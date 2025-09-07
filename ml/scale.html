@@ -1,0 +1,2067 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://mstrblog.com/ml/scale.html">
+      
+      
+        <link rel="prev" href="multiple_reg.html">
+      
+      
+        <link rel="next" href="train_test.html">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Scale - Learn Python</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#scale-features" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Learn Python" class="md-header__button md-logo" aria-label="Learn Python" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Learn Python
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Scale
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../index.html" class="md-tabs__link">
+          
+  
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../python/intro.html" class="md-tabs__link">
+          
+  
+  
+  Python
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="terminologies.html" class="md-tabs__link">
+          
+  
+  
+  AI
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../sql.html" class="md-tabs__link">
+          
+  
+  
+  Tech
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Learn Python" class="md-nav__button md-logo" aria-label="Learn Python" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Learn Python
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Home
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Welcome
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Python
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python/intro.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python/get_started.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Get Started
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python/variables.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Variables & Data Types
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python/operators.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Operators
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python/number.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Number
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python/string.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    String
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python/output_input.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Output & Input
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python/selection.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Selection (IF)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python/iteration.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Iteration (Loop)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python/list.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    List
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python/dictionary.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dictionary
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python/functions.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Functions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_13" id="__nav_2_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Pandas
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_13">
+            <span class="md-nav__icon md-icon"></span>
+            Pandas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python/pandas_intro.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Intro
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python/pandas_manipulation.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Manipulation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python/pandas_cleaning.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cleaning Data
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_14" id="__nav_2_14_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Advanced
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_14">
+            <span class="md-nav__icon md-icon"></span>
+            Advanced
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python/oop.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OOP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python/regex.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    RegEx
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_15" id="__nav_2_15_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Labs
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_15">
+            <span class="md-nav__icon md-icon"></span>
+            Labs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python/labs/variables.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Variables & Data Types
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python/labs/number.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Number
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python/labs/string.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    String
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python/labs/input_output.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Input Output
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python/labs/selection_iteration.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Selection & Iteration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python/labs/function.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Function
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python/python_slide/python_slide.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Presentation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    AI
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            AI
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="terminologies.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Terminologies
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="intro.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Intro
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mean_median_mode.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Mean Median Mode
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="std_dev.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Standard Deviation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="percentile.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Percentile
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="data_dist.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data Distribution
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="normal_dist.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Normal Data Distribution
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="scatter_plot.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Scatter Plot
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="linear_reg.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Linear Regression
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="polynomial_reg.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Polynomial Regression
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="multiple_reg.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multiple Regression
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Scale
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="scale.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Scale
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#scale-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scale Features
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#predict-co2-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      Predict CO2 Values
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="train_test.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Train/Test
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="decision_tree.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Decision Tree
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="confusion_matrix.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Confusion Matrix
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="hierarchical_clust.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Hierarchical Clustering
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="logistic_reg.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Logistic Regression
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="grid_search.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Grid Search
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cat_data.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Categorical Data
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="k_means.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    K-means
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="bootstrap_agg.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Bootstrap Aggregation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cross_validation.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cross Validation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="auc_roc_curve.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AUC - ROC Curve
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="k_nearest_neighbour.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    K-nearest neighbors
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tech
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Tech
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sql.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SQL
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Linux
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#scale-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scale Features
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#predict-co2-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      Predict CO2 Values
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Scale</h1>
+
+<h2 id="scale-features">Scale Features</h2>
+<p>When your data has different values, and even different measurement units, it can be difficult to compare them. What is kilograms compared to meters? Or altitude compared to time?</p>
+<p>The answer to this problem is scaling. We can scale data into new values that are easier to compare.</p>
+<p>Take a look at the table below, it is the same data set that we used in the multiple regression chapter, but this time the volume column contains values in liters instead of cm3 (1.0 instead of 1000).</p>
+<div class="highlight"><pre><span></span><code><span class="n">Car</span> <span class="n">Model</span>   <span class="n">Volume</span>  <span class="n">Weight</span>  <span class="n">CO2</span> 
+<span class="n">Toyota</span>  <span class="n">Aygo</span>    <span class="mf">1.0</span> <span class="mi">790</span> <span class="mi">99</span>
+<span class="n">Mitsubishi</span>  <span class="n">Space</span> <span class="n">Star</span>  <span class="mf">1.2</span> <span class="mi">1160</span>    <span class="mi">95</span>
+<span class="n">Skoda</span>   <span class="n">Citigo</span>  <span class="mf">1.0</span> <span class="mi">929</span> <span class="mi">95</span>
+<span class="n">Fiat</span>    <span class="mi">500</span> <span class="mf">0.9</span> <span class="mi">865</span> <span class="mi">90</span>
+<span class="n">Mini</span>    <span class="n">Cooper</span>  <span class="mf">1.5</span> <span class="mi">1140</span>    <span class="mi">105</span>
+<span class="n">VW</span>  <span class="n">Up</span><span class="err">!</span> <span class="mf">1.0</span> <span class="mi">929</span> <span class="mi">105</span>
+<span class="n">Skoda</span>   <span class="n">Fabia</span>   <span class="mf">1.4</span> <span class="mi">1109</span>    <span class="mi">90</span>
+<span class="n">Mercedes</span>    <span class="n">A</span><span class="o">-</span><span class="n">Class</span> <span class="mf">1.5</span> <span class="mi">1365</span>    <span class="mi">92</span>
+<span class="n">Ford</span>    <span class="n">Fiesta</span>  <span class="mf">1.5</span> <span class="mi">1112</span>    <span class="mi">98</span>
+<span class="n">Audi</span>    <span class="n">A1</span>  <span class="mf">1.6</span> <span class="mi">1150</span>    <span class="mi">99</span>
+<span class="n">Hyundai</span> <span class="n">I20</span> <span class="mf">1.1</span> <span class="mi">980</span> <span class="mi">99</span>
+<span class="n">Suzuki</span>  <span class="n">Swift</span>   <span class="mf">1.3</span> <span class="mi">990</span> <span class="mi">101</span>
+<span class="n">Ford</span>    <span class="n">Fiesta</span>  <span class="mf">1.0</span> <span class="mi">1112</span>    <span class="mi">99</span>
+<span class="n">Honda</span>   <span class="n">Civic</span>   <span class="mf">1.6</span> <span class="mi">1252</span>    <span class="mi">94</span>
+<span class="n">Hundai</span>  <span class="n">I30</span> <span class="mf">1.6</span> <span class="mi">1326</span>    <span class="mi">97</span>
+<span class="n">Opel</span>    <span class="n">Astra</span>   <span class="mf">1.6</span> <span class="mi">1330</span>    <span class="mi">97</span>
+<span class="n">BMW</span> <span class="mi">1</span>   <span class="mf">1.6</span> <span class="mi">1365</span>    <span class="mi">99</span>
+<span class="n">Mazda</span>   <span class="mi">3</span>   <span class="mf">2.2</span> <span class="mi">1280</span>    <span class="mi">104</span>
+<span class="n">Skoda</span>   <span class="n">Rapid</span>   <span class="mf">1.6</span> <span class="mi">1119</span>    <span class="mi">104</span>
+<span class="n">Ford</span>    <span class="n">Focus</span>   <span class="mf">2.0</span> <span class="mi">1328</span>    <span class="mi">105</span>
+<span class="n">Ford</span>    <span class="n">Mondeo</span>  <span class="mf">1.6</span> <span class="mi">1584</span>    <span class="mi">94</span>
+<span class="n">Opel</span>    <span class="n">Insignia</span>    <span class="mf">2.0</span> <span class="mi">1428</span>    <span class="mi">99</span>
+<span class="n">Mercedes</span>    <span class="n">C</span><span class="o">-</span><span class="n">Class</span> <span class="mf">2.1</span> <span class="mi">1365</span>    <span class="mi">99</span>
+<span class="n">Skoda</span>   <span class="n">Octavia</span> <span class="mf">1.6</span> <span class="mi">1415</span>    <span class="mi">99</span>
+<span class="n">Volvo</span>   <span class="n">S60</span> <span class="mf">2.0</span> <span class="mi">1415</span>    <span class="mi">99</span>
+<span class="n">Mercedes</span>    <span class="n">CLA</span> <span class="mf">1.5</span> <span class="mi">1465</span>    <span class="mi">102</span>
+<span class="n">Audi</span>    <span class="n">A4</span>  <span class="mf">2.0</span> <span class="mi">1490</span>    <span class="mi">104</span>
+<span class="n">Audi</span>    <span class="n">A6</span>  <span class="mf">2.0</span> <span class="mi">1725</span>    <span class="mi">114</span>
+<span class="n">Volvo</span>   <span class="n">V70</span> <span class="mf">1.6</span> <span class="mi">1523</span>    <span class="mi">109</span>
+<span class="n">BMW</span> <span class="mi">5</span>   <span class="mf">2.0</span> <span class="mi">1705</span>    <span class="mi">114</span>
+<span class="n">Mercedes</span>    <span class="n">E</span><span class="o">-</span><span class="n">Class</span> <span class="mf">2.1</span> <span class="mi">1605</span>    <span class="mi">115</span>
+<span class="n">Volvo</span>   <span class="n">XC70</span>    <span class="mf">2.0</span> <span class="mi">1746</span>    <span class="mi">117</span>
+<span class="n">Ford</span>    <span class="n">B</span><span class="o">-</span><span class="n">Max</span>   <span class="mf">1.6</span> <span class="mi">1235</span>    <span class="mi">104</span>
+<span class="n">BMW</span> <span class="mi">2</span>   <span class="mf">1.6</span> <span class="mi">1390</span>    <span class="mi">108</span>
+<span class="n">Opel</span>    <span class="n">Zafira</span>  <span class="mf">1.6</span> <span class="mi">1405</span>    <span class="mi">109</span>
+<span class="n">Mercedes</span>    <span class="n">SLK</span> <span class="mf">2.5</span> <span class="mi">1395</span>    <span class="mi">120</span>
+</code></pre></div>
+<p>It can be difficult to compare the volume 1.0 with the weight 790, but if we scale them both into comparable values, we can easily see how much one value is compared to the other.</p>
+<p>There are different methods for scaling data, in this tutorial we will use a method called standardization.</p>
+<p>The standardization method uses this formula:</p>
+<p>z = (x - u) / s</p>
+<p>Where z is the new value, x is the original value, u is the mean and s is the standard deviation.</p>
+<p>If you take the weight column from the data set above, the first value is 790, and the scaled value will be:</p>
+<p>(790 - 1292.23) / 238.74 = -2.1
+If you take the volume column from the data set above, the first value is 1.0, and the scaled value will be:</p>
+<p>(1.0 - 1.61) / 0.38 = -1.59</p>
+<p>Now you can compare -2.1 with -1.59 instead of comparing 790 with 1.0.</p>
+<p>You do not have to do this manually, the Python sklearn module has a method called StandardScaler() which returns a Scaler object with methods for transforming data sets.</p>
+<p>Example:
+Scale all values in the Weight and Volume columns:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn</span><span class="w"> </span><span class="kn">import</span> <span class="n">linear_model</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">StandardScaler</span>
+<span class="n">scale</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data.csv&quot;</span><span class="p">)</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;Weight&#39;</span><span class="p">,</span> <span class="s1">&#39;Volume&#39;</span><span class="p">]]</span>
+
+<span class="n">scaledX</span> <span class="o">=</span> <span class="n">scale</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">scaledX</span><span class="p">)</span>
+</code></pre></div>
+<p>Result:
+Note that the first two values are -2.1 and -1.59, which corresponds to our calculations:
+<div class="highlight"><pre><span></span><code><span class="p">[[</span><span class="o">-</span><span class="mf">2.10389253</span> <span class="o">-</span><span class="mf">1.59336644</span><span class="p">]</span>
+ <span class="p">[</span><span class="o">-</span><span class="mf">0.55407235</span> <span class="o">-</span><span class="mf">1.07190106</span><span class="p">]</span>
+ <span class="p">[</span><span class="o">-</span><span class="mf">1.52166278</span> <span class="o">-</span><span class="mf">1.59336644</span><span class="p">]</span>
+ <span class="p">[</span><span class="o">-</span><span class="mf">1.78973979</span> <span class="o">-</span><span class="mf">1.85409913</span><span class="p">]</span>
+ <span class="p">[</span><span class="o">-</span><span class="mf">0.63784641</span> <span class="o">-</span><span class="mf">0.28970299</span><span class="p">]</span>
+ <span class="p">[</span><span class="o">-</span><span class="mf">1.52166278</span> <span class="o">-</span><span class="mf">1.59336644</span><span class="p">]</span>
+ <span class="p">[</span><span class="o">-</span><span class="mf">0.76769621</span> <span class="o">-</span><span class="mf">0.55043568</span><span class="p">]</span>
+ <span class="p">[</span> <span class="mf">0.3046118</span>  <span class="o">-</span><span class="mf">0.28970299</span><span class="p">]</span>
+ <span class="p">[</span><span class="o">-</span><span class="mf">0.7551301</span>  <span class="o">-</span><span class="mf">0.28970299</span><span class="p">]</span>
+ <span class="p">[</span><span class="o">-</span><span class="mf">0.59595938</span> <span class="o">-</span><span class="mf">0.0289703</span> <span class="p">]</span>
+ <span class="p">[</span><span class="o">-</span><span class="mf">1.30803892</span> <span class="o">-</span><span class="mf">1.33263375</span><span class="p">]</span>
+ <span class="p">[</span><span class="o">-</span><span class="mf">1.26615189</span> <span class="o">-</span><span class="mf">0.81116837</span><span class="p">]</span>
+ <span class="p">[</span><span class="o">-</span><span class="mf">0.7551301</span>  <span class="o">-</span><span class="mf">1.59336644</span><span class="p">]</span>
+ <span class="p">[</span><span class="o">-</span><span class="mf">0.16871166</span> <span class="o">-</span><span class="mf">0.0289703</span> <span class="p">]</span>
+ <span class="p">[</span> <span class="mf">0.14125238</span> <span class="o">-</span><span class="mf">0.0289703</span> <span class="p">]</span>
+ <span class="p">[</span> <span class="mf">0.15800719</span> <span class="o">-</span><span class="mf">0.0289703</span> <span class="p">]</span>
+ <span class="p">[</span> <span class="mf">0.3046118</span>  <span class="o">-</span><span class="mf">0.0289703</span> <span class="p">]</span>
+ <span class="p">[</span><span class="o">-</span><span class="mf">0.05142797</span>  <span class="mf">1.53542584</span><span class="p">]</span>
+ <span class="p">[</span><span class="o">-</span><span class="mf">0.72580918</span> <span class="o">-</span><span class="mf">0.0289703</span> <span class="p">]</span>
+ <span class="p">[</span> <span class="mf">0.14962979</span>  <span class="mf">1.01396046</span><span class="p">]</span>
+ <span class="p">[</span> <span class="mf">1.2219378</span>  <span class="o">-</span><span class="mf">0.0289703</span> <span class="p">]</span>
+ <span class="p">[</span> <span class="mf">0.5685001</span>   <span class="mf">1.01396046</span><span class="p">]</span>
+ <span class="p">[</span> <span class="mf">0.3046118</span>   <span class="mf">1.27469315</span><span class="p">]</span>
+ <span class="p">[</span> <span class="mf">0.51404696</span> <span class="o">-</span><span class="mf">0.0289703</span> <span class="p">]</span>
+ <span class="p">[</span> <span class="mf">0.51404696</span>  <span class="mf">1.01396046</span><span class="p">]</span>
+ <span class="p">[</span> <span class="mf">0.72348212</span> <span class="o">-</span><span class="mf">0.28970299</span><span class="p">]</span>
+ <span class="p">[</span> <span class="mf">0.8281997</span>   <span class="mf">1.01396046</span><span class="p">]</span>
+ <span class="p">[</span> <span class="mf">1.81254495</span>  <span class="mf">1.01396046</span><span class="p">]</span>
+ <span class="p">[</span> <span class="mf">0.96642691</span> <span class="o">-</span><span class="mf">0.0289703</span> <span class="p">]</span>
+ <span class="p">[</span> <span class="mf">1.72877089</span>  <span class="mf">1.01396046</span><span class="p">]</span>
+ <span class="p">[</span> <span class="mf">1.30990057</span>  <span class="mf">1.27469315</span><span class="p">]</span>
+ <span class="p">[</span> <span class="mf">1.90050772</span>  <span class="mf">1.01396046</span><span class="p">]</span>
+ <span class="p">[</span><span class="o">-</span><span class="mf">0.23991961</span> <span class="o">-</span><span class="mf">0.0289703</span> <span class="p">]</span>
+ <span class="p">[</span> <span class="mf">0.40932938</span> <span class="o">-</span><span class="mf">0.0289703</span> <span class="p">]</span>
+ <span class="p">[</span> <span class="mf">0.47215993</span> <span class="o">-</span><span class="mf">0.0289703</span> <span class="p">]</span>
+ <span class="p">[</span> <span class="mf">0.4302729</span>   <span class="mf">2.31762392</span><span class="p">]]</span>
+</code></pre></div></p>
+<h2 id="predict-co2-values">Predict CO2 Values</h2>
+<p>The task in the Multiple Regression chapter was to predict the CO2 emission from a car when you only knew its weight and volume.</p>
+<p>When the data set is scaled, you will have to use the scale when you predict values:</p>
+<p>Example:
+Predict the CO2 emission from a 1.3 liter car that weighs 2300 kilograms:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn</span><span class="w"> </span><span class="kn">import</span> <span class="n">linear_model</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">StandardScaler</span>
+<span class="n">scale</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data.csv&quot;</span><span class="p">)</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;Weight&#39;</span><span class="p">,</span> <span class="s1">&#39;Volume&#39;</span><span class="p">]]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;CO2&#39;</span><span class="p">]</span>
+
+<span class="n">scaledX</span> <span class="o">=</span> <span class="n">scale</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+<span class="n">regr</span> <span class="o">=</span> <span class="n">linear_model</span><span class="o">.</span><span class="n">LinearRegression</span><span class="p">()</span>
+<span class="n">regr</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">scaledX</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="n">scaled</span> <span class="o">=</span> <span class="n">scale</span><span class="o">.</span><span class="n">transform</span><span class="p">([[</span><span class="mi">2300</span><span class="p">,</span> <span class="mf">1.3</span><span class="p">]])</span>
+
+<span class="n">predictedCO2</span> <span class="o">=</span> <span class="n">regr</span><span class="o">.</span><span class="n">predict</span><span class="p">([</span><span class="n">scaled</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">predictedCO2</span><span class="p">)</span>
+</code></pre></div>
+<p>Result:
+[107.2087328]</p>
+<p><br><br></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; - 2025 Learn Python
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>
