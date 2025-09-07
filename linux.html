@@ -1,0 +1,4882 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://mstrblog.com/linux.html">
+      
+      
+        <link rel="prev" href="sql.html">
+      
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Linux - Learn Python</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/extra.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#top-100-most-useful-linux-commands" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="Learn Python" class="md-header__button md-logo" aria-label="Learn Python" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Learn Python
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Linux
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="index.html" class="md-tabs__link">
+          
+  
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="python/intro.html" class="md-tabs__link">
+          
+  
+  
+  Python
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="ml/terminologies.html" class="md-tabs__link">
+          
+  
+  
+  AI
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="sql.html" class="md-tabs__link">
+          
+  
+  
+  Tech
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="Learn Python" class="md-nav__button md-logo" aria-label="Learn Python" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Learn Python
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Home
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Welcome
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Python
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="python/intro.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="python/get_started.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Get Started
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="python/variables.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Variables & Data Types
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="python/operators.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Operators
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="python/number.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Number
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="python/string.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    String
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="python/output_input.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Output & Input
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="python/selection.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Selection (IF)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="python/iteration.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Iteration (Loop)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="python/list.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    List
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="python/dictionary.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dictionary
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="python/functions.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Functions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_13" id="__nav_2_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Pandas
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_13">
+            <span class="md-nav__icon md-icon"></span>
+            Pandas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="python/pandas_intro.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Intro
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="python/pandas_manipulation.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Manipulation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="python/pandas_cleaning.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cleaning Data
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_14" id="__nav_2_14_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Advanced
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_14">
+            <span class="md-nav__icon md-icon"></span>
+            Advanced
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="python/oop.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OOP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="python/regex.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    RegEx
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_15" id="__nav_2_15_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Labs
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_15">
+            <span class="md-nav__icon md-icon"></span>
+            Labs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="python/labs/variables.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Variables & Data Types
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="python/labs/number.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Number
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="python/labs/string.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    String
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="python/labs/input_output.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Input Output
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="python/labs/selection_iteration.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Selection & Iteration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="python/labs/function.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Function
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="python/python_slide/python_slide.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Presentation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    AI
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            AI
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ml/terminologies.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Terminologies
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ml/intro.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Intro
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ml/mean_median_mode.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Mean Median Mode
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ml/std_dev.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Standard Deviation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ml/percentile.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Percentile
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ml/data_dist.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data Distribution
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ml/normal_dist.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Normal Data Distribution
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ml/scatter_plot.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Scatter Plot
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ml/linear_reg.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Linear Regression
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ml/polynomial_reg.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Polynomial Regression
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ml/multiple_reg.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multiple Regression
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ml/scale.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Scale
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ml/train_test.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Train/Test
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ml/decision_tree.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Decision Tree
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ml/confusion_matrix.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Confusion Matrix
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ml/hierarchical_clust.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Hierarchical Clustering
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ml/logistic_reg.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Logistic Regression
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ml/grid_search.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Grid Search
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ml/cat_data.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Categorical Data
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ml/k_means.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    K-means
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ml/bootstrap_agg.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Bootstrap Aggregation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ml/cross_validation.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cross Validation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ml/auc_roc_curve.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AUC - ROC Curve
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ml/k_nearest_neighbour.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    K-nearest neighbors
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tech
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Tech
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sql.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SQL
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Linux
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="linux.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Linux
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#top-100-most-useful-linux-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Top 100 Most Useful Linux Commands
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Top 100 Most Useful Linux Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file-management-commands-in-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      File Management Commands In Linux
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="File Management Commands In Linux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-ls-list-directory-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. ls – List Directory Contents
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-cd-change-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. cd – Change Directory
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-mkdir-create-a-new-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. mkdir – Create A New Directory
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-rmdir-remove-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. rmdir – Remove Directory
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-touch-create-a-new-empty-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. touch – Create A New Empty File
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-cp-copy-files-and-directories" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. cp – Copy Files And Directories
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-mv-move-or-rename-files-and-directories" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. mv – Move Or Rename Files And Directories
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-rm-remove-files-and-directories" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. rm – Remove Files And Directories
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-find-search-for-files-in-a-directory-hierarchy" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. find – Search For Files In A Directory Hierarchy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-du-estimate-file-space-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. du – Estimate File Space Usage
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search-and-filter-commands-in-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Search And Filter Commands In Linux
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Search And Filter Commands In Linux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-grep-search-text-using-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. grep – Search Text Using Patterns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-awk-pattern-scanning-and-processing-language" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. awk – Pattern Scanning And Processing Language
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-sed-stream-editor-for-filtering-and-transforming-text" class="md-nav__link">
+    <span class="md-ellipsis">
+      13. sed – Stream Editor For Filtering And Transforming Text
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-sort-sort-lines-of-text-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      14. sort – Sort Lines Of Text Files
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-uniq-report-or-omit-repeated-lines" class="md-nav__link">
+    <span class="md-ellipsis">
+      15. uniq – Report Or Omit Repeated Lines
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16-diff-compare-files-line-by-line" class="md-nav__link">
+    <span class="md-ellipsis">
+      16. diff – Compare Files Line By Line
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#17-wc-print-line-word-and-byte-counts" class="md-nav__link">
+    <span class="md-ellipsis">
+      17. wc – Print Line, Word, And Byte Counts
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redirection-commands-in-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Redirection Commands In Linux
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Redirection Commands In Linux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#18-redirect-standard-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      18. &gt; – Redirect Standard Output
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#19-append-standard-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      19. &gt;&gt; – Append Standard Output
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#20-redirect-standard-input" class="md-nav__link">
+    <span class="md-ellipsis">
+      20. &lt; – Redirect Standard Input
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#21-pipe-output-to-another-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      21. | – Pipe Output To Another Command
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-tee-read-from-standard-input-and-write-to-standard-output-and-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      22. tee – Read From Standard Input And Write To Standard Output And Files
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#archive-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Archive Commands
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Archive Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#23-tar-store-and-extract-files-from-an-archive" class="md-nav__link">
+    <span class="md-ellipsis">
+      23. tar – Store And Extract Files From An Archive
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-gzip-compress-or-expand-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      24. gzip – Compress Or Expand Files
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-gunzip-decompress-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      25. gunzip – Decompress Files
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26-zip-package-and-compress-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      26. zip – Package And Compress Files
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#27-unzip-extract-files-from-zip-archives" class="md-nav__link">
+    <span class="md-ellipsis">
+      27. unzip – Extract Files From ZIP Archives
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-transfer-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      File Transfer Commands
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="File Transfer Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#28-scp-secure-copy-files-between-hosts" class="md-nav__link">
+    <span class="md-ellipsis">
+      28. scp – Secure Copy Files Between Hosts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#29-rsync-synchronize-files-between-hosts" class="md-nav__link">
+    <span class="md-ellipsis">
+      29. rsync – Synchronize Files Between Hosts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#30-sftp-secure-file-transfer-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      30. sftp – Secure File Transfer Program
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#31-wget-retrieve-files-from-the-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      31. wget – Retrieve Files from the Web
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-curl-transfer-data-from-or-to-a-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      32. curl – Transfer Data From Or To A Server
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-permissions-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      File Permissions Commands
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="File Permissions Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#33-chmod-change-file-modes-or-access-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      33. chmod – Change File Modes Or Access Permissions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-chown-change-file-owner-and-group" class="md-nav__link">
+    <span class="md-ellipsis">
+      34. chown – Change File Owner And Group
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-umask-set-default-file-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      35. umask – Set Default File Permissions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#process-management-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Process Management Commands
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Process Management Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#36-ps-report-a-snapshot-of-current-processes" class="md-nav__link">
+    <span class="md-ellipsis">
+      36. ps – Report A Snapshot Of Current Processes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#37-top-display-linux-processes" class="md-nav__link">
+    <span class="md-ellipsis">
+      37. top – Display Linux Processes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#38-htop-interactive-process-viewer" class="md-nav__link">
+    <span class="md-ellipsis">
+      38. htop – Interactive Process Viewer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#39-kill-send-a-signal-to-a-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      39. kill – Send A Signal To A Process
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#40-pkill-send-a-signal-to-a-process-based-on-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      40. pkill – Send A Signal To A Process Based On Name
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#41-nohup-run-a-command-immune-to-hangups" class="md-nav__link">
+    <span class="md-ellipsis">
+      41. nohup – Run A Command Immune To Hangups
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-monitoring-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Performance Monitoring Commands
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Performance Monitoring Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#42-vmstat-report-virtual-memory-statistics" class="md-nav__link">
+    <span class="md-ellipsis">
+      42. vmstat – Report Virtual Memory Statistics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-iostat-report-cpu-and-io-statistics" class="md-nav__link">
+    <span class="md-ellipsis">
+      43. iostat – Report CPU And I/O Statistics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-free-display-amount-of-free-and-used-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      44. free – Display Amount Of Free And Used Memory
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-df-report-file-system-disk-space-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      45. df – Report File System Disk Space Usage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#46-sar-collect-and-report-system-activity" class="md-nav__link">
+    <span class="md-ellipsis">
+      46. sar – Collect And Report System Activity
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user-management-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      User Management Commands
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Management Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#47-useradd-create-a-new-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      47. useradd – Create A New User
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#48-usermod-modify-a-user-account" class="md-nav__link">
+    <span class="md-ellipsis">
+      48. usermod – Modify A User Account
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#49-userdel-delete-a-user-account" class="md-nav__link">
+    <span class="md-ellipsis">
+      49. userdel – Delete A User Account
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#50-groupadd-add-a-group" class="md-nav__link">
+    <span class="md-ellipsis">
+      50. groupadd – Add A Group
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#51-passwd-update-users-authentication-tokens" class="md-nav__link">
+    <span class="md-ellipsis">
+      51. passwd – Update User’s Authentication Tokens
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#networking-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Networking Commands
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Networking Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#52-ping-send-icmp-echo_request-to-network-hosts" class="md-nav__link">
+    <span class="md-ellipsis">
+      52. ping – Send ICMP ECHO_REQUEST To Network Hosts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-ifconfig-configure-network-interfaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      53. ifconfig – Configure Network Interfaces
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-netstat-network-statistics" class="md-nav__link">
+    <span class="md-ellipsis">
+      54. netstat – Network Statistics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#55-ss-socket-statistics" class="md-nav__link">
+    <span class="md-ellipsis">
+      55. ss – Socket Statistics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#56-traceroute-trace-route-to-host" class="md-nav__link">
+    <span class="md-ellipsis">
+      56. traceroute – Trace Route To Host
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#57-dig-dns-lookup" class="md-nav__link">
+    <span class="md-ellipsis">
+      57. dig - DNS Lookup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#58-nslookup-query-internet-name-servers-interactively" class="md-nav__link">
+    <span class="md-ellipsis">
+      58. nslookup – Query Internet Name Servers Interactively
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#59-iptables-ipv4-packet-filtering-and-nat" class="md-nav__link">
+    <span class="md-ellipsis">
+      59. iptables – IPv4 Packet Filtering And NAT
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#60-ip-manage-network-devices-and-routing" class="md-nav__link">
+    <span class="md-ellipsis">
+      60. ip – Manage Network Devices And Routing
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#package-management-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Package Management Commands
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Package Management Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-apt-debianubuntu-package-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      61. apt – Debian/Ubuntu Package Manager
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-pacman-arch-linux-package-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      62. pacman – Arch Linux Package Manager
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-dnf-fedora-package-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      63. dnf – Fedora Package Manager
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-yum-red-hat-package-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      64. yum – Red Hat Package Manager
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#65-zypper-opensuse-package-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      65. zypper – OpenSUSE Package Manager
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#66-flatpak-flatpak-application-package-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      66. flatpak – Flatpak Application Package Manager
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#67-appimage-appimage-application-package-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      67. appimage – AppImage Application Package Manager
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#68-snap-snappy-application-package-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      68. snap – Snappy Application Package Manager
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-information-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      System Information Commands
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="System Information Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#69-uname-print-system-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      69. uname – Print System Information
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#70-hostname-show-or-set-the-systems-host-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      70. hostname – Show Or Set The System’s Host Name
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#71-uptime-how-long-the-system-has-been-running" class="md-nav__link">
+    <span class="md-ellipsis">
+      71. uptime – How Long The System Has Been Running
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-whoami-print-active-user-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      72. whoami – Print Active User ID
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-id-print-real-and-effective-user-and-group-ids" class="md-nav__link">
+    <span class="md-ellipsis">
+      73. id – Print Real And Effective User And Group IDs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#74-lscpu-display-cpu-architecture-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      74. lscpu – Display CPU Architecture Information
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#75-lsblk-list-block-devices" class="md-nav__link">
+    <span class="md-ellipsis">
+      75. lsblk – List Block Devices
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#76-lsmod-show-the-status-of-modules-in-the-linux-kernel" class="md-nav__link">
+    <span class="md-ellipsis">
+      76. lsmod – Show The Status of Modules In The Linux Kernel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#77-dmesg-print-or-control-the-kernel-ring-buffer" class="md-nav__link">
+    <span class="md-ellipsis">
+      77. dmesg – Print Or Control The Kernel Ring Buffer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-administration-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      System Administration Commands
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="System Administration Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#78-sudo-execute-a-command-as-another-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      78. sudo – Execute A Command As Another User
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#79-su-change-user-id-or-become-superuser" class="md-nav__link">
+    <span class="md-ellipsis">
+      79. su – Change User ID Or Become Superuser
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#80-shutdown-shutdown-or-restart-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      80. shutdown – Shutdown Or Restart Linux
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#81-reboot-reboot-or-restart-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      81. reboot – Reboot Or Restart System
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-systemctl-control-the-systemd-system-and-service-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      82. systemctl – Control The systemd System And Service Manager
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83-service-run-a-system-v-init-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      83. service – Run A System V Init Script
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-linux-commands-to-try" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other Linux Commands To Try
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#top-100-most-useful-linux-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Top 100 Most Useful Linux Commands
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Top 100 Most Useful Linux Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file-management-commands-in-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      File Management Commands In Linux
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="File Management Commands In Linux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-ls-list-directory-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. ls – List Directory Contents
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-cd-change-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. cd – Change Directory
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-mkdir-create-a-new-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. mkdir – Create A New Directory
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-rmdir-remove-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. rmdir – Remove Directory
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-touch-create-a-new-empty-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. touch – Create A New Empty File
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-cp-copy-files-and-directories" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. cp – Copy Files And Directories
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-mv-move-or-rename-files-and-directories" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. mv – Move Or Rename Files And Directories
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-rm-remove-files-and-directories" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. rm – Remove Files And Directories
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-find-search-for-files-in-a-directory-hierarchy" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. find – Search For Files In A Directory Hierarchy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-du-estimate-file-space-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. du – Estimate File Space Usage
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search-and-filter-commands-in-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Search And Filter Commands In Linux
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Search And Filter Commands In Linux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-grep-search-text-using-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. grep – Search Text Using Patterns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-awk-pattern-scanning-and-processing-language" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. awk – Pattern Scanning And Processing Language
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-sed-stream-editor-for-filtering-and-transforming-text" class="md-nav__link">
+    <span class="md-ellipsis">
+      13. sed – Stream Editor For Filtering And Transforming Text
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-sort-sort-lines-of-text-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      14. sort – Sort Lines Of Text Files
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-uniq-report-or-omit-repeated-lines" class="md-nav__link">
+    <span class="md-ellipsis">
+      15. uniq – Report Or Omit Repeated Lines
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16-diff-compare-files-line-by-line" class="md-nav__link">
+    <span class="md-ellipsis">
+      16. diff – Compare Files Line By Line
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#17-wc-print-line-word-and-byte-counts" class="md-nav__link">
+    <span class="md-ellipsis">
+      17. wc – Print Line, Word, And Byte Counts
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redirection-commands-in-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Redirection Commands In Linux
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Redirection Commands In Linux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#18-redirect-standard-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      18. &gt; – Redirect Standard Output
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#19-append-standard-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      19. &gt;&gt; – Append Standard Output
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#20-redirect-standard-input" class="md-nav__link">
+    <span class="md-ellipsis">
+      20. &lt; – Redirect Standard Input
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#21-pipe-output-to-another-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      21. | – Pipe Output To Another Command
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-tee-read-from-standard-input-and-write-to-standard-output-and-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      22. tee – Read From Standard Input And Write To Standard Output And Files
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#archive-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Archive Commands
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Archive Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#23-tar-store-and-extract-files-from-an-archive" class="md-nav__link">
+    <span class="md-ellipsis">
+      23. tar – Store And Extract Files From An Archive
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-gzip-compress-or-expand-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      24. gzip – Compress Or Expand Files
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-gunzip-decompress-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      25. gunzip – Decompress Files
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26-zip-package-and-compress-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      26. zip – Package And Compress Files
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#27-unzip-extract-files-from-zip-archives" class="md-nav__link">
+    <span class="md-ellipsis">
+      27. unzip – Extract Files From ZIP Archives
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-transfer-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      File Transfer Commands
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="File Transfer Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#28-scp-secure-copy-files-between-hosts" class="md-nav__link">
+    <span class="md-ellipsis">
+      28. scp – Secure Copy Files Between Hosts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#29-rsync-synchronize-files-between-hosts" class="md-nav__link">
+    <span class="md-ellipsis">
+      29. rsync – Synchronize Files Between Hosts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#30-sftp-secure-file-transfer-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      30. sftp – Secure File Transfer Program
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#31-wget-retrieve-files-from-the-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      31. wget – Retrieve Files from the Web
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-curl-transfer-data-from-or-to-a-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      32. curl – Transfer Data From Or To A Server
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-permissions-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      File Permissions Commands
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="File Permissions Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#33-chmod-change-file-modes-or-access-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      33. chmod – Change File Modes Or Access Permissions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-chown-change-file-owner-and-group" class="md-nav__link">
+    <span class="md-ellipsis">
+      34. chown – Change File Owner And Group
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-umask-set-default-file-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      35. umask – Set Default File Permissions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#process-management-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Process Management Commands
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Process Management Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#36-ps-report-a-snapshot-of-current-processes" class="md-nav__link">
+    <span class="md-ellipsis">
+      36. ps – Report A Snapshot Of Current Processes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#37-top-display-linux-processes" class="md-nav__link">
+    <span class="md-ellipsis">
+      37. top – Display Linux Processes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#38-htop-interactive-process-viewer" class="md-nav__link">
+    <span class="md-ellipsis">
+      38. htop – Interactive Process Viewer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#39-kill-send-a-signal-to-a-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      39. kill – Send A Signal To A Process
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#40-pkill-send-a-signal-to-a-process-based-on-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      40. pkill – Send A Signal To A Process Based On Name
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#41-nohup-run-a-command-immune-to-hangups" class="md-nav__link">
+    <span class="md-ellipsis">
+      41. nohup – Run A Command Immune To Hangups
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-monitoring-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Performance Monitoring Commands
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Performance Monitoring Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#42-vmstat-report-virtual-memory-statistics" class="md-nav__link">
+    <span class="md-ellipsis">
+      42. vmstat – Report Virtual Memory Statistics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-iostat-report-cpu-and-io-statistics" class="md-nav__link">
+    <span class="md-ellipsis">
+      43. iostat – Report CPU And I/O Statistics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-free-display-amount-of-free-and-used-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      44. free – Display Amount Of Free And Used Memory
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-df-report-file-system-disk-space-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      45. df – Report File System Disk Space Usage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#46-sar-collect-and-report-system-activity" class="md-nav__link">
+    <span class="md-ellipsis">
+      46. sar – Collect And Report System Activity
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user-management-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      User Management Commands
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Management Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#47-useradd-create-a-new-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      47. useradd – Create A New User
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#48-usermod-modify-a-user-account" class="md-nav__link">
+    <span class="md-ellipsis">
+      48. usermod – Modify A User Account
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#49-userdel-delete-a-user-account" class="md-nav__link">
+    <span class="md-ellipsis">
+      49. userdel – Delete A User Account
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#50-groupadd-add-a-group" class="md-nav__link">
+    <span class="md-ellipsis">
+      50. groupadd – Add A Group
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#51-passwd-update-users-authentication-tokens" class="md-nav__link">
+    <span class="md-ellipsis">
+      51. passwd – Update User’s Authentication Tokens
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#networking-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Networking Commands
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Networking Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#52-ping-send-icmp-echo_request-to-network-hosts" class="md-nav__link">
+    <span class="md-ellipsis">
+      52. ping – Send ICMP ECHO_REQUEST To Network Hosts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-ifconfig-configure-network-interfaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      53. ifconfig – Configure Network Interfaces
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-netstat-network-statistics" class="md-nav__link">
+    <span class="md-ellipsis">
+      54. netstat – Network Statistics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#55-ss-socket-statistics" class="md-nav__link">
+    <span class="md-ellipsis">
+      55. ss – Socket Statistics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#56-traceroute-trace-route-to-host" class="md-nav__link">
+    <span class="md-ellipsis">
+      56. traceroute – Trace Route To Host
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#57-dig-dns-lookup" class="md-nav__link">
+    <span class="md-ellipsis">
+      57. dig - DNS Lookup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#58-nslookup-query-internet-name-servers-interactively" class="md-nav__link">
+    <span class="md-ellipsis">
+      58. nslookup – Query Internet Name Servers Interactively
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#59-iptables-ipv4-packet-filtering-and-nat" class="md-nav__link">
+    <span class="md-ellipsis">
+      59. iptables – IPv4 Packet Filtering And NAT
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#60-ip-manage-network-devices-and-routing" class="md-nav__link">
+    <span class="md-ellipsis">
+      60. ip – Manage Network Devices And Routing
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#package-management-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Package Management Commands
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Package Management Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-apt-debianubuntu-package-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      61. apt – Debian/Ubuntu Package Manager
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-pacman-arch-linux-package-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      62. pacman – Arch Linux Package Manager
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-dnf-fedora-package-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      63. dnf – Fedora Package Manager
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-yum-red-hat-package-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      64. yum – Red Hat Package Manager
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#65-zypper-opensuse-package-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      65. zypper – OpenSUSE Package Manager
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#66-flatpak-flatpak-application-package-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      66. flatpak – Flatpak Application Package Manager
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#67-appimage-appimage-application-package-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      67. appimage – AppImage Application Package Manager
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#68-snap-snappy-application-package-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      68. snap – Snappy Application Package Manager
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-information-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      System Information Commands
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="System Information Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#69-uname-print-system-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      69. uname – Print System Information
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#70-hostname-show-or-set-the-systems-host-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      70. hostname – Show Or Set The System’s Host Name
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#71-uptime-how-long-the-system-has-been-running" class="md-nav__link">
+    <span class="md-ellipsis">
+      71. uptime – How Long The System Has Been Running
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-whoami-print-active-user-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      72. whoami – Print Active User ID
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-id-print-real-and-effective-user-and-group-ids" class="md-nav__link">
+    <span class="md-ellipsis">
+      73. id – Print Real And Effective User And Group IDs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#74-lscpu-display-cpu-architecture-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      74. lscpu – Display CPU Architecture Information
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#75-lsblk-list-block-devices" class="md-nav__link">
+    <span class="md-ellipsis">
+      75. lsblk – List Block Devices
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#76-lsmod-show-the-status-of-modules-in-the-linux-kernel" class="md-nav__link">
+    <span class="md-ellipsis">
+      76. lsmod – Show The Status of Modules In The Linux Kernel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#77-dmesg-print-or-control-the-kernel-ring-buffer" class="md-nav__link">
+    <span class="md-ellipsis">
+      77. dmesg – Print Or Control The Kernel Ring Buffer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-administration-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      System Administration Commands
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="System Administration Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#78-sudo-execute-a-command-as-another-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      78. sudo – Execute A Command As Another User
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#79-su-change-user-id-or-become-superuser" class="md-nav__link">
+    <span class="md-ellipsis">
+      79. su – Change User ID Or Become Superuser
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#80-shutdown-shutdown-or-restart-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      80. shutdown – Shutdown Or Restart Linux
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#81-reboot-reboot-or-restart-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      81. reboot – Reboot Or Restart System
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-systemctl-control-the-systemd-system-and-service-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      82. systemctl – Control The systemd System And Service Manager
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83-service-run-a-system-v-init-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      83. service – Run A System V Init Script
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-linux-commands-to-try" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other Linux Commands To Try
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Linux</h1>
+
+<p>Linux is the backbone of the internet. It powers nearly 97% of the world’s top web servers. And 55.9% of professional developers lean on Linux for their development needs.</p>
+<p>Yet, Linux has only a 2.68% desktop market share. Why this gap?</p>
+<p>The core focus of Linux has never been its user interface. It was instead designed to give you complete control over your operating system through the command line.</p>
+<p>In this article, we cover the top 100 most useful Linux commands. Learning just a handful of these commands can help you boost your productivity as a Linux user. Let’s dive right in!</p>
+<h2 id="top-100-most-useful-linux-commands">Top 100 Most Useful Linux Commands</h2>
+<p>Now that you have a basic understanding of what Linux commands are, let’s dive into the top 100 most commonly used Linux commands.</p>
+<p>We’ve organized them by category to cover areas like file management, system monitoring, network operations, user administration, and more.</p>
+<h3 id="file-management-commands-in-linux">File Management Commands In Linux</h3>
+<p>File management is a common task on the Linux command line. Here are essential file commands:</p>
+<h4 id="1-ls-list-directory-contents">1. ls – List Directory Contents</h4>
+<p>The ls command is one of the most frequently used Linux commands. It lists the contents of a directory, showing all files and subdirectories contained inside.</p>
+<p>Without any options or arguments, ls will display the contents of the current working directory. You can pass a path name to list files and folders in that location instead.</p>
+<p><div class="highlight"><pre><span></span><code>Syntax:
+
+ls [options] [directory]
+Some of the most useful ls options include:
+
+-l – Display results in long format, showing extra details like permissions, ownership, size, and modification date for each file and directory.
+-a – Show hidden files and directories that start with . in addition to non-hidden items.
+-R – Recursively list all subdirectory contents, descending into child folders indefinitely.
+-S – Sort results by file size, largest first.
+-t – Sort by timestamp, newest first.
+Example:
+
+ls -l /home/user/documents
+This would list the contents of the “documents” folder in long format.
+
+Example output:
+
+total 824
+-rwxrwx--- 1 user user    8389 Jul 12 08:53 report.pdf
+-rw-r--r-- 1 user user   10231 Jun 30 16:32 presentation.pptx
+drwxr-xr-x 2 user user    4096 May 11 09:21 images
+-rw-rw-r-- 1 user user     453 Apr 18 13:32 todo.txt
+</code></pre></div>
+This output shows a detailed list with permissions, size, owner, and timestamp for each file and directory. The long listing format given by the -l option provides helpful file information at a glance.</p>
+<h4 id="2-cd-change-directory">2. cd – Change Directory</h4>
+<p>The cd command is used to navigate between directories. It allows you to move the current working directory to a new location in the filesystem.</p>
+<p>When you run the cd command by itself, it will return you to the home directory. You can also pass a specific path to change into. For example:</p>
+<p><div class="highlight"><pre><span></span><code>cd /usr/local – Changes to the /usr/local directory.
+cd .. – Moves up one level to the parent directory.
+cd ~/pictures – Changes to the pictures folder in your home directory.
+Syntax:
+
+cd [directory]
+
+Example:
+
+cd /home/user/documents
+</code></pre></div>
+This would change the working directory to the “documents” folder under /home/user. Using cd is essential for being able to access and work with files in different locations conveniently.</p>
+<h4 id="3-mkdir-create-a-new-directory">3. mkdir – Create A New Directory</h4>
+<p>The mkdir command allows you to create a new folder. You simply pass the name of the directory to create.
+<div class="highlight"><pre><span></span><code>Syntax:
+
+mkdir [options] &lt;directory&gt;
+
+This will create a directory called “newproject” in the current working directory.
+
+Some useful mkdir options:
+
+-p – Creates parent directories recursively as needed.
+-v – Verbose output showing created directories.
+Example:
+
+mkdir -v ~/project/code
+</code></pre></div>
+This would create the “code” subdirectory under “project” in the user’s home folder, with verbose output showing the directory being created.</p>
+<h4 id="4-rmdir-remove-directory">4. rmdir – Remove Directory</h4>
+<p>To delete an empty directory, use the rmdir command. Note that rmdir can only remove empty directories – we’ll need the rm command to delete non-empty ones.
+<div class="highlight"><pre><span></span><code>Syntax:
+
+rmdir [options] &lt;directory&gt;
+
+Some options for rmdir include:
+
+-v – Verbose output when deleting directories.
+-p – Remove parent directories recursively as needed.
+Example:
+
+rmdir -v ~/project/code
+</code></pre></div>
+This would delete the “code” subdirectory under “project” while showing verbose output.</p>
+<h4 id="5-touch-create-a-new-empty-file">5. touch – Create A New Empty File</h4>
+<p>The touch command is used to create a new empty file instantly. This is useful when you need an empty file to populate with data later.</p>
+<p>The basic syntax of touch is:</p>
+<p>touch [options] filename</p>
+<p>Some useful options for touch include:
+<div class="highlight"><pre><span></span><code>-c – Do not create the file if it already exists. This avoids accidentally overwriting existing files.
+-m – Instead of creating a new file, update the timestamp on an existing file. This can be used to change the modified time.
+For example:
+
+touch /home/user/newfile.txt
+</code></pre></div>
+The above command creates a new empty file called “newfile.txt” in the user’s /home/user directory. If newfile.txt already exists, it will update the access and modification times on the file instead.</p>
+<h4 id="6-cp-copy-files-and-directories">6. cp – Copy Files And Directories</h4>
+<p>The cp command copies files or directories from one location to another. It requires passing a source path and a destination.</p>
+<p>The basic syntax of cp is:
+<div class="highlight"><pre><span></span><code>cp [options] source destination
+
+Some useful cp options:
+
+-r – Copy directories recursively, descending into child directories to copy their contents as well. Necessary when copying directories.
+-i – Prompt before overwriting any existing files at the destination. It prevents accidentally overwriting data.
+-v – Display verbose output showing the details of each file as it is copied. Helpful to confirm exactly what was copied.
+For example:
+
+cp -r /home/user/documents /backups/
+</code></pre></div>
+This would recursively copy the /home/user/documents directory and all its contents to the /backups/ directory. The -r option is needed to copy directories.</p>
+<p>The cp command is one of the most frequently used file management utilities for copying files and directories in Linux. You’ll find yourself using this command quite often.</p>
+<h4 id="7-mv-move-or-rename-files-and-directories">7. mv – Move Or Rename Files And Directories</h4>
+<p>The mv command is used to move files or directories to a different location or rename them. Unlike copy, the files from the source path are deleted after they’ve been moved to the destination.</p>
+<p>You can also use the mv command to rename files since you simply need to change the source and destination paths to the old and new name.</p>
+<p>The syntax of mv is:
+<div class="highlight"><pre><span></span><code>mv [options] source destination
+
+Useful mv options:
+
+-i – Prompt before overwriting any existing files at the destination location. This prevents accidentally overwriting data.
+-v – Produce verbose output showing each file or directory as it is moved. This is helpful for confirming exactly what was moved.
+For example:
+
+mv ~/folder1 /tmp/folder1
+
+The above will move folder1 from the home (~) directory to the /tmp/ directory. Let’s look at another example of using the mv command for renaming files.
+
+mv folder1 folder2
+</code></pre></div>
+Here, “folder1” is renamed to “folder2.”</p>
+<h4 id="8-rm-remove-files-and-directories">8. rm – Remove Files And Directories</h4>
+<p>The rm command deletes files and directories. Use caution because deleted files and directories cannot be recovered.</p>
+<p>The syntax is:
+<div class="highlight"><pre><span></span><code>rm [options] name
+
+Useful rm options:
+
+-r – Recursively delete directories, including all contents inside them. This is necessary when deleting directories.
+-f – Force deletion and suppress all confirmation prompts. This is a dangerous command, as files cannot be recovered when they’re gone!
+-i – Prompt for confirmation before deleting each file or directory, which provides safety against accidental removal.
+For example:
+
+rm -rf temp
+</code></pre></div>
+This recursively deletes the “temp” directory and all its contents without prompting (-f overrides confirmations).</p>
+<p>Note: The rm command permanently erases files and folders, so use it with extreme care. If used with sudo privileges, you could also delete the root directory completely, and Linux would no longer function after restarting your computer. </p>
+<h4 id="9-find-search-for-files-in-a-directory-hierarchy">9. find – Search For Files In A Directory Hierarchy</h4>
+<p>The find command recursively searches directories for files matching given criteria.</p>
+<p>The basic syntax of find is:
+<div class="highlight"><pre><span></span><code>find [path] [criteria]
+
+Some useful criteria options for find include:
+
+-type f – Search for only normal files, omitting directories.
+-mtime +30 – Search for files modified over 30 days ago.
+-user jane – Search for files belonging to user “jane.”
+For example:
+
+find . -type f -mtime +30
+</code></pre></div>
+This will find all regular files over 30 days old under the current directory (denoted by the dot).</p>
+<p>The find command allows searching for files based on all kinds of advanced conditions like name, size, permissions, timestamps, ownership, and more.</p>
+<h4 id="10-du-estimate-file-space-usage">10. du – Estimate File Space Usage</h4>
+<p>The du command measures the file space usage for a given directory. When used without options, it displays disk usage for the current working directory.</p>
+<p>The syntax for du is:
+<div class="highlight"><pre><span></span><code>du [options] [path]
+
+Useful du options:
+
+-h – Display file sizes in human-readable format like K for Kilobytes rather than a byte count. Much easier to parse.
+-s – Only show the total size for a directory, rather than listing each subdirectory and file. Good for summary.
+-a – Show individual file sizes in addition to totals. Helps identify large files.
+For example:
+
+du -sh pictures
+</code></pre></div>
+This will print a human-readable size total for the “pictures” directory.</p>
+<p>The du command is helpful for analyzing disk usage for a directory tree and identifying files consuming excessive space.</p>
+<p><br><br></p>
+<h3 id="search-and-filter-commands-in-linux">Search And Filter Commands In Linux</h3>
+<p>Now, let’s explore commands that allow you to search, filter, and manipulate text right from the Linux command line.</p>
+<h4 id="11-grep-search-text-using-patterns">11. grep – Search Text Using Patterns</h4>
+<p>The grep command is used to search for text patterns within files or output. It prints any lines that match the given regular expression. grep is extremely powerful for searching, filtering, and pattern matching in Linux.</p>
+<p>Here is the basic syntax:</p>
+<p>grep [options] pattern [files]</p>
+<p>For example:
+<div class="highlight"><pre><span></span><code>grep -i &quot;error&quot; /var/log/syslog
+
+This searches the syslog file for the word “error,” ignoring case sensitivity.
+
+Some useful grep options:
+
+-i – Ignore case distinctions in patterns
+-R – Recursively search subdirectories
+-c – Print only a count of matching lines
+-v – Invert match, print non-matching lines
+</code></pre></div>
+grep allows you to search files and output for keywords or patterns quickly. It’s invaluable for parsing logs, searching source code, matching regexes, and extracting data.</p>
+<h4 id="12-awk-pattern-scanning-and-processing-language">12. awk – Pattern Scanning And Processing Language</h4>
+<p>The awk command allows more advanced text processing based on specified patterns and actions. It operates on a line-by-line basis, splitting each line into fields.</p>
+<p>awk syntax is:
+<div class="highlight"><pre><span></span><code>awk &#39;pattern { action }&#39; input-file
+
+For example:
+
+awk &#39;/error/ {print $1}&#39; /var/log/syslog
+</code></pre></div>
+This prints the first field of any line containing “error.” awk can also use built-in variables like NR (number of records) and NF (number of fields).</p>
+<p>Advanced awk capabilities include:</p>
+<ul>
+<li>Mathematical computations on fields</li>
+<li>Conditional statements</li>
+<li>Built-in functions for manipulating strings, numbers, and dates</li>
+<li>Output formatting control</li>
+</ul>
+<p>This makes awk suitable for data extraction, reporting, and transforming text output. awk is extremely powerful since it is an independent programming language giving you a lot of control as a Linux command.</p>
+<h4 id="13-sed-stream-editor-for-filtering-and-transforming-text">13. sed – Stream Editor For Filtering And Transforming Text</h4>
+<p>The sed command allows filtering and transformation of text. It can perform operations like search/replace, deletion, transposition, and more. However, unlike awk, sed was designed for editing lines on a per-line basis as per the instructions.</p>
+<p>Here’s the basic syntax is:
+<div class="highlight"><pre><span></span><code>sed options &#39;commands&#39; input-file
+
+For example:
+
+sed &#39;s/foo/bar/&#39; file.txt
+
+This replaces “foo” with “bar” in file.txt.
+
+Some useful sed commands:
+
+s – Search and replace text
+/pattern/d – Delete lines matching a pattern
+10,20d – Delete lines 10-20
+1,3!d – Delete all except lines 1-3
+</code></pre></div>
+sed is ideal for tasks like bulk find/replace, selective line deletion, and other text stream editing operations.</p>
+<h4 id="14-sort-sort-lines-of-text-files">14. sort – Sort Lines Of Text Files</h4>
+<p>When you’re working with a lot of text or data or even large outputs from other commands, sorting it is a great way to make things manageable. The sort command will sort the lines of a text file alphabetically or numerically.</p>
+<p>Basic sort syntax:
+<div class="highlight"><pre><span></span><code>sort [options] [file]
+
+Useful sort options:
+
+-n – Sort numerically instead of alphabetically
+-r – Reverse the sort order
+-k – Sort based on a specific field or column
+For example:
+
+sort -n grades.txt
+</code></pre></div>
+This numerically sorts the contents of grades.txt. sort is handy for ordering the contents of files for more readable output or analysis.</p>
+<h4 id="15-uniq-report-or-omit-repeated-lines">15. uniq – Report Or Omit Repeated Lines</h4>
+<p>The uniq command filters duplicate adjacent lines from input. This is often used in conjunction with sort.</p>
+<p>Basic syntax:
+<div class="highlight"><pre><span></span><code>uniq [options] [input]
+
+Options:
+
+-c – Prefix unique lines with count of occurrences.
+-d – Only show duplicated lines, not unique ones.
+For example:
+
+sort data.txt | uniq
+</code></pre></div>
+This will remove any duplicated lines in data.txt after sorting. uniq gives you control over filtering repeated text.</p>
+<h4 id="16-diff-compare-files-line-by-line">16. diff – Compare Files Line By Line</h4>
+<p>The diff command compares two files line-by-line and prints the differences. It’s commonly used to show changes between versions of files.</p>
+<p>Syntax:
+<div class="highlight"><pre><span></span><code>diff [options] file1 file2
+
+Options:
+
+-b – Ignore changes in whitespace.
+-B – Show differences inline, highlighting changes.
+-u – Output differences with three lines of context.
+For example:
+
+diff original.txt updated.txt
+</code></pre></div>
+This will output the lines that differ between original.txt and updated.txt. diff is invaluable for comparing revisions of text files and source code.</p>
+<h4 id="17-wc-print-line-word-and-byte-counts">17. wc – Print Line, Word, And Byte Counts</h4>
+<p>The wc (word count) command prints counts of lines, words, and bytes in a file.</p>
+<p>Syntax:
+<div class="highlight"><pre><span></span><code>wc [options] [file]
+
+Options:
+
+-l – Print only the line count.
+-w – Print only the word count.
+-c – Print only the byte count.
+For example:
+
+wc report.txt
+</code></pre></div>
+This command will print the number of lines, words, and bytes in report.txt.</p>
+<p><br><br></p>
+<h3 id="redirection-commands-in-linux">Redirection Commands In Linux</h3>
+<p>Redirection commands are used to control input and output sources in Linux, allowing you to send and append output streams to files, take input from files, connect multiple commands, and split output to multiple destinations.</p>
+<h4 id="18-redirect-standard-output">18. &gt; – Redirect Standard Output</h4>
+<p>The &gt; redirection operator redirects the standard output stream from the command to a file instead of printing to the terminal. Any existing contents of the file will be overwritten.</p>
+<p>For example:
+<div class="highlight"><pre><span></span><code>ls -l /home &gt; homelist.txt
+</code></pre></div>
+This will execute ls -l to list the contents of the /home directory.</p>
+<p>Then, instead of printing that output to the terminal, the &gt; symbol captures that standard output and writes it to homelist.txt, overwriting any existing file contents.</p>
+<p>Redirecting standard output is helpful for saving command results to files for storage, debugging, or chaining commands together.</p>
+<h4 id="19-append-standard-output">19. &gt;&gt; – Append Standard Output</h4>
+<p>The &gt;&gt; operator appends standard output from a command to a file without overwriting existing contents.</p>
+<p>For example:
+<div class="highlight"><pre><span></span><code>tail /var/log/syslog &gt;&gt; logfile.txt
+</code></pre></div>
+This will append the last 10 lines of the syslog log file onto the end of logfile.txt. Unlike &gt;, &gt;&gt; adds the output without erasing the current logfile.txt contents.</p>
+<p>Appending is helpful in collecting command output in one place without losing existing data.</p>
+<h4 id="20-redirect-standard-input">20. &lt; – Redirect Standard Input</h4>
+<p>The &lt; redirection operator feeds a file’s contents as standard input to a command, instead of taking input from the keyboard.</p>
+<p>For example:
+<div class="highlight"><pre><span></span><code>wc -l &lt; myfile.txt
+</code></pre></div>
+This sends the contents of myfile.txt as input to the wc command, which will count lines in that file instead of waiting for keyboard input.</p>
+<p>Redirecting input is useful for batch-processing files and automating workflows.</p>
+<h4 id="21-pipe-output-to-another-command">21. | – Pipe Output To Another Command</h4>
+<p>The pipe | operator sends the output from one command as input to another command, chaining them together.</p>
+<p>For example:
+<div class="highlight"><pre><span></span><code>ls -l | less
+</code></pre></div>
+This pipes the output of ls -l into the less command, which allows scrolling through the file listing.</p>
+<p>Piping is commonly used to chain together commands where the output of one feeds the input of another. This allows building complex operations out of smaller single-purpose programs.</p>
+<h4 id="22-tee-read-from-standard-input-and-write-to-standard-output-and-files">22. tee – Read From Standard Input And Write To Standard Output And Files</h4>
+<p>The tee command splits standard input into two streams.</p>
+<p>It writes the input to standard output (shows the output of the main command) while also saving a copy to a file.</p>
+<p>For example:
+<div class="highlight"><pre><span></span><code>cat file.txt | tee copy.txt
+</code></pre></div>
+This displays file.txt contents to the terminal while simultaneously writing it to copy.txt.</p>
+<p>tee is unlike redirecting, where you don’t see the output until you open the file you’ve redirected the output to.</p>
+<p><br><br></p>
+<h3 id="archive-commands">Archive Commands</h3>
+<p>Archiving commands allow you to bundle multiple files and directories into compressed archive files for easier portability and storage. Common archive formats in Linux include .tar, .gz, and .zip.</p>
+<h4 id="23-tar-store-and-extract-files-from-an-archive">23. tar – Store And Extract Files From An Archive</h4>
+<p>The tar command helps you work with tape archive (.tar) files. It helps you bundle multiple files and directories into a single compressed .tar file.</p>
+<p>Syntax:
+<div class="highlight"><pre><span></span><code>tar [options] filename
+
+Useful tar options:
+
+-c – Create a new .tar archive file.
+-x – Extract files from a .tar archive.
+-f – Specify archive filename rather than stdin/stdout.
+-v – Verbose output showing archived files.
+-z – Compress or uncompress archive with gzip.
+For example:
+
+tar -cvzf images.tar.gz /home/user/images
+</code></pre></div>
+This creates a gzip-compressed tar archive called images.tar.gz containing the /home/user/images folder.</p>
+<h4 id="24-gzip-compress-or-expand-files">24. gzip – Compress Or Expand Files</h4>
+<p>The gzip command compresses files using LZ77 coding to reduce size for storage or transmission. With gzip, you work with .gz files.</p>
+<p>Syntax:
+<div class="highlight"><pre><span></span><code>gzip [options] filename
+
+Useful gzip options:
+
+-c – Write output to stdout instead of file.
+-d – Decompress file instead of compressing.
+-r – Recursively compress directories.
+For example:
+
+gzip -cr documents/
+</code></pre></div>
+The above command recursively compresses the documents folder and outputs to stdout.</p>
+<h4 id="25-gunzip-decompress-files">25. gunzip – Decompress Files</h4>
+<p>The gunzip command is used for decompressing .gz files.</p>
+<p>Syntax:
+<div class="highlight"><pre><span></span><code>gunzip filename.gz
+
+Example:
+
+gunzip documents.tar.gz
+</code></pre></div>
+The above command will extract the original uncompressed contents of documents.tar.gz.</p>
+<h4 id="26-zip-package-and-compress-files">26. zip – Package And Compress Files</h4>
+<p>The zip command creates .zip archived files containing compressed file contents.</p>
+<p>Syntax:
+<div class="highlight"><pre><span></span><code>zip [options] archive.zip filenames
+
+Useful zip options:
+
+-r – Recursively zip a directory.
+-e – Encrypt contents with a password.
+Example:
+
+zip -re images.zip pictures
+</code></pre></div>
+This encrypts and compresses the pictures folder into images.zip.</p>
+<h4 id="27-unzip-extract-files-from-zip-archives">27. unzip – Extract Files From ZIP Archives</h4>
+<p>Similar to gunzip, the unzip command extracts and uncompresses files from .zip archives.</p>
+<p>Syntax:
+<div class="highlight"><pre><span></span><code>unzip archive.zip
+
+Example:
+
+unzip images.zip
+</code></pre></div>
+The above example command extracts all files from images.zip in the current directory.</p>
+<p><br><br></p>
+<h3 id="file-transfer-commands">File Transfer Commands</h3>
+<p>File transfer commands allow you to move files between systems over a network. This is useful for copying files to remote servers or downloading content from the internet.</p>
+<h4 id="28-scp-secure-copy-files-between-hosts">28. scp – Secure Copy Files Between Hosts</h4>
+<p>The scp (secure copy) command copies files between hosts over an SSH connection. All data transfer is encrypted for security.</p>
+<p>scp syntax copies files from a source path to a destination defined as user@host:
+<div class="highlight"><pre><span></span><code>scp source user@host:destination
+
+For example:
+
+scp image.jpg user@server:/uploads/
+</code></pre></div>
+This securely copies image.jpg to the /uploads folder on server as user.</p>
+<p>scp works like the cp command but for remote file transfer. It leverages SSH (Secure Shell) for data transfer, providing encryption to ensure that no sensitive data, such as passwords, are exposed over the network. Authentication is typically handled using SSH keys, though passwords can also be used. Files can be copied both to and from remote hosts.</p>
+<h4 id="29-rsync-synchronize-files-between-hosts">29. rsync – Synchronize Files Between Hosts</h4>
+<p>The rsync tool synchronizes files between two locations while minimizing data transfer using delta encoding. This makes it faster to sync large directory trees.</p>
+<p>rsync syntax syncs source to destination:</p>
+<p>rsync [options] source destination</p>
+<p>For example:
+<div class="highlight"><pre><span></span><code>rsync -ahv ~/documents user@server:/backups/
+
+The above example command recursively syncs the documents folder to server:/backups/, showing verbose, human-readable output.
+
+Useful rsync options:
+
+-a – Archive mode syncs recursively and preserves permissions, times, etc.
+-h – Human-readable output.
+-v – Verbose output.
+</code></pre></div>
+rsync is ideal for syncing files and folders to remote systems and keeping things decentrally backed up and secure.</p>
+<h4 id="30-sftp-secure-file-transfer-program">30. sftp – Secure File Transfer Program</h4>
+<p>The sftp program provides interactive file transfers over SSH, similar to regular FTP but encrypted. It can transfer files to/from remote systems.</p>
+<p>sftp connects to a host then accepts commands like:
+<div class="highlight"><pre><span></span><code>sftp user@host
+
+get remotefile localfile
+
+put localfile remotefile
+</code></pre></div>
+This retrieves remotefile from the server and copies localfile to the remote host.</p>
+<p>sftp has an interactive shell for navigating remote file systems, transferring files and directories, and managing permissions and properties.</p>
+<h4 id="31-wget-retrieve-files-from-the-web">31. wget – Retrieve Files from the Web</h4>
+<p>The wget tool downloads files over HTTP, HTTPS, and FTP connections. It’s useful for retrieving web resources directly from the terminal.</p>
+<p>For example:
+<div class="highlight"><pre><span></span><code>wget https://example.com/file.iso
+
+This downloads the file.iso image from the remote server.
+
+Useful wget options:
+
+-c – Resume interrupted download.
+-r – Download recursively.
+-O – Save to specific filename.
+</code></pre></div>
+wget is ideal for scripting automatic downloads and mirroring websites.</p>
+<h4 id="32-curl-transfer-data-from-or-to-a-server">32. curl – Transfer Data From Or To A Server</h4>
+<p>The curl command transfers data to or from a network server using supported protocols. This includes REST, HTTP, FTP, and more.</p>
+<p>For example:
+<div class="highlight"><pre><span></span><code>curl -L https://example.com
+
+The above command retrieves data from the HTTPS URL and outputs it.
+
+Useful curl options:
+
+-o – Write output to file.
+-I – Show response headers only.
+-L – Follow redirects.
+</code></pre></div>
+curl is designed to transfer data across networks programmatically.</p>
+<p><br><br></p>
+<h3 id="file-permissions-commands">File Permissions Commands</h3>
+<p>File permissions commands allow you to modify access rights for users. This includes setting read/write/execute permissions, changing ownership, and default file modes.</p>
+<h4 id="33-chmod-change-file-modes-or-access-permissions">33. chmod – Change File Modes Or Access Permissions</h4>
+<p>The chmod command is used to change the access permissions or modes of files and directories. The permission modes represent who can read, write, or execute the file.</p>
+<p>For example:
+<div class="highlight"><pre><span></span><code>chmod 755 file.txt
+
+There are three sets of permissions—owner, group, and public. Permissions are set using numeric modes from 0 to 7:
+
+7 – read, write, and execute.
+6 – read and write.
+4 – read only.
+0 – no permission.
+This sets the owner permissions to 7 (rwx), group to 5 (r-x), and public to 5 (r-x). You can also reference users and groups symbolically:
+
+chmod g+w file.txt
+
+The g+w syntax adds group write permission to the file.
+</code></pre></div>
+Setting proper file and directory permissions is crucial for Linux security and controlling access. chmod gives you flexible control to configure permissions precisely as needed.</p>
+<h4 id="34-chown-change-file-owner-and-group">34. chown – Change File Owner And Group</h4>
+<p>The chown command changes ownership of a file or directory. Ownership has two components—the user who is the owner, and the group it belongs to.</p>
+<p>For example:
+<div class="highlight"><pre><span></span><code>chown john:developers file.txt
+</code></pre></div>
+The above example command will set the owner user to “john” and the owner group to “developers.”</p>
+<p>Only the root superuser account can use chown to change file owners. It’s used to fix permission problems by modifying the owner and group as needed.</p>
+<h4 id="35-umask-set-default-file-permissions">35. umask – Set Default File Permissions</h4>
+<p>The umask command controls the default permissions given to newly created files. It takes an octal mask as input, which subtracts from 666 for files and 777 for directories.</p>
+<p>For example:
+<div class="highlight"><pre><span></span><code>umask 007
+
+New files will default to permissions 750 instead of 666, and new directories to 700 instead of 777.
+</code></pre></div>
+Setting a umask lets you configure default file permissions rather than relying on system defaults. The umask command is useful for restricting permissions on new files without relying on someone going in and manually adding restrictions.</p>
+<p><br><br></p>
+<h3 id="process-management-commands">Process Management Commands</h3>
+<p>These commands allow you to view, monitor, and control processes running on your Linux system. This is useful for identifying resource usage and stopping misbehaving programs.</p>
+<h4 id="36-ps-report-a-snapshot-of-current-processes">36. ps – Report A Snapshot Of Current Processes</h4>
+<p>The ps command displays a snapshot of currently running processes, including their PID, TTY, stat, start time, etc.</p>
+<p>For example:
+<div class="highlight"><pre><span></span><code>ps aux
+
+This shows every process running as all users with additional details like CPU and memory usage.
+
+Some useful ps options:
+
+aux – Show processes for all users
+--forest – Display tree of parent/child processes
+</code></pre></div>
+ps gives you visibility into what’s currently running on your system.</p>
+<h4 id="37-top-display-linux-processes">37. top – Display Linux Processes</h4>
+<p>The top command shows real-time Linux process information, including PID, user, CPU %, memory usage, uptime, and more. Unlike ps, it updates the display dynamically to reflect current usage.</p>
+<p>For example:
+<div class="highlight"><pre><span></span><code>top -u mysql
+</code></pre></div>
+The above command monitors processes just for the “mysql” user. It becomes quite helpful in identifying resource-intensive programs.</p>
+<h4 id="38-htop-interactive-process-viewer">38. htop – Interactive Process Viewer</h4>
+<p>The htop command is an interactive process viewer replacing the top command. It shows system processes along with CPU/memory/swap usage graphs, allows sorting by columns, killing programs, and more.</p>
+<p>Simply type in htop in the command line to view your processes.</p>
+<p>htop has enhanced UI elements with colors, scrolling, and mouse support for easier navigation compared to top. Excellent for investigating processes.</p>
+<p>bar graph showing that developers prefer Linux (76.9%) compared to Docker (73.6%) and Kubernetes (71.1%)</p>
+<h4 id="39-kill-send-a-signal-to-a-process">39. kill – Send A Signal To A Process</h4>
+<p>The kill command sends a signal to a process to terminate or kill it. Signals allow graceful shutdown if the process handles them.</p>
+<p>For example:
+<div class="highlight"><pre><span></span><code>kill -15 12345
+</code></pre></div>
+The above command sends the SIGTERM (15) signal to stop the process with PID 12345 gracefully.</p>
+<h4 id="40-pkill-send-a-signal-to-a-process-based-on-name">40. pkill – Send A Signal To A Process Based On Name</h4>
+<p>The pkill command kills processes by name instead of PID. It can make things easier than finding the PID first.</p>
+<p>For example:
+<div class="highlight"><pre><span></span><code>pkill -9 firefox
+</code></pre></div>
+This forcibly stops all Firefox processes with SIGKILL (9). pkill targets processes by matching name, user, and other criteria instead of the PID.</p>
+<h4 id="41-nohup-run-a-command-immune-to-hangups">41. nohup – Run A Command Immune To Hangups</h4>
+<p>The nohup command runs processes immune to hangups, so they keep running if you log out or get disconnected.</p>
+<p>For example:
+<div class="highlight"><pre><span></span><code>nohup python script.py &amp;
+</code></pre></div>
+The above example command will launch script.py detached in the background and immune to hangups. nohup is generally used to start persistent background daemons and services.</p>
+<p><br><br></p>
+<h3 id="performance-monitoring-commands">Performance Monitoring Commands</h3>
+<p>These commands provide valuable system performance statistics to help analyze resource utilization, identify bottlenecks, and optimize efficiency.</p>
+<h4 id="42-vmstat-report-virtual-memory-statistics">42. vmstat – Report Virtual Memory Statistics</h4>
+<p>The vmstat command prints detailed reports on memory, swap, I/O, and CPU activity. This includes metrics like memory used/free, swap in/out, disk blocks read/written, and CPU time spent on processes/idle.</p>
+<p>For example:
+<div class="highlight"><pre><span></span><code>vmstat 5
+
+Other useful vmstat options:
+
+-a – Show active and inactive memory
+-s – Display event counters and memory stats
+-S – Output in KB instead of blocks
+5 – Output refreshed every 5 seconds.
+</code></pre></div>
+The example above outputs memory and CPU data every 5 seconds until interrupted, which is useful for monitoring live system performance.</p>
+<h4 id="43-iostat-report-cpu-and-io-statistics">43. iostat – Report CPU And I/O Statistics</h4>
+<p>The iostat command monitors and displays CPU utilization and disk I/O metrics. This includes CPU load, IOPS, read/write throughput, and more.</p>
+<p>For example:
+<div class="highlight"><pre><span></span><code>iostat -d -p sda 5
+
+Some iostat options:
+
+-c – Display CPU utilization info
+-t – Print timestamp for each report
+-x – Show extended stats like service times and wait counts
+-d – Show detailed stats per disk/partition instead of aggregate totals
+-p – Display stats for specific disk devices
+</code></pre></div>
+This shows detailed per-device I/O stats for sda every 5 seconds.</p>
+<p>iostat helps analyze disk subsystem performance and identify hardware bottlenecks.</p>
+<h4 id="44-free-display-amount-of-free-and-used-memory">44. free – Display Amount Of Free And Used Memory</h4>
+<p>The free command shows the total, used and free amounts of physical and swap memory on the system. This gives an overview of available memory.</p>
+<p>For example:
+<div class="highlight"><pre><span></span><code>free -h
+
+Some options for the free command:
+
+-b – Display output in bytes
+-k – Show output in KB instead of default bytes
+-m – Show output in MB instead of bytes
+-h – Print statistics in human-readable format like GB, MB instead of bytes.
+</code></pre></div>
+This prints memory statistics in human-readable format (GB, MB, etc). It’s useful when you want a quick overview of memory capacity.</p>
+<h4 id="45-df-report-file-system-disk-space-usage">45. df – Report File System Disk Space Usage</h4>
+<p>The df command displays disk space usage for file systems. It shows the filesystem name, total/used/available space, and capacity.</p>
+<p>For example:
+<div class="highlight"><pre><span></span><code>df -h
+</code></pre></div>
+The above command will print the disk utilization in a human-readable format. You can also run it without arguments to get the same data in block sizes.</p>
+<h4 id="46-sar-collect-and-report-system-activity">46. sar – Collect And Report System Activity</h4>
+<p>The sar tool collects and logs system activity information on CPU, memory, I/O, network, and more over time. This data can be analyzed to identify performance issues.</p>
+<p>For example:
+<div class="highlight"><pre><span></span><code>sar -u 5 60
+</code></pre></div>
+This samples CPU usage every 5 seconds for a duration of 60 samples.</p>
+<p>sar provides detailed historical system performance data not available in real-time tools.</p>
+<p><br><br></p>
+<h3 id="user-management-commands">User Management Commands</h3>
+<p>When using multi-user systems, you may need commands that help you manage users and groups for access control and permissions. Let’s cover those commands here.</p>
+<h4 id="47-useradd-create-a-new-user">47. useradd – Create A New User</h4>
+<p>The useradd command creates a new user account and home directory. It sets the new user’s UID, group, shell, and other defaults.</p>
+<p>For example:
+<div class="highlight"><pre><span></span><code>useradd -m john
+
+Useful useradd options:
+
+-m – Create the user’s home directory.
+-g – Specify the primary group instead of the default.
+-s – Set the user’s login shell.
+</code></pre></div>
+The above command will create a new user, “john,” with a generated UID and home folder created at /home/john.</p>
+<h4 id="48-usermod-modify-a-user-account">48. usermod – Modify A User Account</h4>
+<p>The usermod command modifies the settings of an existing user account. This can change the username, home dir, shell, group, expiry date, etc.</p>
+<p>For example:
+<div class="highlight"><pre><span></span><code>usermod -aG developers john
+</code></pre></div>
+With this command, you add a user john to an additional group—“developers.” The -a appends to the existing list of groups that the user is added to.</p>
+<h4 id="49-userdel-delete-a-user-account">49. userdel – Delete A User Account</h4>
+<p>The userdel command deletes a user account, home directory, and mail spool.</p>
+<p>For example:
+<div class="highlight"><pre><span></span><code>userdel -rf john
+
+Helpful userdel options:
+
+-r – Remove the user’s home directory and mail spool.
+-f – Force deletion even if the user is still logged in.
+</code></pre></div>
+This forces the removal of user “john,” deleting associated files.</p>
+<p>Specifying options like -r and -f with userdel ensures the user account is entirely deleted even if the user is logged in or has active processes.</p>
+<h4 id="50-groupadd-add-a-group">50. groupadd – Add A Group</h4>
+<p>The groupadd command creates a new user group. Groups represent teams or roles for permissions purposes.</p>
+<p>For example:
+<div class="highlight"><pre><span></span><code>groupadd -r sysadmin
+
+Useful groupadd options:
+
+-r – Create a system group used for core system functions.
+-g – Specify the new group’s GID instead of using next available.
+</code></pre></div>
+The above command creates a new “sysadmin” group with system privileges. When creating new groups, the -r or -g help set them up correctly.</p>
+<h4 id="51-passwd-update-users-authentication-tokens">51. passwd – Update User’s Authentication Tokens</h4>
+<p>The passwd command sets or updates a user’s authentication password/tokens. This allows changing your login password.</p>
+<p>For example:
+<div class="highlight"><pre><span></span><code>passwd john
+</code></pre></div>
+This prompts user “john” to enter a new password interactively. If you’ve lost the password for an account, you may want to login to Linux with sudo or su privileges and change the password using the same method.</p>
+<p><br><br></p>
+<h3 id="networking-commands">Networking Commands</h3>
+<p>These commands are used for monitoring connections, troubleshooting network issues, routing, DNS lookups, and interface configuration.</p>
+<h4 id="52-ping-send-icmp-echo_request-to-network-hosts">52. ping – Send ICMP ECHO_REQUEST To Network Hosts</h4>
+<p>The ping command verifies connectivity to a remote host by sending ICMP echo request packets and listening for echo responses.</p>
+<p>For example:
+<div class="highlight"><pre><span></span><code>ping google.com
+PING google.com (142.251.42.78): 56 data bytes
+64 bytes from 142.251.42.78: icmp_seq=0 ttl=112 time=8.590 ms
+64 bytes from 142.251.42.78: icmp_seq=1 ttl=112 time=12.486 ms
+64 bytes from 142.251.42.78: icmp_seq=2 ttl=112 time=12.085 ms
+64 bytes from 142.251.42.78: icmp_seq=3 ttl=112 time=10.866 ms
+--- google.com ping statistics ---
+4 packets transmitted, 4 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 8.590/11.007/12.486/1.518 ms
+
+Useful ping options:
+
+-c [count] – Limit packets sent.
+-i [interval] – Wait interval seconds between pings.
+</code></pre></div>
+With the above command, you ping google.com and outputs round-trip stats indicating connectivity and latency. Generally, ping is used to check if a system you’re trying to connect to is alive and connected to the network.</p>
+<h4 id="53-ifconfig-configure-network-interfaces">53. ifconfig – Configure Network Interfaces</h4>
+<p>The ifconfig command displays and configures network interface settings, including IP address, netmask, broadcast, MTU, and hardware MAC address.</p>
+<p>For example:
+<div class="highlight"><pre><span></span><code>ifconfig
+eth0: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500
+inet 10.0.2.15  netmask 255.255.255.0  broadcast 10.0.2.255
+inet6 fe80::a00:27ff:fe1e:ef1d  prefixlen 64  scopeid 0x20&lt;link&gt;
+ether 08:00:27:1e:ef:1d  txqueuelen 1000  (Ethernet)
+RX packets 23955654  bytes 16426961213 (15.3 GiB)
+RX errors 0  dropped 0  overruns 0  frame 0
+TX packets 12432322  bytes 8710937057 (8.1 GiB)
+TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+</code></pre></div>
+Running ifconfig with no other arguments will give you a list of all the network interfaces available for use, along with IP and additional network information. ifconfig can also be used to set addresses, enable/disable interfaces, and change options.</p>
+<h4 id="54-netstat-network-statistics">54. netstat – Network Statistics</h4>
+<p>The netstat command shows you the network connections, routing tables, interface stats, masquerade connections, and multicast memberships.</p>
+<p>For example:
+<div class="highlight"><pre><span></span><code>netstat -pt tcp
+</code></pre></div>
+This command will output all the active TCP connections and the processes using them.</p>
+<h4 id="55-ss-socket-statistics">55. ss – Socket Statistics</h4>
+<p>The ss command dumps socket statistical information similar to netstat. It can show open TCP and UDP sockets, send/receive buffer sizes, and more.</p>
+<p>For example:
+<div class="highlight"><pre><span></span><code>ss -t -a
+</code></pre></div>
+This prints all open TCP sockets. More efficient than netstat.</p>
+<h4 id="56-traceroute-trace-route-to-host">56. traceroute – Trace Route To Host</h4>
+<p>The traceroute command prints the route packets take to a network host, showing each hop along the way and transit times. Useful for network debugging.</p>
+<p>For example:
+<div class="highlight"><pre><span></span><code>traceroute google.com
+</code></pre></div>
+This traces the path to reach google.com and outputs each network hop.</p>
+<h4 id="57-dig-dns-lookup">57. dig - DNS Lookup</h4>
+<p>The dig command performs DNS lookups and returns information about DNS records for a domain.</p>
+<p>For example:
+<div class="highlight"><pre><span></span><code>dig google.com
+; &lt;&lt;&gt;&gt; DiG 9.10.6 &lt;&lt;&gt;&gt; google.com
+;; global options: +cmd
+;; Got answer:
+;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 60290
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1280
+;; QUESTION SECTION:
+;google.com. IN A
+;; ANSWER SECTION:
+google.com. 220 IN A 142.251.42.78
+;; Query time: 6 msec
+;; SERVER: 2405:201:2:e17b::c0a8:1d01#53(2405:201:2:e17b::c0a8:1d01)
+;; WHEN: Wed Nov 15 01:36:16 IST 2023
+;; MSG SIZE  rcvd: 55
+</code></pre></div>
+This queries DNS servers for records related to google.com and prints details.</p>
+<h4 id="58-nslookup-query-internet-name-servers-interactively">58. nslookup – Query Internet Name Servers Interactively</h4>
+<p>The nslookup command queries DNS servers interactively to perform name resolution lookups or display DNS records.</p>
+<p>It enters an interactive shell, allowing you to manually lookup hostnames, reverse IP addresses, find DNS record types, and more.</p>
+<p>For example, some common nslookup usage. Type nslookup on your command line:
+<div class="highlight"><pre><span></span><code>nslookup
+
+Next, we’ll set Google’s 8.8.8.8 DNS server for lookups.
+
+&gt; server 8.8.8.8
+
+Now, let’s query the A record of stackoverflow.com to find its IP address.
+
+&gt; set type=A
+&gt; stackoverflow.com
+Server: 8.8.8.8
+Address: 8.8.8.8#53
+Non-authoritative answer:
+Name: stackoverflow.com
+Address: 104.18.32.7
+Name: stackoverflow.com
+Address: 172.64.155.249
+
+Now, let’s find the MX records for github.com to see its mail servers.
+
+&gt; set type=MX
+&gt; github.com
+Server: 8.8.8.8
+Address: 8.8.8.8#53
+Non-authoritative answer:
+github.com mail exchanger = 1 aspmx.l.google.com.
+github.com mail exchanger = 5 alt1.aspmx.l.google.com.
+github.com mail exchanger = 5 alt2.aspmx.l.google.com.
+github.com mail exchanger = 10 alt3.aspmx.l.google.com.
+github.com mail exchanger = 10 alt4.aspmx.l.google.com.
+</code></pre></div>
+The interactive queries make nslookup very useful for exploring DNS and troubleshooting name resolution issues.</p>
+<h4 id="59-iptables-ipv4-packet-filtering-and-nat">59. iptables – IPv4 Packet Filtering And NAT</h4>
+<p>The iptables command allows configuring Linux netfilter firewall rules to filter and process network packets. It sets up policies and rules for how the system will handle different types of inbound and outbound connections and traffic.</p>
+<p>For example:
+<div class="highlight"><pre><span></span><code>iptables -A INPUT -s 192.168.1.10 -j DROP
+</code></pre></div>
+The above command will block all input from IP 192.168.1.10.</p>
+<p>iptables provides powerful control over the Linux kernel firewall to handle routing, NAT, packet filtering, and other traffic control. It is a critical tool for securing Linux servers.</p>
+<h4 id="60-ip-manage-network-devices-and-routing">60. ip – Manage Network Devices And Routing</h4>
+<p>The ip command allows managing and monitoring various network device related activities like assigning IP addresses, setting up subnets, displaying link details, and configuring routing options.</p>
+<p>For example:
+<div class="highlight"><pre><span></span><code>ip link show
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc fq_codel state UP mode DEFAULT group default qlen 1000
+link/ether 08:00:27:8a:5c:04 brd ff:ff:ff:ff:ff:ff
+</code></pre></div>
+The above command shows all the network interfaces, their status, and other information.</p>
+<p>This command aims to replace ifconfig with more modern Linux network management. ip can control network devices, routing tables, and other network stack settings.</p>
+<p><br><br></p>
+<h3 id="package-management-commands">Package Management Commands</h3>
+<p>Package managers allow easy installation, update and removal of software on Linux distributions. Popular package managers include APT, YUM, DNF, Pacman, and Zypper.</p>
+<h4 id="61-apt-debianubuntu-package-manager">61. apt – Debian/Ubuntu Package Manager</h4>
+<p>The apt command manages packages on Debian/Ubuntu systems using the APT repository. It allows installing, updating, and removing packages.</p>
+<p>For example:
+<div class="highlight"><pre><span></span><code>apt update
+
+This command fetches the latest package versions and metadata from the repositories.
+
+apt install nginx
+
+You can install the nginx package from the configured APT repositories using the above command.
+
+apt upgrade
+</code></pre></div>
+And this command upgrades packages and dependencies to newer versions.</p>
+<p>APT makes installing software easy by fetching packages from repositories.</p>
+<h4 id="62-pacman-arch-linux-package-manager">62. pacman – Arch Linux Package Manager</h4>
+<p>pacman manages packages on Arch Linux from the Arch User Repository. It can install, upgrade, and remove packages.</p>
+<p>For example:
+<div class="highlight"><pre><span></span><code>pacman -S nmap
+
+This installs the nmap package from the configured repositories.
+
+pacman -Syu
+</code></pre></div>
+This synchronizes with repositories and upgrades all packages.</p>
+<p>pacman keeps Arch Linux up-to-date and allows easy management of packages.</p>
+<h4 id="63-dnf-fedora-package-manager">63. dnf – Fedora Package Manager</h4>
+<p>dnf installs, updates, and removes packages on Fedora Linux distributions using RPM packages. It replaces Yum as the next-gen package manager.</p>
+<p>For example:
+<div class="highlight"><pre><span></span><code>dnf install util-linux
+
+This installs the util-linux package.
+
+dnf upgrade
+</code></pre></div>
+This upgrades all installed packages to the latest versions.</p>
+<p>dnf makes Fedora package management fast and efficient.</p>
+<h4 id="64-yum-red-hat-package-manager">64. yum – Red Hat Package Manager</h4>
+<p>yum manages packages on RHEL and CentOS Linux distributions using RPM packages. It fetches from Yum repositories to install and update.</p>
+<p>For example:
+<div class="highlight"><pre><span></span><code>yum update
+
+This updates all installed packages to the latest versions.
+
+yum install httpd
+</code></pre></div>
+The above command installs the Apache httpd package. yum has been the major package manager for keeping Red Hat distributions updated.</p>
+<h4 id="65-zypper-opensuse-package-manager">65. zypper – OpenSUSE Package Manager</h4>
+<p>zypper manages packages on SUSE/openSUSE Linux. It can add repositories, search, install, and upgrade packages.</p>
+<p>For example:
+<div class="highlight"><pre><span></span><code>zypper refresh
+
+The refresh command for zypper refreshes repository metadata from added repositories.
+
+zypper install python
+</code></pre></div>
+This installs the Python package from configured repositories. zypper makes the package management experience effortless on SUSE/openSUSE systems.</p>
+<h4 id="66-flatpak-flatpak-application-package-manager">66. flatpak – Flatpak Application Package Manager</h4>
+<p>The flatpak command helps you manage Flatpak applications and runtimes. flatpak allows sandboxed desktop application distribution across Linux.</p>
+<p>For example:
+<div class="highlight"><pre><span></span><code>flatpak install flathub org.libreoffice.LibreOffice
+
+For instance, the above command will install LibreOffice from the Flathub repository.
+
+flatpak run org.libreoffice.LibreOffice
+</code></pre></div>
+And this one launches the sandboxed LibreOffice Flatpak application. flatpak provides a centralized cross-distro Linux application repository so you’re no longer limited to packages available with a specific distro’s package library.</p>
+<h4 id="67-appimage-appimage-application-package-manager">67. appimage – AppImage Application Package Manager</h4>
+<p>AppImage packages are self-contained applications that run on most Linux distributions. The appimage command runs existing AppImages.</p>
+<p>For example:
+<div class="highlight"><pre><span></span><code>chmod +x myapp.AppImage
+./myapp.AppImage
+</code></pre></div>
+This allows running the AppImage binary file directly.</p>
+<p>AppImages allow application deployment without system-wide installation. Think of them like small containers that include all the files to enable the app to run without too many external dependencies.</p>
+<h4 id="68-snap-snappy-application-package-manager">68. snap – Snappy Application Package Manager</h4>
+<p>The snap command manages snaps—containerized software packages. Snaps auto-update and work across Linux distributions similar to Flatpak.</p>
+<p>For example:
+<div class="highlight"><pre><span></span><code>snap install vlc
+
+This simple command installs the VLC media player snap.
+
+snap run vlc
+</code></pre></div>
+Once installed, you can use snap to run packages that are installed via snap by using the above command. Snaps isolate apps from the base system for portability and allow cleaner installs.</p>
+<p><br><br></p>
+<h3 id="system-information-commands">System Information Commands</h3>
+<p>These commands allow you to view details about your Linux system hardware, kernel, distributions, hostname, uptime, and more.</p>
+<h4 id="69-uname-print-system-information">69. uname – Print System Information</h4>
+<p>The uname command prints detailed information about the Linux system kernel, hardware architecture, hostname, and operating system. This includes version numbers and machine info.</p>
+<p>For example:
+<div class="highlight"><pre><span></span><code>uname -a
+Linux hostname 5.4.0-48-generic x86_64 GNU/Linux
+
+uname is useful for querying these core system details. Some options include:
+
+-a – Print all available system info
+-r – Print just the kernel release number
+The above command printed extended system information, including kernel name/version, hardware architecture, hostname, and OS.
+
+uname -r
+</code></pre></div>
+This will print only the kernel release number. The uname command shows details about your Linux system’s core components.</p>
+<h4 id="70-hostname-show-or-set-the-systems-host-name">70. hostname – Show Or Set The System’s Host Name</h4>
+<p>The hostname command prints or sets the hostname identifier for your Linux system on the network. With no arguments it displays the current hostname. Passing a name will update the hostname.</p>
+<p>For example:
+<div class="highlight"><pre><span></span><code>hostname
+linuxserver
+
+This prints linuxserver — the configured system hostname.
+
+hostname UbuntuServer
+</code></pre></div>
+hostnames identify systems on a network. hostname gets or configures the identifying name of your system on the network. The second command helps you change the local hostname to UbuntuServer.</p>
+<h4 id="71-uptime-how-long-the-system-has-been-running">71. uptime – How Long The System Has Been Running</h4>
+<p>The uptime command shows how long the Linux system has been running since it was last rebooted. It prints the uptime and current time.</p>
+<p>Simply run the following command to get your system uptime data:
+<div class="highlight"><pre><span></span><code>uptime
+23:51:26 up 2 days, 4:12, 1 user, load average: 0.00, 0.01, 0.05
+</code></pre></div>
+This prints the system uptime showing how long the system has been on since last boot.</p>
+<h4 id="72-whoami-print-active-user-id">72. whoami – Print Active User ID</h4>
+<p>The whoami command prints the effective username of the current user logged into the system. It displays the privilege level you are operating at.</p>
+<p>Type the command in your terminal to get the ID:
+<div class="highlight"><pre><span></span><code>whoami
+john
+</code></pre></div>
+This prints the effective username that the current user is logged in and operating as and is useful in scripts or diagnostics to identify what user account actions are being performed as.</p>
+<h4 id="73-id-print-real-and-effective-user-and-group-ids">73. id – Print Real And Effective User And Group IDs</h4>
+<p>The id command prints detailed user and group information about the effective IDs and names of the current user. This includes:
+<div class="highlight"><pre><span></span><code>Real user ID and name.
+Effective user ID and name.
+Real group ID and name.
+Effective group ID and name.
+To use the id command, simply type: 
+
+id
+uid=1000(john) gid=1000(john) groups=1000(john),10(wheel),998(developers)
+</code></pre></div>
+The id command prints the current user’s real and effective user and group IDs. id displays user and group details useful for determining file access permissions.</p>
+<h4 id="74-lscpu-display-cpu-architecture-information">74. lscpu – Display CPU Architecture Information</h4>
+<p>The lscpu command shows detailed CPU architecture information, including:
+<div class="highlight"><pre><span></span><code>Number of CPU cores
+Number of sockets
+Model name
+Cache sizes
+CPU frequency
+Address sizes
+To use the lscpu command, simply type: 
+
+lscpu
+Architecture:        x86_64
+CPU op-mode(s):      32-bit, 64-bit
+Byte Order:          Little Endian
+CPU(s):              16
+On-line CPU(s) list: 0-15
+</code></pre></div>
+lscpu details the CPU architecture like the number of cores, sockets, model name, caches, and more.</p>
+<h4 id="75-lsblk-list-block-devices">75. lsblk – List Block Devices</h4>
+<p>The lsblk command lists information about all available block devices, including local disks, partitions, and logical volumes. The output includes device names, labels, sizes, and mount points.
+<div class="highlight"><pre><span></span><code>lsblk
+NAME    MAJ:MIN RM   SIZE RO TYPE  MOUNTPOINT
+sda       8:0    0   1.8T  0 disk
+|-sda1    8:1    0   512M  0 part  /boot
+|-sda2    8:2    0    16M  0 part
+`-sda5    8:5    0   1.8T  0 part
+`-lvm1 254:0    0   1.8T  0 lvm   /
+</code></pre></div>
+lsblk lists all the block devices, including disks, partitions, and logical volumes. Gives an overview of storage devices.</p>
+<h4 id="76-lsmod-show-the-status-of-modules-in-the-linux-kernel">76. lsmod – Show The Status of Modules In The Linux Kernel</h4>
+<p>The lsmod command prints currently loaded kernel modules like device drivers. This includes networking, storage, and other hardware-related modules being used by the Linux kernel to interface with internal and external devices.
+<div class="highlight"><pre><span></span><code>lsmod
+Module                  Size  Used by
+ipv6                  406206  27
+evdev                   17700  0
+crct10dif_pclmul       16384  1
+crc32_pclmul           16384  0
+ghash_clmulni_intel    16384  0
+aesni_intel           399871  0
+aes_x86_64             20274  1 aesni_intel
+</code></pre></div>
+As you can see, it lists the currently loaded kernel modules like device drivers. In this case, it shows the use of networking, input, cryptographic and encryption modules.</p>
+<h4 id="77-dmesg-print-or-control-the-kernel-ring-buffer">77. dmesg – Print Or Control The Kernel Ring Buffer</h4>
+<p>The dmesg command dumps messages from the kernel ring buffer. This includes essential system events recorded by the kernel during start-up and operation.
+<div class="highlight"><pre><span></span><code>dmesg | grep -i error
+[   12.345678] Error receiving batched read response: -110
+[   23.456789] tplink_mdio 0000:03:00.0: Direct firmware load for tplink-mdio/leap_p8_v1_0.bin failed with error -2
+[   40.567890] iwlwifi 0000:09:00.0: Direct firmware load for iwlwifi-ty-a0-gf-a0-59.ucode failed with error -2
+</code></pre></div>
+Grepping for “error” shows issues loading specific firmware. This prints buffered kernel log messages, including system events like start-up, errors, warnings etc.</p>
+<p><br><br></p>
+<h3 id="system-administration-commands">System Administration Commands</h3>
+<p>System admin commands help you run programs as other users, shut down or reboot the system, and manage init systems and services.</p>
+<h4 id="78-sudo-execute-a-command-as-another-user">78. sudo – Execute A Command As Another User</h4>
+<p>The sudo command allows you to run commands as another user, typically the superuser. After entering the sudo order, it will prompt you for your password to authenticate.</p>
+<p>This provides elevated access for tasks like installing packages, editing system files, administering services etc.</p>
+<p>For example:
+<div class="highlight"><pre><span></span><code>sudo adduser bob
+[sudo] password for john:
+</code></pre></div>
+User ‘bob’ has been added to the system.</p>
+<p>This uses sudo to create a new user, ‘bob’. Regular users typically cannot add users without sudo.</p>
+<h4 id="79-su-change-user-id-or-become-superuser">79. su – Change User ID Or Become Superuser</h4>
+<p>The su command allows you to switch to another user account including the superuser. You must provide the target user’s password to authenticate. This gives direct access to run commands in another user’s environment.</p>
+<p>For example:
+<div class="highlight"><pre><span></span><code>su bob
+Password:
+bob@linux:~$
+</code></pre></div>
+After inputting bob’s password, this command switches the current user to the user ‘bob’. The shell prompt will reflect the new user.</p>
+<h4 id="80-shutdown-shutdown-or-restart-linux">80. shutdown – Shutdown Or Restart Linux</h4>
+<p>The shutdown command schedules a system power off, halt or reboot after a specified timer or immediately. It’s required to reboot or shutdown multi-user Linux systems safely.</p>
+<p>For example:
+<div class="highlight"><pre><span></span><code>shutdown -r now
+Broadcast message from root@linux Fri 2023-01-20 18:12:37 CST:
+The system is going down for reboot NOW!
+</code></pre></div>
+This reboots the system instantly with a warning to users.</p>
+<h4 id="81-reboot-reboot-or-restart-system">81. reboot – Reboot Or Restart System</h4>
+<p>The reboot command restarts the Linux operating system, logging all users off and safely rebooting the system. It synchronizes disks and brings the system down cleanly before restarting.</p>
+<p>For example:
+<div class="highlight"><pre><span></span><code>reboot
+Restarting system.
+</code></pre></div>
+This immediately reboots the OS. reboot is a simple alternative to shutdown -r.</p>
+<h4 id="82-systemctl-control-the-systemd-system-and-service-manager">82. systemctl – Control The systemd System And Service Manager</h4>
+<p>The systemctl command allows you to manage systemd services like starting, stopping, restarting, or reloading them. Systemd is the new init system used in most modern Linux distros, replacing SysV init.</p>
+<p>For example:
+<div class="highlight"><pre><span></span><code>systemctl start apache2
+==== AUTHENTICATING FOR org.freedesktop.systemd1.manage-units ===
+Authentication is required to start &#39;apache2.service&#39;.
+Authenticating as: User Name
+Password:
+==== AUTHENTICATION COMPLETE ===
+</code></pre></div>
+This starts the apache2 service after authenticating.</p>
+<h4 id="83-service-run-a-system-v-init-script">83. service – Run A System V Init Script</h4>
+<p>The service command runs System V init scripts for controlling services. This allows starting, stopping, restarting, and reloading services managed under traditional SysV init.</p>
+<p>For example:
+<div class="highlight"><pre><span></span><code>service iptables start
+[ ok ] Starting iptables (via systemctl): iptables.service.
+</code></pre></div>
+The above command starts the iptables firewall service using its SysV init script.</p>
+<p><br><br></p>
+<h3 id="other-linux-commands-to-try">Other Linux Commands To Try</h3>
+<div class="highlight"><pre><span></span><code>84. mount – Mount or “attach” drives to the system.
+85. umount – Umount or “remove” drives from the system.
+86. xargs – Builds and executes commands provided through standard input.
+87. alias – Create shortcuts for long or complex commands.
+88. jobs – List programs currently running jobs in the background.
+89. bg – Resume a stopped or paused background process.
+90. killall – Terminate processes by program name rather than PID.
+91. history – Display previously used commands within the current terminal session.
+92. man – Access help manuals for commands right within the terminal.
+93. screen – Manage multiple terminal sessions from a single window.
+94. ssh – Establish secure encrypted connections to remote servers.
+95. tcpdump – Capture network traffic based on specific criteria.
+96. watch – Repeat a command at intervals and highlight output differences.
+97. tmux – Terminal multiplexer for persistent sessions and splitting.
+98. nc – Open TCP or UDP connections for testing and data transfer.
+99. nmap – Host discovery, port scanning, and OS fingerprinting.
+100. strace – Debug processes by tracing operating system signals and calls.
+</code></pre></div>
+<p><br><br><br></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; - 2025 Learn Python
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs"], "search": "assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,2298 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://mstrblog.com/sql.html">
+      
+      
+        <link rel="prev" href="ml/k_nearest_neighbour.html">
+      
+      
+        <link rel="next" href="linux.html">
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>SQL - Learn Python</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/extra.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#join" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="Learn Python" class="md-header__button md-logo" aria-label="Learn Python" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Learn Python
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              SQL
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="index.html" class="md-tabs__link">
+          
+  
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="python/intro.html" class="md-tabs__link">
+          
+  
+  
+  Python
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="ml/terminologies.html" class="md-tabs__link">
+          
+  
+  
+  AI
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="sql.html" class="md-tabs__link">
+          
+  
+  
+  Tech
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="Learn Python" class="md-nav__button md-logo" aria-label="Learn Python" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Learn Python
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Home
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Welcome
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Python
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="python/intro.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="python/get_started.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Get Started
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="python/variables.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Variables & Data Types
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="python/operators.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Operators
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="python/number.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Number
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="python/string.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    String
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="python/output_input.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Output & Input
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="python/selection.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Selection (IF)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="python/iteration.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Iteration (Loop)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="python/list.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    List
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="python/dictionary.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dictionary
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="python/functions.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Functions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_13" id="__nav_2_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Pandas
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_13">
+            <span class="md-nav__icon md-icon"></span>
+            Pandas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="python/pandas_intro.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Intro
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="python/pandas_manipulation.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Manipulation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="python/pandas_cleaning.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cleaning Data
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_14" id="__nav_2_14_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Advanced
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_14">
+            <span class="md-nav__icon md-icon"></span>
+            Advanced
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="python/oop.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OOP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="python/regex.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    RegEx
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_15" id="__nav_2_15_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Labs
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_15">
+            <span class="md-nav__icon md-icon"></span>
+            Labs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="python/labs/variables.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Variables & Data Types
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="python/labs/number.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Number
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="python/labs/string.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    String
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="python/labs/input_output.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Input Output
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="python/labs/selection_iteration.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Selection & Iteration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="python/labs/function.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Function
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="python/python_slide/python_slide.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Presentation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    AI
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            AI
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ml/terminologies.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Terminologies
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ml/intro.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Intro
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ml/mean_median_mode.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Mean Median Mode
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ml/std_dev.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Standard Deviation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ml/percentile.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Percentile
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ml/data_dist.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data Distribution
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ml/normal_dist.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Normal Data Distribution
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ml/scatter_plot.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Scatter Plot
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ml/linear_reg.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Linear Regression
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ml/polynomial_reg.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Polynomial Regression
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ml/multiple_reg.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multiple Regression
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ml/scale.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Scale
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ml/train_test.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Train/Test
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ml/decision_tree.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Decision Tree
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ml/confusion_matrix.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Confusion Matrix
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ml/hierarchical_clust.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Hierarchical Clustering
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ml/logistic_reg.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Logistic Regression
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ml/grid_search.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Grid Search
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ml/cat_data.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Categorical Data
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ml/k_means.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    K-means
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ml/bootstrap_agg.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Bootstrap Aggregation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ml/cross_validation.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cross Validation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ml/auc_roc_curve.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AUC - ROC Curve
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ml/k_nearest_neighbour.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    K-nearest neighbors
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tech
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Tech
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    SQL
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="sql.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    SQL
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#join" class="md-nav__link">
+    <span class="md-ellipsis">
+      JOIN
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coalesce" class="md-nav__link">
+    <span class="md-ellipsis">
+      COALESCE
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#over-partition-by" class="md-nav__link">
+    <span class="md-ellipsis">
+      OVER PARTITION BY
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#case" class="md-nav__link">
+    <span class="md-ellipsis">
+      CASE
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cast" class="md-nav__link">
+    <span class="md-ellipsis">
+      CAST
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unpivot" class="md-nav__link">
+    <span class="md-ellipsis">
+      UNPIVOT
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouping-sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      GROUPING SETS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#union-all" class="md-nav__link">
+    <span class="md-ellipsis">
+      UNION ALL
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rollup" class="md-nav__link">
+    <span class="md-ellipsis">
+      ROLLUP
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cube" class="md-nav__link">
+    <span class="md-ellipsis">
+      CUBE
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plsql" class="md-nav__link">
+    <span class="md-ellipsis">
+      PL/SQL
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="linux.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Linux
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#join" class="md-nav__link">
+    <span class="md-ellipsis">
+      JOIN
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coalesce" class="md-nav__link">
+    <span class="md-ellipsis">
+      COALESCE
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#over-partition-by" class="md-nav__link">
+    <span class="md-ellipsis">
+      OVER PARTITION BY
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#case" class="md-nav__link">
+    <span class="md-ellipsis">
+      CASE
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cast" class="md-nav__link">
+    <span class="md-ellipsis">
+      CAST
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unpivot" class="md-nav__link">
+    <span class="md-ellipsis">
+      UNPIVOT
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouping-sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      GROUPING SETS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#union-all" class="md-nav__link">
+    <span class="md-ellipsis">
+      UNION ALL
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rollup" class="md-nav__link">
+    <span class="md-ellipsis">
+      ROLLUP
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cube" class="md-nav__link">
+    <span class="md-ellipsis">
+      CUBE
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plsql" class="md-nav__link">
+    <span class="md-ellipsis">
+      PL/SQL
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>SQL</h1>
+
+<h4 id="join">JOIN</h4>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">StudentCourse</span><span class="p">.</span><span class="n">COURSE_ID</span><span class="p">,</span><span class="w"> </span><span class="n">Student</span><span class="p">.</span><span class="n">NAME</span><span class="p">,</span><span class="w"> </span><span class="n">Student</span><span class="p">.</span><span class="n">AGE</span><span class="w"> </span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">Student</span>
+<span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">StudentCourse</span>
+<span class="k">ON</span><span class="w"> </span><span class="n">Student</span><span class="p">.</span><span class="n">ROLL_NO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">StudentCourse</span><span class="p">.</span><span class="n">ROLL_NO</span><span class="p">;</span>
+</code></pre></div>
+<ul>
+<li>JOIN (or INNER JOIN)</li>
+<li>LEFT JOIN (or LEFT OUTER JOIN)</li>
+<li>RIGHT JOIN (or RIGHT OUTER JOIN)</li>
+<li>OUTER JOIN (or fULL OUTER JOIN)</li>
+</ul>
+<p><br></p>
+<h4 id="coalesce">COALESCE</h4>
+<p>COALESCE is an alternative of ISNULL
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="k">COALESCE</span><span class="p">(</span><span class="k">SUM</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">spend</span><span class="p">),</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">sales</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">orders</span><span class="w"> </span><span class="n">a</span>
+<span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">dates</span><span class="w"> </span><span class="n">b</span>
+<span class="k">ON</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">dateID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">dateID</span>
+</code></pre></div></p>
+<p><br></p>
+<h4 id="over-partition-by">OVER PARTITION BY</h4>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">Customercity</span><span class="p">,</span><span class="w"> </span>
+<span class="w">       </span><span class="k">AVG</span><span class="p">(</span><span class="n">Orderamount</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">AvgOrderAmount</span><span class="p">,</span><span class="w"> </span>
+<span class="w">       </span><span class="k">MIN</span><span class="p">(</span><span class="n">OrderAmount</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">MinOrderAmount</span><span class="p">,</span><span class="w"> </span>
+<span class="w">       </span><span class="k">SUM</span><span class="p">(</span><span class="n">Orderamount</span><span class="p">)</span><span class="w"> </span><span class="n">TotalOrderAmount</span>
+<span class="k">FROM</span><span class="w"> </span><span class="p">[</span><span class="n">dbo</span><span class="p">].[</span><span class="n">Orders</span><span class="p">]</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">Customercity</span><span class="p">;</span>
+
+
+<span class="k">SELECT</span><span class="w"> </span><span class="n">Customercity</span><span class="p">,</span><span class="w"> </span><span class="n">CustomerName</span><span class="w"> </span><span class="p">,</span><span class="n">OrderAmount</span><span class="p">,</span>
+<span class="w">       </span><span class="k">AVG</span><span class="p">(</span><span class="n">Orderamount</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">AvgOrderAmount</span><span class="p">,</span><span class="w"> </span>
+<span class="w">       </span><span class="k">MIN</span><span class="p">(</span><span class="n">OrderAmount</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">MinOrderAmount</span><span class="p">,</span><span class="w"> </span>
+<span class="w">       </span><span class="k">SUM</span><span class="p">(</span><span class="n">Orderamount</span><span class="p">)</span><span class="w"> </span><span class="n">TotalOrderAmount</span>
+<span class="k">FROM</span><span class="w"> </span><span class="p">[</span><span class="n">dbo</span><span class="p">].[</span><span class="n">Orders</span><span class="p">]</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">Customercity</span><span class="p">;</span>
+
+<span class="n">Error</span><span class="p">:</span><span class="w"> </span><span class="k">Column</span><span class="w"> </span><span class="n">CustomerName</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">invalid</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="n">because</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="n">contained</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">either</span><span class="w"> </span><span class="n">an</span><span class="w"> </span><span class="n">aggregare</span><span class="w"> </span><span class="k">function</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">clause</span><span class="p">.</span>
+
+<span class="k">SELECT</span><span class="w"> </span><span class="n">Customercity</span><span class="p">,</span><span class="w"> </span>
+<span class="w">       </span><span class="n">CustomerName</span><span class="p">,</span><span class="w"> </span>
+<span class="w">       </span><span class="n">OrderAmount</span><span class="p">,</span><span class="w"> </span>
+<span class="w">       </span><span class="k">AVG</span><span class="p">(</span><span class="n">Orderamount</span><span class="p">)</span><span class="w"> </span><span class="n">OVER</span><span class="p">(</span><span class="n">PARTITION</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">Customercity</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">AvgOrderAmount</span><span class="p">,</span><span class="w"> </span>
+<span class="w">       </span><span class="k">MIN</span><span class="p">(</span><span class="n">OrderAmount</span><span class="p">)</span><span class="w"> </span><span class="n">OVER</span><span class="p">(</span><span class="n">PARTITION</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">Customercity</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">MinOrderAmount</span><span class="p">,</span><span class="w"> </span>
+<span class="w">       </span><span class="k">SUM</span><span class="p">(</span><span class="n">Orderamount</span><span class="p">)</span><span class="w"> </span><span class="n">OVER</span><span class="p">(</span><span class="n">PARTITION</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">Customercity</span><span class="p">)</span><span class="w"> </span><span class="n">TotalOrderAmount</span>
+<span class="k">FROM</span><span class="w"> </span><span class="p">[</span><span class="n">dbo</span><span class="p">].[</span><span class="n">Orders</span><span class="p">];</span>
+</code></pre></div>
+<p><br>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">seq</span><span class="p">,</span><span class="w"> </span><span class="n">week</span><span class="p">,</span><span class="w"> </span><span class="n">min_date</span><span class="p">,</span><span class="w"> </span><span class="n">max_date</span>
+<span class="k">FROM</span>
+<span class="p">(</span>
+<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">rownum</span><span class="w"> </span><span class="n">seq</span><span class="p">,</span><span class="w"> </span><span class="n">week</span><span class="p">,</span><span class="w"> </span><span class="n">min_date</span><span class="p">,</span><span class="w"> </span><span class="n">max_date</span>
+<span class="w">    </span><span class="k">FROM</span>
+<span class="w">    </span><span class="p">(</span>
+<span class="w">        </span><span class="k">SELECT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">week</span><span class="p">,</span>
+<span class="w">        </span><span class="k">MIN</span><span class="p">(</span><span class="n">dateID</span><span class="p">)</span><span class="w"> </span><span class="n">OVER</span><span class="w"> </span><span class="p">(</span><span class="n">PARTITION</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">week</span><span class="p">)</span><span class="w"> </span><span class="n">min_date</span><span class="p">,</span>
+<span class="w">        </span><span class="k">MAX</span><span class="p">(</span><span class="n">dateID</span><span class="p">)</span><span class="w"> </span><span class="n">OVER</span><span class="w"> </span><span class="p">(</span><span class="n">PARTITION</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">week</span><span class="p">)</span><span class="w"> </span><span class="n">max_date</span>
+<span class="w">        </span><span class="k">FROM</span><span class="w"> </span><span class="n">dates</span>
+<span class="w">        </span><span class="k">WHERE</span><span class="w"> </span><span class="n">week</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="s1">&#39;202201&#39;</span>
+<span class="w">        </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">week</span><span class="w"> </span><span class="k">DESC</span>
+<span class="w">    </span><span class="p">)</span>
+<span class="p">)</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">seq</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">250</span>
+</code></pre></div></p>
+<p><br>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">col1</span><span class="p">,</span>
+<span class="k">SUM</span><span class="p">(</span><span class="n">col2</span><span class="p">)</span><span class="w"> </span><span class="n">OVER</span><span class="w"> </span><span class="p">(</span><span class="n">PARTITION</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">col3</span><span class="p">,</span><span class="w"> </span><span class="n">col4</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">col1</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">col22</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">table1</span>
+</code></pre></div></p>
+<p><br>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">seq</span><span class="p">,</span><span class="w"> </span><span class="n">week</span><span class="p">,</span><span class="w"> </span><span class="n">epoch</span><span class="p">,</span><span class="w"> </span><span class="n">min_date</span><span class="p">,</span><span class="w"> </span><span class="n">max_date</span>
+<span class="k">FROM</span>
+<span class="p">(</span>
+<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">rownum</span><span class="w"> </span><span class="n">seq</span><span class="p">,</span><span class="w"> </span><span class="n">week</span><span class="p">,</span><span class="w"> </span><span class="n">epoch</span><span class="p">,</span><span class="w"> </span><span class="n">min_date</span><span class="p">,</span><span class="w"> </span><span class="n">max_date</span>
+<span class="w">    </span><span class="k">FROM</span>
+<span class="w">    </span><span class="p">(</span>
+<span class="w">        </span><span class="k">SELECT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">week</span><span class="p">,</span><span class="w"> </span><span class="n">epoch</span><span class="p">,</span>
+<span class="w">        </span><span class="k">MIN</span><span class="p">(</span><span class="n">dateID</span><span class="p">)</span><span class="w"> </span><span class="n">OVER</span><span class="w"> </span><span class="p">(</span><span class="n">PARTITION</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">week</span><span class="p">)</span><span class="w"> </span><span class="n">min_date</span><span class="p">,</span>
+<span class="w">        </span><span class="k">MAX</span><span class="p">(</span><span class="n">dateID</span><span class="p">)</span><span class="w"> </span><span class="n">OVER</span><span class="w"> </span><span class="p">(</span><span class="n">PARTITION</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">week</span><span class="p">)</span><span class="w"> </span><span class="n">max_date</span>
+<span class="w">        </span><span class="k">FROM</span><span class="w"> </span><span class="n">dates</span>
+<span class="w">        </span><span class="k">WHERE</span><span class="w"> </span><span class="n">epoch</span><span class="w"> </span><span class="k">BETWEEN</span>
+<span class="w">            </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">epoch</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">dates</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">week</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">202201</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">12</span>
+<span class="w">            </span><span class="k">AND</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">epoch</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">dates</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">week</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">202201</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">12</span>
+<span class="w">        </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">epoch</span>
+<span class="w">    </span><span class="p">)</span>
+<span class="p">)</span>
+</code></pre></div></p>
+<p><br></p>
+<h4 id="case">CASE</h4>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">col1</span><span class="p">,</span><span class="w"> </span><span class="n">col2</span><span class="p">,</span>
+<span class="k">MAX</span><span class="p">(</span><span class="n">one</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;one&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">MAX</span><span class="p">(</span><span class="n">two</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;two&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">MAX</span><span class="p">(</span><span class="k">more</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;more&#39;</span>
+<span class="k">FROM</span>
+<span class="p">(</span>
+<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">col1</span><span class="p">,</span><span class="w"> </span><span class="n">col2</span><span class="p">,</span><span class="w"> </span><span class="n">TR</span><span class="p">,</span>
+<span class="w">    </span><span class="p">(</span><span class="k">CASE</span><span class="w"> </span><span class="k">WHEN</span><span class="w"> </span><span class="n">TR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;one&#39;</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="n">col4</span><span class="p">)</span><span class="w"> </span><span class="k">end</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;one&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="p">(</span><span class="k">CASE</span><span class="w"> </span><span class="k">WHEN</span><span class="w"> </span><span class="n">TR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;two&#39;</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="n">col4</span><span class="p">)</span><span class="w"> </span><span class="k">end</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;two&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="p">(</span><span class="k">CASE</span><span class="w"> </span><span class="k">WHEN</span><span class="w"> </span><span class="n">TR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;more&#39;</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="n">col4</span><span class="p">)</span><span class="w"> </span><span class="k">end</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;more&#39;</span><span class="w"> </span>
+<span class="w">    </span><span class="k">FROM</span>
+<span class="w">    </span><span class="p">(</span>
+<span class="w">        </span><span class="k">SELECT</span><span class="w"> </span><span class="n">col1</span><span class="p">,</span><span class="w"> </span><span class="n">col2</span><span class="p">,</span>
+<span class="w">        </span><span class="k">CASE</span>
+<span class="w">        </span><span class="k">WHEN</span><span class="w"> </span><span class="n">col3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;one&#39;</span>
+<span class="w">        </span><span class="k">WHEN</span><span class="w"> </span><span class="n">col3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;two&#39;</span>
+<span class="w">        </span><span class="k">WHEN</span><span class="w"> </span><span class="n">col3</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;more&#39;</span>
+<span class="w">        </span><span class="k">END</span><span class="w"> </span><span class="s1">&#39;TR&#39;</span>
+<span class="w">        </span><span class="k">FROM</span><span class="w"> </span><span class="n">table1</span>
+<span class="w">    </span><span class="p">)</span>
+<span class="w">    </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">col1</span><span class="p">,</span><span class="w"> </span><span class="n">col2</span><span class="p">,</span><span class="w"> </span><span class="n">TR</span>
+<span class="p">)</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">col1</span><span class="p">,</span><span class="w"> </span><span class="n">col2</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">col2</span>
+</code></pre></div>
+<p><br>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">col1</span>
+<span class="p">(</span><span class="k">CASE</span><span class="w"> </span><span class="k">WHEN</span><span class="w"> </span><span class="p">(</span><span class="n">col1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="n">col1</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span><span class="p">)</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">ELSE</span><span class="w"> </span><span class="n">col1</span><span class="w"> </span><span class="k">END</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">col1</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">table1</span>
+</code></pre></div></p>
+<p><br></p>
+<h4 id="cast">CAST</h4>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">col1</span><span class="p">,</span>
+<span class="k">CAST</span><span class="p">(</span><span class="s1">&#39;T99999&#39;</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">VARCHAR2</span><span class="p">(</span><span class="mi">20</span><span class="p">))</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">T99999</span><span class="p">,</span>
+<span class="k">CAST</span><span class="p">(</span><span class="s1">&#39;ALL&#39;</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">VARCHAR2</span><span class="p">(</span><span class="mi">20</span><span class="p">))</span><span class="w"> </span><span class="k">ALL</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">table1</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+</code></pre></div>
+<p><br></p>
+<h4 id="unpivot">UNPIVOT</h4>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">table1</span>
+<span class="n">UNPIVOT</span>
+<span class="p">(</span><span class="n">col1</span><span class="w"> </span><span class="k">FOR</span><span class="w"> </span><span class="n">col2</span><span class="w"> </span><span class="k">IN</span><span class="p">(</span><span class="n">T11111</span><span class="p">,</span><span class="w"> </span><span class="n">T99999</span><span class="p">))</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">col2</span>
+</code></pre></div>
+<p><br>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="o">*</span><span class="p">,</span>
+<span class="n">RANK</span><span class="p">()</span><span class="w"> </span><span class="n">OVER</span><span class="w"> </span><span class="p">(</span><span class="n">PARTITION</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">col1</span><span class="p">,</span><span class="w"> </span><span class="n">col2</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">col3</span><span class="w"> </span><span class="k">desc</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;col3&#39;</span>
+<span class="k">FROM</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">a</span>
+</code></pre></div></p>
+<p><br></p>
+<h4 id="grouping-sets">GROUPING SETS</h4>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span>
+<span class="w">    </span><span class="n">aggregate_function</span><span class="p">(</span><span class="n">column_1</span><span class="p">)</span>
+<span class="w">    </span><span class="n">column_2</span><span class="p">,</span>
+<span class="w">    </span><span class="n">column_3</span><span class="p">,</span>
+<span class="k">FROM</span>
+<span class="w">    </span><span class="k">table_name</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span>
+<span class="w">    </span><span class="k">GROUPING</span><span class="w"> </span><span class="k">SETS</span><span class="w"> </span><span class="p">(</span>
+<span class="w">        </span><span class="p">(</span><span class="n">column_2</span><span class="p">,</span><span class="w"> </span><span class="n">column_3</span><span class="p">),</span>
+<span class="w">        </span><span class="p">(</span><span class="n">column_2</span><span class="p">),</span>
+<span class="w">        </span><span class="p">(</span><span class="n">column_3</span><span class="p">),</span>
+<span class="w">        </span><span class="p">()</span>
+<span class="p">);</span>
+</code></pre></div>
+<p><br></p>
+<h4 id="union-all">UNION ALL</h4>
+<p>GROUPING SETS is equivalent to UNION ALL
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="k">SUM</span><span class="p">(</span><span class="n">column_1</span><span class="p">),</span><span class="w"> </span><span class="n">column_2</span><span class="p">,</span><span class="w"> </span><span class="n">column_3</span>
+<span class="k">FROM</span><span class="w"> </span><span class="k">table_name</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span>
+<span class="w">    </span><span class="n">column_2</span><span class="p">,</span>
+<span class="w">    </span><span class="n">column_3</span>
+
+<span class="k">UNION</span><span class="w"> </span><span class="k">ALL</span>
+
+<span class="k">SELECT</span><span class="w"> </span><span class="k">SUM</span><span class="p">(</span><span class="n">column_1</span><span class="p">),</span><span class="w"> </span><span class="n">column_2</span><span class="p">,</span><span class="w"> </span><span class="k">NULL</span>
+<span class="k">FROM</span><span class="w"> </span><span class="k">table_name</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">column_2</span>
+</code></pre></div></p>
+<p><br></p>
+<h4 id="rollup">ROLLUP</h4>
+<p>Similar to GROUPING SETS, you can use the ROLLUP option
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span>
+<span class="w">  </span><span class="k">SUM</span><span class="p">(</span><span class="n">payment_amount</span><span class="p">),</span>
+<span class="w">  </span><span class="k">YEAR</span><span class="p">(</span><span class="n">payment_date</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s1">&#39;Payment Year&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="n">store_id</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s1">&#39;Store&#39;</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">payment</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="k">ROLLUP</span><span class="w"> </span><span class="p">(</span><span class="k">YEAR</span><span class="p">(</span><span class="n">payment_date</span><span class="p">),</span><span class="w"> </span><span class="n">store_id</span><span class="p">)</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="k">YEAR</span><span class="p">(</span><span class="n">payment_date</span><span class="p">),</span><span class="w"> </span><span class="n">store_id</span>
+</code></pre></div></p>
+<p><br></p>
+<h4 id="cube">CUBE</h4>
+<p>CUBE is like combining GROUPING SETS and ROLLUP</p>
+<p>The main difference in this output from the ROLLUP example is that the grand total for each store is also shown
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span>
+<span class="w">  </span><span class="k">SUM</span><span class="p">(</span><span class="n">payment_amount</span><span class="p">),</span>
+<span class="w">  </span><span class="k">YEAR</span><span class="p">(</span><span class="n">payment_date</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s1">&#39;Payment Year&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="n">store_id</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s1">&#39;Store&#39;</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">payment</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="k">CUBE</span><span class="w"> </span><span class="p">(</span><span class="k">YEAR</span><span class="p">(</span><span class="n">payment_date</span><span class="p">),</span><span class="w"> </span><span class="n">store_id</span><span class="p">)</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="k">YEAR</span><span class="p">(</span><span class="n">payment_date</span><span class="p">),</span><span class="w"> </span><span class="n">store_id</span>
+</code></pre></div></p>
+<p><br></p>
+<h4 id="plsql">PL/SQL</h4>
+<div class="highlight"><pre><span></span><code><span class="k">BEGIN</span>
+<span class="w">    </span><span class="k">FOR</span><span class="w"> </span><span class="k">c</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="k">table_name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">user_tables</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="k">table_name</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;%MSTR_%&#39;</span><span class="p">)</span>
+<span class="w">        </span><span class="n">LOOP</span>
+<span class="w">        </span><span class="n">DBMS_OUTPUT</span><span class="p">.</span><span class="n">PUT_LINE</span><span class="p">(</span><span class="k">c</span><span class="p">.</span><span class="k">table_name</span><span class="p">);</span>
+<span class="w">        </span><span class="k">EXECUTE</span><span class="w"> </span><span class="k">IMMEDIATE</span><span class="w"> </span><span class="s1">&#39;DROP TABLE&#39;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="k">c</span><span class="p">.</span><span class="k">table_name</span><span class="p">;</span>
+<span class="w">    </span><span class="k">END</span><span class="w"> </span><span class="n">LOOP</span><span class="p">;</span>
+<span class="k">END</span><span class="p">;</span>
+</code></pre></div>
+<p><br><br></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; - 2025 Learn Python
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs"], "search": "assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>
