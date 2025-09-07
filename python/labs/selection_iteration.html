@@ -1,0 +1,2733 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://mstrblog.com/python/labs/selection_iteration.html">
+      
+      
+        <link rel="prev" href="input_output.html">
+      
+      
+        <link rel="next" href="function.html">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Selection & Iteration - Learn Python</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#selection-and-iteration" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Learn Python" class="md-header__button md-logo" aria-label="Learn Python" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Learn Python
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Selection & Iteration
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../index.html" class="md-tabs__link">
+          
+  
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../intro.html" class="md-tabs__link">
+          
+  
+  
+  Python
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ml/terminologies.html" class="md-tabs__link">
+          
+  
+  
+  AI
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../sql.html" class="md-tabs__link">
+          
+  
+  
+  Tech
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Learn Python" class="md-nav__button md-logo" aria-label="Learn Python" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Learn Python
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Home
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Welcome
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Python
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intro.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../get_started.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Get Started
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../variables.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Variables & Data Types
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../operators.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Operators
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../number.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Number
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../string.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    String
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../output_input.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Output & Input
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../selection.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Selection (IF)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../iteration.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Iteration (Loop)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../list.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    List
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dictionary.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dictionary
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Functions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_13" id="__nav_2_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Pandas
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_13">
+            <span class="md-nav__icon md-icon"></span>
+            Pandas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pandas_intro.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Intro
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pandas_manipulation.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Manipulation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pandas_cleaning.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cleaning Data
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_14" id="__nav_2_14_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Advanced
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_14">
+            <span class="md-nav__icon md-icon"></span>
+            Advanced
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../oop.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OOP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../regex.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    RegEx
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_15" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_15" id="__nav_2_15_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Labs
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_15_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_15">
+            <span class="md-nav__icon md-icon"></span>
+            Labs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="variables.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Variables & Data Types
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="number.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Number
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="string.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    String
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="input_output.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Input Output
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Selection & Iteration
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="selection_iteration.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Selection & Iteration
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lab-1-print-first-10-natural-numbers-using-while-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lab 1: Print First 10 natural numbers using while loop
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-2-print-the-following-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lab 2: Print the following pattern
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-3-calculate-the-sum-of-all-numbers-from-1-to-a-given-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lab 3: Calculate the sum of all numbers from 1 to a given number
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-4-write-a-program-to-print-multiplication-table-of-a-given-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lab 4: Write a program to print multiplication table of a given number
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-5-display-numbers-from-a-list-using-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lab 5: Display numbers from a list using loop
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-6-count-the-total-number-of-digits-in-a-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lab 6: Count the total number of digits in a number
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-7-print-the-following-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lab 7: Print the following pattern
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-8-print-list-in-reverse-order-using-a-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lab 8: Print list in reverse order using a loop
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-9-display-numbers-from-10-to-1-using-for-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lab 9: Display numbers from -10 to -1 using for loop
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-10-use-else-block-to-display-a-message-done-after-successful-execution-of-for-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lab 10: Use else block to display a message “Done” after successful execution of for loop
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-11-write-a-program-to-display-all-prime-numbers-within-a-range" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lab 11: Write a program to display all prime numbers within a range
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-12-display-fibonacci-series-up-to-10-terms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lab 12: Display Fibonacci series up to 10 terms
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-13-find-the-factorial-of-a-given-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lab 13: Find the factorial of a given number
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-14-reverse-a-given-integer-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lab 14: Reverse a given integer number
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-15-use-a-loop-to-display-elements-from-a-given-list-present-at-odd-index-positions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lab 15: Use a loop to display elements from a given list present at odd index positions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-16-calculate-the-cube-of-all-numbers-from-1-to-a-given-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lab 16: Calculate the cube of all numbers from 1 to a given number
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-17-find-the-sum-of-the-series-upto-n-terms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lab 17: Find the sum of the series upto n terms
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-18-print-the-following-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lab 18: Print the following pattern
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="function.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Function
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python_slide/python_slide.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Presentation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    AI
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            AI
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml/terminologies.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Terminologies
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml/intro.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Intro
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml/mean_median_mode.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Mean Median Mode
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml/std_dev.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Standard Deviation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml/percentile.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Percentile
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml/data_dist.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data Distribution
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml/normal_dist.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Normal Data Distribution
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml/scatter_plot.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Scatter Plot
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml/linear_reg.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Linear Regression
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml/polynomial_reg.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Polynomial Regression
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml/multiple_reg.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multiple Regression
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml/scale.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Scale
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml/train_test.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Train/Test
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml/decision_tree.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Decision Tree
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml/confusion_matrix.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Confusion Matrix
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml/hierarchical_clust.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Hierarchical Clustering
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml/logistic_reg.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Logistic Regression
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml/grid_search.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Grid Search
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml/cat_data.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Categorical Data
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml/k_means.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    K-means
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml/bootstrap_agg.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Bootstrap Aggregation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml/cross_validation.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cross Validation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml/auc_roc_curve.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AUC - ROC Curve
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml/k_nearest_neighbour.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    K-nearest neighbors
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tech
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Tech
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sql.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SQL
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Linux
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lab-1-print-first-10-natural-numbers-using-while-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lab 1: Print First 10 natural numbers using while loop
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-2-print-the-following-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lab 2: Print the following pattern
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-3-calculate-the-sum-of-all-numbers-from-1-to-a-given-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lab 3: Calculate the sum of all numbers from 1 to a given number
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-4-write-a-program-to-print-multiplication-table-of-a-given-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lab 4: Write a program to print multiplication table of a given number
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-5-display-numbers-from-a-list-using-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lab 5: Display numbers from a list using loop
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-6-count-the-total-number-of-digits-in-a-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lab 6: Count the total number of digits in a number
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-7-print-the-following-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lab 7: Print the following pattern
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-8-print-list-in-reverse-order-using-a-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lab 8: Print list in reverse order using a loop
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-9-display-numbers-from-10-to-1-using-for-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lab 9: Display numbers from -10 to -1 using for loop
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-10-use-else-block-to-display-a-message-done-after-successful-execution-of-for-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lab 10: Use else block to display a message “Done” after successful execution of for loop
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-11-write-a-program-to-display-all-prime-numbers-within-a-range" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lab 11: Write a program to display all prime numbers within a range
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-12-display-fibonacci-series-up-to-10-terms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lab 12: Display Fibonacci series up to 10 terms
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-13-find-the-factorial-of-a-given-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lab 13: Find the factorial of a given number
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-14-reverse-a-given-integer-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lab 14: Reverse a given integer number
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-15-use-a-loop-to-display-elements-from-a-given-list-present-at-odd-index-positions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lab 15: Use a loop to display elements from a given list present at odd index positions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-16-calculate-the-cube-of-all-numbers-from-1-to-a-given-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lab 16: Calculate the cube of all numbers from 1 to a given number
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-17-find-the-sum-of-the-series-upto-n-terms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lab 17: Find the sum of the series upto n terms
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-18-print-the-following-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lab 18: Print the following pattern
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="selection-and-iteration">Selection and Iteration</h1>
+<p>Lab 1: Print First 10 natural numbers using while loop<br>
+Lab 2: Print the following pattern<br>
+Lab 3: Calculate the sum of all numbers from 1 to a given number<br>
+Lab 4: Write a program to print multiplication table of a given number<br>
+Lab 5: Display numbers from a list using loop<br>
+Lab 6: Count the total number of digits in a number<br>
+Lab 7: Print the following pattern<br>
+Lab 8: Print list in reverse order using a loop<br>
+Lab 9: Display numbers from -10 to -1 using for loop<br>
+Lab 10: Use else block to display a message “Done” after successful execution of for loop <br>
+Lab 11: Write a program to display all prime numbers within a range<br>
+Lab 12: Display Fibonacci series up to 10 terms<br>
+Lab 13: Find the factorial of a given number<br>
+Lab 14: Reverse a given integer number<br>
+Lab 15: Use a loop to display elements from a given list present at odd index positions<br>
+Lab 16: Calculate the cube of all numbers from 1 to a given number<br>
+Lab 17: Find the sum of the series upto n terms<br>
+Lab 18: Print the following pattern
+<br><br></p>
+<h3 id="lab-1-print-first-10-natural-numbers-using-while-loop">Lab 1: Print First 10 natural numbers using while loop</h3>
+<p>Expected output:
+<div class="highlight"><pre><span></span><code><span class="mi">1</span>
+<span class="mi">2</span>
+<span class="mi">3</span>
+<span class="mi">4</span>
+<span class="mi">5</span>
+<span class="mi">6</span>
+<span class="mi">7</span>
+<span class="mi">8</span>
+<span class="mi">9</span>
+<span class="mi">10</span>
+</code></pre></div></p>
+<p>Show Solution
+<div class="highlight"><pre><span></span><code><span class="o">.</span><span class="c1"># program 1: Print first 10 natural numbers</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+</code></pre></div>
+<br></p>
+<h3 id="lab-2-print-the-following-pattern">Lab 2: Print the following pattern</h3>
+<p>Write a program to print the following number pattern using a loop.
+<div class="highlight"><pre><span></span><code><span class="mi">1</span> 
+<span class="mi">1</span> <span class="mi">2</span> 
+<span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> 
+<span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> 
+<span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span>
+</code></pre></div></p>
+<p>Hint:<br>
+Decide the row count, i.e., 5, because the pattern contains five rows<br>
+Run outer for loop 5 times using for loop and range() function<br>
+Run inner for loop i+1 times using for loop and range() function<br>
+In the first iteration of the outer loop, the inner loop will execute 1 time<br>
+In the second iteration of the outer loop, the inner loop will execute 2 time<br>
+In the third iteration of the outer loop, the inner loop will execute 3 times, and so on till row 5<br>
+print the value of j in each iteration of inner loop (j is the the inner loop iterator variable)<br>
+Display an empty line at the end of each iteration of the outer loop (empty line after each row)<br></p>
+<p>Solution:
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number Pattern &quot;</span><span class="p">)</span>
+
+<span class="c1"># Decide the row count. (above pattern contains 5 rows)</span>
+<span class="n">row</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="c1"># start: 1</span>
+<span class="c1"># stop: row+1 (range never include stop number in result)</span>
+<span class="c1"># step: 1</span>
+<span class="c1"># run loop 5 times</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">row</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="c1"># Run inner loop i+1 times</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+    <span class="c1"># empty line after each row</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+</code></pre></div>
+<br></p>
+<h3 id="lab-3-calculate-the-sum-of-all-numbers-from-1-to-a-given-number">Lab 3: Calculate the sum of all numbers from 1 to a given number</h3>
+<p>Write a program to accept a number from a user and calculate the sum of all numbers from 1 to a given number</p>
+<p>For example, if the user entered 10 the output should be 55 (1+2+3+4+5+6+7+8+9+10)</p>
+<p>Expected Output:<br>
+Enter number 10<br>
+Sum is:  55</p>
+<p>Refer:<br>
+Accept input from user in Python<br>
+Calculate sum and average in Python</p>
+<p>Hint:<br>
+Approach 1: Use for loop and range() function<br>
+Create variable s = 0 to store the sum of all numbers<br>
+Use Python 3’s built-in function input() to take input from a user<br>
+Convert user input to the integer type using the int() constructor and save it to variable n<br>
+Run loop n times using for loop and range() function<br>
+In each iteration of a loop, add current number (i) to variable s<br>
+Use the print() function to display the variable s on screen</p>
+<p>Approach 2: Use the built-in function sum(). The sum() function calculates the addition of numbers in the list or range</p>
+<p>Solution:</p>
+<p>Solution 1: Using for loop and range() function
+<div class="highlight"><pre><span></span><code><span class="c1"># s: store sum of all numbers</span>
+<span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter number &quot;</span><span class="p">))</span>
+<span class="c1"># run loop n times</span>
+<span class="c1"># stop: n+1 (because range never include stop number in result)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="c1"># add current number to sum variable</span>
+    <span class="n">s</span> <span class="o">+=</span> <span class="n">i</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sum is: &quot;</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+</code></pre></div></p>
+<p>Solution 2: Using the built-in function sum()
+<div class="highlight"><pre><span></span><code><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter number &quot;</span><span class="p">))</span>
+<span class="c1"># pass range of numbers to sum() function</span>
+<span class="n">x</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Sum is:&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+</code></pre></div>
+<br></p>
+<h3 id="lab-4-write-a-program-to-print-multiplication-table-of-a-given-number">Lab 4: Write a program to print multiplication table of a given number</h3>
+<p>For example, num = 2 so the output should be
+<div class="highlight"><pre><span></span><code><span class="mi">2</span>
+<span class="mi">4</span>
+<span class="mi">6</span>
+<span class="mi">8</span>
+<span class="mi">10</span>
+<span class="mi">12</span>
+<span class="mi">14</span>
+<span class="mi">16</span>
+<span class="mi">18</span>
+<span class="mi">20</span>
+</code></pre></div></p>
+<p>Hint:<br>
+Set n =2<br>
+Use for loop to iterate the first 10 numbers<br>
+In each iteration, multiply 2 by the current number.( p = n*i)<br>
+Print p</p>
+<p>Solution:
+<div class="highlight"><pre><span></span><code><span class="n">n</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="c1"># stop: 11 (because range never include stop number in result)</span>
+<span class="c1"># run loop 10 times</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="c1"># 2 *i (current number)</span>
+    <span class="n">product</span> <span class="o">=</span> <span class="n">n</span> <span class="o">*</span> <span class="n">i</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">product</span><span class="p">)</span>
+</code></pre></div>
+<br></p>
+<h3 id="lab-5-display-numbers-from-a-list-using-loop">Lab 5: Display numbers from a list using loop</h3>
+<p>Write a program to display only those numbers from a list that satisfy the following conditions</p>
+<p>The number must be divisible by five<br>
+If the number is greater than 150, then skip it and move to the next number<br>
+If the number is greater than 500, then stop the loop</p>
+<p>Given:<br>
+numbers = [12, 75, 150, 180, 145, 525, 50]</p>
+<p>Expected output:<br>
+75<br>
+150<br>
+145<br></p>
+<p>Refer: break and continue in Python</p>
+<p>Hint:<br>
+Use for loop to iterate each item of a list<br>
+Use break statement to break the loop if the current number is greater than 500<br>
+use continue statement move to next number if the current number is greater than 150<br>
+Use number % 5 == 0 condition to check if number is divisible by 5</p>
+<p>Solution:
+<div class="highlight"><pre><span></span><code><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="mi">145</span><span class="p">,</span> <span class="mi">525</span><span class="p">,</span> <span class="mi">50</span><span class="p">]</span>
+<span class="c1"># iterate each item of a list</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">item</span> <span class="o">&gt;</span> <span class="mi">500</span><span class="p">:</span>
+        <span class="k">break</span>
+    <span class="k">elif</span> <span class="n">item</span> <span class="o">&gt;</span> <span class="mi">150</span><span class="p">:</span>
+        <span class="k">continue</span>
+    <span class="c1"># check if number is divisible by 5</span>
+    <span class="k">elif</span> <span class="n">item</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+</code></pre></div>
+<br></p>
+<h3 id="lab-6-count-the-total-number-of-digits-in-a-number">Lab 6: Count the total number of digits in a number</h3>
+<p>Write a program to count the total number of digits in a number using a while loop.
+For example, the number is 75869, so the output should be 5.</p>
+<p>Hint:<br>
+Set counter = 0<br>
+Run while loop till number != 0<br>
+In each iteration of loop<br>
+Reduce the last digit from the number using floor division ( number = number // 10)<br>
+Increment counter by 1<br>
+print counter</p>
+<p>Solution:
+<div class="highlight"><pre><span></span><code><span class="n">num</span> <span class="o">=</span> <span class="mi">75869</span>
+<span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">num</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="c1"># floor division</span>
+    <span class="c1"># to reduce the last digit from number</span>
+    <span class="n">num</span> <span class="o">=</span> <span class="n">num</span> <span class="o">//</span> <span class="mi">10</span>
+
+    <span class="c1"># increment counter by 1</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="n">count</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Total digits are:&quot;</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span>
+</code></pre></div>
+<br></p>
+<h3 id="lab-7-print-the-following-pattern">Lab 7: Print the following pattern</h3>
+<p>Write a program to use for loop to print the following reverse number pattern
+<div class="highlight"><pre><span></span><code><span class="mi">5</span> <span class="mi">4</span> <span class="mi">3</span> <span class="mi">2</span> <span class="mi">1</span> 
+<span class="mi">4</span> <span class="mi">3</span> <span class="mi">2</span> <span class="mi">1</span> 
+<span class="mi">3</span> <span class="mi">2</span> <span class="mi">1</span> 
+<span class="mi">2</span> <span class="mi">1</span> 
+<span class="mi">1</span>
+</code></pre></div></p>
+<p>Hint:<br>
+Set row = 5 because the above pattern contains five rows<br>
+create an outer loop to iterate numbers from 1 to 5 using for loop and range() function<br>
+Create an inner loop inside the outer loop in such a way that in each iteration of the outer loop, the inner loop iteration will be reduced by i. i is the current number of an outer loop<br>
+In each iteration of the inner loop, print the iterator variable of the inner loop (j)</p>
+<p>Note:<br>
+In the first iteration of the outer loop inner loop execute five times.<br>
+In the second iteration of the outer loop inner loop execute four times.<br>
+In the last iteration of the outer loop, the inner loop will execute only once</p>
+<p>Solution:
+<div class="highlight"><pre><span></span><code><span class="n">n</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="o">-</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
+</code></pre></div>
+<br></p>
+<h3 id="lab-8-print-list-in-reverse-order-using-a-loop">Lab 8: Print list in reverse order using a loop</h3>
+<p>Given:<br>
+list1 = [10, 20, 30, 40, 50]</p>
+<p>Expected output:
+<div class="highlight"><pre><span></span><code><span class="mi">50</span>
+<span class="mi">40</span>
+<span class="mi">30</span>
+<span class="mi">20</span>
+<span class="mi">10</span>
+</code></pre></div></p>
+<p>Hint:<br>
+Approach 1: Use the built-in function reversed() to reverse the list<br>
+Approach 2: Use for loop and the len() function</p>
+<p>Get the size of a list using the len(list1) function<br>
+Use for loop and reverse range() to iterate index number in reverse order starting from length-1 to 0. In each iteration, i will be reduced by 1<br>
+In each iteration, print list item using list1[i]. i is the current value if the index</p>
+<p>Solution:<br>
+Solution 1: Using a reversed() function and for loop
+<div class="highlight"><pre><span></span><code><span class="n">list1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">]</span>
+<span class="c1"># reverse list</span>
+<span class="n">new_list</span> <span class="o">=</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">list1</span><span class="p">)</span>
+<span class="c1"># iterate reversed list</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">new_list</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+</code></pre></div></p>
+<p>Solution 2: Using for loop and the len() function
+<div class="highlight"><pre><span></span><code><span class="n">list1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">]</span>
+<span class="c1"># get list size</span>
+<span class="c1"># len(list1) -1: because index start with 0</span>
+<span class="c1"># iterate list in reverse order</span>
+<span class="c1"># star from last item to first</span>
+<span class="n">size</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">list1</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">list1</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</code></pre></div>
+<br></p>
+<h3 id="lab-9-display-numbers-from-10-to-1-using-for-loop">Lab 9: Display numbers from -10 to -1 using for loop</h3>
+<p>Expected output:
+<div class="highlight"><pre><span></span><code><span class="o">-</span><span class="mi">10</span>
+<span class="o">-</span><span class="mi">9</span>
+<span class="o">-</span><span class="mi">8</span>
+<span class="o">-</span><span class="mi">7</span>
+<span class="o">-</span><span class="mi">6</span>
+<span class="o">-</span><span class="mi">5</span>
+<span class="o">-</span><span class="mi">4</span>
+<span class="o">-</span><span class="mi">3</span>
+<span class="o">-</span><span class="mi">2</span>
+<span class="o">-</span><span class="mi">1</span>
+</code></pre></div></p>
+<p>Hint: Reverse range</p>
+<p>Solution:
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+</code></pre></div>
+<br></p>
+<h3 id="lab-10-use-else-block-to-display-a-message-done-after-successful-execution-of-for-loop">Lab 10: Use else block to display a message “Done” after successful execution of for loop</h3>
+<p>For example, the following loop will execute without any error.</p>
+<p>Given:
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</code></pre></div></p>
+<p>Expected output:
+<div class="highlight"><pre><span></span><code><span class="mi">0</span>
+<span class="mi">1</span>
+<span class="mi">2</span>
+<span class="mi">3</span>
+<span class="mi">4</span>
+<span class="n">Done</span><span class="err">!</span>
+</code></pre></div></p>
+<p>Hint:
+Same as the if statement, Python allows us to use an else block along with for loop. for loop can have the else block, which will be executed when the loop terminates normally. See else block in for loop.</p>
+<p>Solution:
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Done!&quot;</span><span class="p">)</span>
+</code></pre></div>
+<br></p>
+<h3 id="lab-11-write-a-program-to-display-all-prime-numbers-within-a-range">Lab 11: Write a program to display all prime numbers within a range</h3>
+<p>Note: A Prime Number is a number that cannot be made by multiplying other whole numbers. A prime number is a natural number greater than 1 that is not a product of two smaller natural numbers</p>
+<p>Examples:<br>
+6 is not a prime mumber because it can be made by 2×3 = 6<br>
+37 is a prime number because no other whole numbers multiply together to make it.</p>
+<p>Given:
+<div class="highlight"><pre><span></span><code><span class="c1"># range</span>
+<span class="n">start</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="n">end</span> <span class="o">=</span> <span class="mi">50</span>
+</code></pre></div></p>
+<p>Expected output:
+<div class="highlight"><pre><span></span><code><span class="n">Prime</span> <span class="n">numbers</span> <span class="n">between</span> <span class="mi">25</span> <span class="ow">and</span> <span class="mi">50</span> <span class="n">are</span><span class="p">:</span>
+<span class="mi">29</span>
+<span class="mi">31</span>
+<span class="mi">37</span>
+<span class="mi">41</span>
+<span class="mi">43</span>
+<span class="mi">47</span>
+</code></pre></div></p>
+<p>Solution:
+<div class="highlight"><pre><span></span><code><span class="n">start</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="n">end</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Prime numbers between&quot;</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="s2">&quot;and&quot;</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="s2">&quot;are:&quot;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="c1"># all prime numbers are greater than 1</span>
+    <span class="c1"># if number is less than or equal to 1, it is not prime</span>
+    <span class="k">if</span> <span class="n">num</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">num</span><span class="p">):</span>
+            <span class="c1"># check for factors</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">num</span> <span class="o">%</span> <span class="n">i</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="c1"># not a prime number so break inner loop and</span>
+                <span class="c1"># look for next number</span>
+                <span class="k">break</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+</code></pre></div>
+<br></p>
+<h3 id="lab-12-display-fibonacci-series-up-to-10-terms">Lab 12: Display Fibonacci series up to 10 terms</h3>
+<p>The Fibonacci Sequence is a series of numbers. The next number is found by adding up the two numbers before it. The first two numbers are 0 and 1.</p>
+<p>For example, 0, 1, 1, 2, 3, 5, 8, 13, 21. The next number in this series above is 13+21 = 34.</p>
+<p>Expected output:<br>
+Fibonacci sequence:<br>
+0  1  1  2  3  5  8  13  21  34</p>
+<p>Hint:<br>
+Set num1 = 0 and num2 =1 (first two numbers of the sequence)<br>
+Run loop ten times<br>
+In each iteration<br>
+print num1 as the current number of the sequence<br>
+Add last two numbers to get the next number res = num1+ num2<br>
+update values of num1 and num2. Set num1=num2 and num2=res</p>
+<p>Solution:
+<div class="highlight"><pre><span></span><code><span class="c1"># first two numbers</span>
+<span class="n">num1</span><span class="p">,</span> <span class="n">num2</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Fibonacci sequence:&quot;</span><span class="p">)</span>
+<span class="c1"># run loop 10 times</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="c1"># print next number of a series</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;  &quot;</span><span class="p">)</span>
+    <span class="c1"># add last two numbers to get next number</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">num1</span> <span class="o">+</span> <span class="n">num2</span>
+
+    <span class="c1"># update values</span>
+    <span class="n">num1</span> <span class="o">=</span> <span class="n">num2</span>
+    <span class="n">num2</span> <span class="o">=</span> <span class="n">res</span>
+</code></pre></div>
+<br></p>
+<h3 id="lab-13-find-the-factorial-of-a-given-number">Lab 13: Find the factorial of a given number</h3>
+<p>Write a program to use the loop to find the factorial of a given number.</p>
+<p>The factorial (symbol: !) means to multiply all whole numbers from the chosen number down to 1.</p>
+<p>For example: calculate the factorial of 5<br>
+5! = 5 × 4 × 3 × 2 × 1 = 120</p>
+<p>Expected output:<br>
+120</p>
+<p>Hint:<br>
+Set variable factorial =1 to store factorial of a given number<br>
+Iterate numbers starting from 1 to the given number n using for loop and range() function. (here, the loop will run five times because n is 5)<br>
+In each iteration, multiply factorial by the current number and assign it again to a factorial variable (factorial = factorial *i)<br>
+After the loop completes, print factorial</p>
+<p>Solution:
+<div class="highlight"><pre><span></span><code><span class="n">num</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">factorial</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">if</span> <span class="n">num</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Factorial does not exist for negative numbers&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">num</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The factorial of 0 is 1&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="c1"># run loop 5 times</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">num</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="c1"># multiply factorial by current number</span>
+        <span class="n">factorial</span> <span class="o">=</span> <span class="n">factorial</span> <span class="o">*</span> <span class="n">i</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The factorial of&quot;</span><span class="p">,</span> <span class="n">num</span><span class="p">,</span> <span class="s2">&quot;is&quot;</span><span class="p">,</span> <span class="n">factorial</span><span class="p">)</span>
+</code></pre></div>
+<br></p>
+<h3 id="lab-14-reverse-a-given-integer-number">Lab 14: Reverse a given integer number</h3>
+<p>Given:<br>
+76542</p>
+<p>Expected output:<br>
+24567</p>
+<p>Solution
+<div class="highlight"><pre><span></span><code><span class="n">num</span> <span class="o">=</span> <span class="mi">76542</span>
+<span class="n">reverse_number</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Given Number &quot;</span><span class="p">,</span> <span class="n">num</span><span class="p">)</span>
+<span class="k">while</span> <span class="n">num</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">reminder</span> <span class="o">=</span> <span class="n">num</span> <span class="o">%</span> <span class="mi">10</span>
+    <span class="n">reverse_number</span> <span class="o">=</span> <span class="p">(</span><span class="n">reverse_number</span> <span class="o">*</span> <span class="mi">10</span><span class="p">)</span> <span class="o">+</span> <span class="n">reminder</span>
+    <span class="n">num</span> <span class="o">=</span> <span class="n">num</span> <span class="o">//</span> <span class="mi">10</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Revere Number &quot;</span><span class="p">,</span> <span class="n">reverse_number</span><span class="p">)</span>
+</code></pre></div>
+<br></p>
+<h3 id="lab-15-use-a-loop-to-display-elements-from-a-given-list-present-at-odd-index-positions">Lab 15: Use a loop to display elements from a given list present at odd index positions</h3>
+<p>Given:<br>
+my_list = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]<br></p>
+<p>Note: list index always starts at 0</p>
+<p>Expected output:<br>
+20 40 60 80 100</p>
+<p>Hint:<br>
+Use list slicing. Using list slicing, we can access a range of elements from a list</p>
+<p>Solution:
+<div class="highlight"><pre><span></span><code><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span>
+<span class="c1"># stat from index 1 with step 2( means 1, 3, 5, an so on)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">my_list</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+</code></pre></div>
+<br></p>
+<h3 id="lab-16-calculate-the-cube-of-all-numbers-from-1-to-a-given-number">Lab 16: Calculate the cube of all numbers from 1 to a given number</h3>
+<p>Write a program to rint the cube of all numbers from 1 to a given number</p>
+<p>Given:<br>
+input_number = 6</p>
+<p>Expected output:<br>
+Current Number is : 1  and the cube is 1<br>
+Current Number is : 2  and the cube is 8<br>
+Current Number is : 3  and the cube is 27<br>
+Current Number is : 4  and the cube is 64<br>
+Current Number is : 5  and the cube is 125<br>
+Current Number is : 6  and the cube is 216</p>
+<p>Hint:
+Iterate numbers from 1 to n using for loop and range() function<br>
+In each iteration of a loop, calculate the cube of a current number (i) by multiplying itself three times (c = i * i* i)</p>
+<p>Solution:
+<div class="highlight"><pre><span></span><code><span class="n">input_number</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">input_number</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Current Number is :&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="s2">&quot; and the cube is&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">i</span> <span class="o">*</span> <span class="n">i</span> <span class="o">*</span> <span class="n">i</span><span class="p">))</span>
+</code></pre></div>
+<br></p>
+<h3 id="lab-17-find-the-sum-of-the-series-upto-n-terms">Lab 17: Find the sum of the series upto n terms</h3>
+<p>Write a program to calculate the sum of series up to n term. For example, if n =5 the series will become 2 + 22 + 222 + 2222 + 22222 = 24690</p>
+<p>Given:<br>
+<div class="highlight"><pre><span></span><code><span class="c1"># number of terms</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">5</span>
+</code></pre></div></p>
+<p>Expected output:<br>
+24690</p>
+<p>Solution:
+<div class="highlight"><pre><span></span><code><span class="n">n</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="c1"># first number of sequence</span>
+<span class="n">start</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">sum_seq</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1"># run loop n times</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;+&quot;</span><span class="p">)</span>
+    <span class="n">sum_seq</span> <span class="o">+=</span> <span class="n">start</span>
+    <span class="c1"># calculate the next term</span>
+    <span class="n">start</span> <span class="o">=</span> <span class="n">start</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Sum of above series is:&quot;</span><span class="p">,</span> <span class="n">sum_seq</span><span class="p">)</span>
+</code></pre></div>
+<br></p>
+<h3 id="lab-18-print-the-following-pattern">Lab 18: Print the following pattern</h3>
+<p>Write a program to print the following start pattern using the for loop</p>
+<div class="highlight"><pre><span></span><code><span class="o">*</span> 
+<span class="o">*</span> <span class="o">*</span> 
+<span class="o">*</span> <span class="o">*</span> <span class="o">*</span> 
+<span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> 
+<span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> 
+<span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> 
+<span class="o">*</span> <span class="o">*</span> <span class="o">*</span> 
+<span class="o">*</span> <span class="o">*</span> 
+<span class="o">*</span>
+</code></pre></div>
+<p>Hint:<br>
+Use two for loops. First for loop to print the upper pattern and second for loop to print lower pattern</p>
+<p>First Pattern:
+<div class="highlight"><pre><span></span><code><span class="o">*</span> 
+<span class="o">*</span> <span class="o">*</span> 
+<span class="o">*</span> <span class="o">*</span> <span class="o">*</span> 
+<span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> 
+<span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span>
+</code></pre></div></p>
+<p>Second Pattern:
+<div class="highlight"><pre><span></span><code><span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> 
+<span class="o">*</span> <span class="o">*</span> <span class="o">*</span> 
+<span class="o">*</span> <span class="o">*</span> 
+<span class="o">*</span>
+</code></pre></div></p>
+<p>Solution:
+<div class="highlight"><pre><span></span><code><span class="n">rows</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">rows</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;*&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\r</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;*&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\r</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div></p>
+<p><br><br><br></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; - 2025 Learn Python
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>

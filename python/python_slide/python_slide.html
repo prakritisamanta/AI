@@ -1,0 +1,1223 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>London School of Python</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="../../presentation/dist/reset.css">
+		<link rel="stylesheet" href="../../presentation/dist/reveal.css">
+		<link rel="stylesheet" href="../../presentation/dist/theme/moon.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../../presentation/plugin/highlight/monokai.css">
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+
+            <section>
+				<h1>Python</h1>
+			</section>
+			<section>
+				<h2>Topics</h2>
+				<ul><h5>
+					<li>Introduction, Get Start</li>
+					<li>Variable and Data types</li>
+					<li>Output and Input</li>
+					<li>Operators</li>
+					<li>Number, String</li>
+					<li>Sequence, Selection (If), Iteration (Loop)</li>
+					<li>List, Dictionary</li>
+					<li>Functions</li>
+					<li>Pandas</li>
+				</h5>					
+				</ul>
+			</section>
+
+
+			<section>
+				<section><h2>Introduction</h2></section>
+				<section>
+					<h3>Python is a high level, general purpose, interpreted, object-oriented programming language</h3>
+				</section>
+				<section>
+					<ul>
+						<li>Beginner friendly, easy to learn and understand</li>
+						<li>Dynamic data type</li>
+						<li>Cross platform</li>
+						<li>Auto memory management and garbage collection</li>
+						<li>Huge community</li>
+						<li>Large ecosystem of libraries, frameworks and tools</li>
+					</ul>
+				</section>
+			</section>
+
+
+			<section>
+				<section><h2>Get Started</h2></section>
+				<section>
+					<h3>Development Environment</h3>
+					IDE (Integrated Development Environment) or<br> 
+					IDLE (Integrated Dev. and Learning Environment)<br><br>
+					<h3>Modes:</h3>
+						<ul>
+							<li>Interactive Mode</li>
+							<li>Script Mode</li>
+						</ul>
+				</section>
+				<section>
+					<h2>First Python Program</h2>
+					print("Hello World!")<br><br>
+
+					print(2 + 4)<br>
+					print(10 - 5)
+				</section>
+			</section>
+
+
+			<section>
+				<section>
+					<h2>Variable and Data Types</h2>
+				</section>
+				<section>
+					<h2>Variable</h2>
+					Variable is a temporary memory location in which you can store data (text or numbers).<br><br>
+					<span class="fragment"><h3>name = "Tom"</h3></span>
+					<span class="fragment"><h3>age = 10</h3></span>
+				</section>
+				<section>
+					<img height="150" data-src="./images/box.png" alt="Box">
+					<br>
+					It's like an empty box. You can put any value. <br>Change it's content.
+					<br><br>
+					<p>
+						<span class="fragment">
+							You can choose a name for the box<br>
+							(called <b>Identifier</b> or <b>variable name</b>)
+						</span>
+					</p>					
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						### Variable Naming Rules
+						
+						- <span class="fragment">Can contain only letters[A-Z][a-z], numbers[0-9] and underscores. eg. Max_Score1</span>
+						- <span class="fragment">Cannot start with a number.</span>
+						- <span class="fragment">Cannot use a Python <b>"Reserved Words"</b> eg. print, if, class etc.</span>
+						- <span class="fragment">Use meaningful names, such as "firstName" instead of "var".</span>
+					</script>
+				</section>
+				<section>
+					<h3>Python Reserved Words</h3><br>
+					and, assert, break, class, continue, def, del, elif, else, except, exec, finally, for, from, global, if, import, in, is, lambda, not, or, pass, print, raise, return, try, while, with, yield
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## Quiz
+						<span class="fragment">score</span>
+						<span class="fragment">(correct)</span><br>
+						<span class="fragment">new score</span>
+						<span class="fragment">(incorrect)</span><br>
+						<span class="fragment">2ndScore</span>
+						<span class="fragment">(incorrect)</span><br>
+						<span class="fragment">score2</span>
+						<span class="fragment">(correct)</span><br>
+						<span class="fragment">max_score</span>
+						<span class="fragment">(correct)</span><br>
+						<span class="fragment">print</span>
+						<span class="fragment">(incorrect)</span><br>
+					</script>
+				</section>
+				<section>
+					<h2>Data Types</h2>
+					<ul>
+						<li>Character</li>
+						<li>String</li>
+						<li>Integer</li>
+						<li>Float (Real)</li>
+						<li>Boolean</li>
+						<li>List</li>
+						<li>Dictionary</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Character</h3>
+					Character data type is able to store a single letter, number or symbol such as<br><br>
+					<p>
+						<span class="fragment">"A"</span> 
+						<span class="fragment">, "b"</span>
+						<span class="fragment">, "$"</span>
+						<span class="fragment">, "3"</span>
+					</p>
+				</section>
+				<section>
+					<h3>String</h3>
+					String is a group of characters to form words or sentences<br>
+					<p>
+						<span class="fragment">name = "Harry Potter"</span><br>						
+						<span class="fragment">phone = '+44 123456789'</span><br>
+						<span class="fragment">address = """29 Craft Avenue<br>Bradford, UK"""</span><br>
+					</p>
+				</section>
+				<section>
+					<h3>Integer</h3>
+					Integer is whole number, positive or negative, without decimal point.
+					It is used for counting or storing quantities<br><br>
+					1234 is an integer<br>
+					<p>
+						<span class="fragment">1234.0</span> 
+						<span class="fragment">is not an integer</span>
+					</p>
+				</section>
+				<section>
+					<h3>Float</h3>
+					Float (Real) is used for numbers, positive or negative, that have a decimal or fractional part<br><br>
+					987.234
+				</section>
+				<section>
+					<h3>Boolean</h3>
+					Boolean can store True or False value. It is used to indicate the result of a condition.<br><br>
+					<p>
+						<span class="fragment">isRaining = False</span><br>
+						<span class="fragment">sorted = True</span>
+					</p>
+				</section>
+				<section>
+					<h3>List</h3>
+					Variable is used to store a single item of data. List allows to store multiple items of data.
+					<br>
+					It contains items separated by commas, enclosed in square brackets ([]).
+					<br><br>
+					list1 = [ 'abcd', 786 , 2.23, 'john', 70.2 ]
+				</section>
+				<section>
+					<h3>Dictionary</h3>
+					Python's dictionaries are kind of hash table type. Dictionaries are enclosed by curly braces ({ }) and values can be assigned and accessed using square braces ([])<br><br>
+					dict = {'name': 'john', 'code':6734, 'dept': 'sales'}
+				</section>
+			</section>
+
+
+
+			<section>
+				<section>
+					<h2>Operators</h2>
+				</section>
+				<section>
+					<ul>
+						<li>Arithmetic Operators</li>
+						<li>Relational Operators</li>
+						<li>Boolean Operators</li>
+					</ul>
+				</section>
+				<section><h2>Arithmetic Operators</h2></section>
+				<section data-markdown>
+					<script type="text/template">
+						|Arithmetic|Operator|Example|Output|
+						|-|-|-|-|
+						|Addition |+|10 + 5|15|
+						|Subtraction |-|10 - 5|5|
+						|Multiplication |*|10 * 5|50|
+						|Division |/|11 / 4|2.66|
+						|Floor Division |//|11 // 4|2|
+						|Mod (Remainder) |%|11 % 4|3|
+						|EXPONENT |**|2 ** 5|32|
+						|ROOT SQUARE |**|25 ** 0.5|5|						
+					</script>
+				</section>
+				<section>
+					<h2>BIDMAS</h2>
+					<span class="fragment">The order of arithmetic operations matters.</span><br><br>
+					<span class="fragment"><b>B</b>rackets, <b>I</b>ndices, <b>D</b>ivision and <b>M</b>ultiplication, <b>A</b>ddition and <b>S</b>ubstraction</span><br><br>
+					<span class="fragment">8 + 2 * 5</span>
+					<span class="fragment">(Answer is 18)</span><br>
+					<span class="fragment">(30 - 5 * 3) / 5</span>
+					<span class="fragment">(Answer is 3)</span>
+				</section>
+				<section>
+					<h2>Relational Operators</h2>
+					The relational operators (comparison operators) evaluate to a Boolean True or False.
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						|Operator|Meaning|Example|Evaluates to|
+						|-|-|-|-|
+						|==|equal to|7==7|True|
+						|!=|not equal to|6!=7|True|
+						|>|Greater than|7>6|True|
+						|<|Less than|6<7|True|
+						|>=|Greater thann or equal to|6>=7|False|
+						|<=|Less than or equal to|7<=7|True|						
+					</script>
+				</section>
+				<section>
+					<pre data-id="code-animation"><code class="hljs javascript" data-trim data-line-numbers>
+						name = input("enter a name")
+						if name == "George":
+							print("Hello George")
+					</code></pre><br>
+					<pre data-id="code-animation"><code class="hljs javascript" data-trim data-line-numbers>
+						name = input("enter a name")
+						if name != "George":
+							print("You are not George")
+					</code></pre>
+				</section>
+				<section>
+					<h2>Boolean Operators</h2>
+					If multiple conditions need to be evaluated, the Boolean operators (or Logical operators)<br> 
+					AND and OR can be used.
+				</section>
+				<section>
+					AND operator requires both conditions to be True for the overall condition to be True.
+					<pre data-id="code-animation"><code class="hljs javascript" data-trim>
+						x = 6
+						x > 0 and x < 7
+						True
+					</code></pre><br>
+					
+					OR operator requires one or the other (or both) of the conditions to be True for the overall condition to be True.					
+					<pre data-id="code-animation"><code class="hljs javascript" data-trim data-line-numbers>
+						x = 5
+						y = 8
+						x/2==2 or y/4==2
+						True
+					</code></pre>
+				</section>
+				<section>
+					A condition can be reversed using the NOT operator.
+					<pre data-id="code-animation"><code class="hljs javascript" data-trim data-line-numbers>
+						x = 5
+						y = 8
+						not (x>y)
+						True
+					</code></pre>
+				</section>
+			</section>
+
+
+
+			<section>
+				<section><h2>Number</h2></section>
+				<section>
+					Numeric data types store numeric values (int or float).<br><br>
+
+					Mathematical Functions<br>
+	abs(x), ceil(x), cmp(x, y), exp(x), fabs(x), floor(x), log(x), log10(x),
+	max(x1, x2,...), min(x1, x2,...), modf(x), pow(x, y), round(x [,n]), sqrt(x)
+					<br><br>
+					Trigonometric Functions<br>
+					sin(x), cos(x), tan(x), hypot(x, y), degrees(x), radians(x)
+				</section>
+				<section>
+					<h3>Random Number</h3>
+					Random numbers can be generated by Python used for games, simulations, testing, security, and privacy applications.
+					<br><br>
+					
+					<span class="fragment"><h5>Random value between 1 and 100:</h5>
+					import random<br>
+					print(random.randint(1, 100))</span><br>
+				</section>
+			</section>
+
+
+			<section>
+				<section>
+					<h2>String</h2>
+				</section>				
+				<section>
+					<h3>String is a set of characters</h3>
+					<img height="100" data-src="./images/string.png" alt="String">
+					<br>
+					<ul>
+						<span class="fragment"><li>has 11 characters</li></span>
+						<span class="fragment"><li>4th character is g</li></span>
+						<span class="fragment"><li>g has index 3</li></span>
+						<span class="fragment"><li>Index start at 0 not 1</li></span>
+						<span class="fragment"><li>"gram" is found from index 3 to 6</li></span>
+					</ul>
+				</section>
+				<section>
+					<h3>LENGTH</h3>
+					To count how many characters are contained in a string<br><br>
+
+					len("Tom") gives 3<br>
+					len("077556644") gives 9<br>
+				</section>
+				<section>
+					<span data-markdown>
+						<script type="text/template">
+							## Substring
+
+							To extract characters from a string
+
+							|H|e|l|l|o| |P|y|t|h|o|n|
+							|-|-|-|-|-|-|-|-|-|-|-|-|
+							|0|1|2|3|4|5|6|7|8|9|10|11|
+						</script>
+					</span>					
+					<span class="fragment">welcome = "Hello Python"</span><br>
+					<span class="fragment">print(welcome[0:3])</span>
+					<span class="fragment"> --> Hel</span><br>
+					<span class="fragment">print(welcome[7])</span>
+					<span class="fragment"> --> P</span><br>
+					<span class="fragment">print(welcome[7:])</span>
+					<span class="fragment"> --> Python</span><br>
+					<span class="fragment">print(welcome[-1])</span>
+					<span class="fragment"> --> n</span><br>
+					<span class="fragment">print(welcome[-3:-1])
+					<span class="fragment"> --> ho</span></span>
+				</section>				
+				<section>
+					<h3>Concatenation</h3>
+					<h4>Concatenation of strings means to join multiple strings together.<br>
+					This is done using the "+" operator</h4>
+					<span class="fragment">print("Hello" + "Python")</span>
+					<span class="fragment"> --> HelloPython</span><br><br>
+					<span class="fragment">print("Hello", "Python")</span>
+					<span class="fragment"> --> Hello Python</span><br><br>
+					<span class="fragment"><h4>Formatting</h4>
+						print("Hello {}").format("Python")</span>
+					<span class="fragment"> --> Hello Python</span><br><br>
+					
+				</section>
+				<section>
+					<h3>Quotation</h3>
+					<pre data-id="code-animation"><code class="hljs javascript" data-trim data-line-numbers>
+						print("Hello World!")
+
+						print('Hello World!')
+
+						print("""Hello
+						World!""")
+					</code></pre>
+				</section>
+				<section>
+					<h3 data-id="code-title">Escape Character</h3>
+					<pre data-id="code-animation"><code class="hljs javascript" data-trim>
+						print("Hello! Welcome to\n Python world.")
+
+						# \t(Tab), \"(print double quote), \'(print single quote)
+					</code></pre>
+					<br>
+					<span class="fragment"><h3>Repetition</h3>
+						print("Hello" * 2) --> HelloHello</span><br>					
+				</section>
+				<section>
+					<h3>String / Type Conversion (Casting)</h3>
+					String conversion means converting another data type to or from the string data type<br>
+					<span class="fragment">x = 10<br>					
+					str_x = str(x)</span><br><br>
+					
+					<span class="fragment">y = "10"<br>					
+					int_y = int(y)</span><br><br>
+
+					<span class="fragment">z = int("Python")</span>
+					
+				</section>
+				<section>
+				<h3>String Functions</h3>
+				capitalize(), center(), count(), decode(), encode(), endswith(), expandtabs(), find(), index(), isalnum(), isalpha(), isdigit(), islower(), isnumeric(), isspace(), istitle(), isupper(), join(), len(), ljust(), lower(), lstrip(), maketrans(), max(str), min(str), replace(), rfind(), rindex(), rjust(), rstrip(), split(), splitlines(), startswith(), strip(), swapcase(), title(), translate(), upper(), zfill(), isdecimal()
+				</section>
+			</section>
+
+
+
+			<section>
+				<section><h2>Output and Input</h2></section>
+				<section>
+					<h2 data-id="code-title">Output</h2>
+					<h3>Quotation</h3>
+					<pre data-id="code-animation"><code class="hljs javascript" data-trim data-line-numbers>
+						print("Hello World!")
+
+						print('Hello World!')
+
+						print("""Hello
+						World!""")
+					</code></pre>
+				</section>
+				<section>
+					<h3 data-id="code-title">Concatenation</h3>
+					<pre data-id="code-animation"><code class="hljs javascript" data-trim>
+						print("Hello" + "World!")
+						
+						print("Hello" , "welcome to" , "Python world")
+
+						print("Hello {}").format("Python")
+					</code></pre>
+					<br>
+					<h3 data-id="code-title">Escape Character</h3>
+					<pre data-id="code-animation"><code class="hljs javascript" data-trim>
+						print("Hello! Welcome to\n Python world.")
+
+						# \t(Tab), \"(print double quote), \'(print single quote)
+					</code></pre>
+				</section>
+				<section>
+					<h3 data-id="code-title">Arguments</h3>
+					<h4 data-id="code-title">Argument end</h4>
+					<pre data-id="code-animation"><code class="hljs javascript" data-trim>
+						print("My name is ", end="")
+						print("Monty Python.")
+						# My name is Monty Python
+					</code></pre>
+
+					<h4 data-id="code-title">Argument sep</h4>
+					<pre data-id="code-animation"><code class="hljs javascript" data-trim>
+						print("My", "name", "is", "Monty", "Python.", sep="-")
+						# My_name_is_Monty_Python
+					</code></pre>
+				</section>
+				
+				<section>
+					<h2 data-id="code-title">Input</h2>
+					<pre data-id="code-animation"><code class="hljs python" data-trim>
+						marks = input('Enter Marks')
+						print(marks)
+					</code></pre>
+					<h4 data-id="code-title">Type Casting</h4>
+					<pre data-id="code-animation"><code class="hljs python" data-trim>
+						marks = input('Enter Marks')
+						print(marks + 10)
+					</code></pre>
+					<pre data-id="code-animation"><code class="hljs python" data-trim>
+						# Try again
+						marks = int(input('Enter Marks'))
+						print(marks + 10)
+					</code></pre>
+				</section>
+				<section>
+					<h2 data-id="code-title">Comment</h2>
+					<pre data-id="code-animation"><code class="hljs python" data-trim>
+						# First comment on Hello World program
+						print("Hello World!")
+					</code></pre>
+				</section>
+			</section>
+
+
+
+			<section>
+				<section>
+					<h2>Programming Concepts</h2>
+					<h3>(Sequence, Selection and Iteration)</h3>
+				</section>
+				<section>
+					The building blocks for any computer program can be reduced down to only three constructs:<br><br>
+
+					<ul>
+						<li>Sequence - the order in which things happen</li>
+						<li>Selection - choosing between possible actions</li>
+						<li>Iteration - repeating actions</li>
+					</ul>
+				</section>
+				<section><h2>Sequence</h2></section>
+				<section>
+					<h5>Sequence is the execution of statements one after the other, in order. The program runs from top to bottom and each instruction completes fully before the next one is executed.</h5>
+					<pre data-id="code-animation"><code class="hljs javascript" data-trim data-line-numbers>
+						# PROGRAM A
+						x = 10
+						x = x * 3
+						x = x + 1
+						print(x)
+						# 31
+					</code></pre>
+					<pre data-id="code-animation"><code class="hljs javascript" data-trim data-line-numbers>
+						# PROGRAM B
+						x = 10
+						x = x + 1
+						print(x)
+						x = x * 3
+						# 11
+					</code></pre>
+				</section>
+			</section>
+
+
+			<section>
+				<section><h2>Selection (IF)</h2></section>
+				<section>					
+					Selection is the construct used to make decisions in a program. These decisions are based on Boolean conditions (True or False).<br>
+					<img height="200" data-src="./images/condition.png" alt="Condition">
+				</section>
+				<section>
+					<h5>IF Condition</h5>
+					<pre data-id="code-animation"><code class="hljs javascript" data-trim data-line-numbers>
+						age = int(input("Enter Age"))
+						if age < 10 :
+							print("You are below 10 years")
+					</code></pre><br>
+					<h5>IF ELSE Condition</h5>
+					<pre data-id="code-animation"><code class="hljs javascript" data-trim data-line-numbers>
+						age = int(input("Enter Age"))
+						if age < 10 :
+							print("You are below 10 years")
+						else:
+							print("You are above 10 years")
+					</code></pre>
+				</section>
+				<section>
+					<h5>IF ELIF ELSE Condition</h5>
+					<pre data-id="code-animation"><code class="hljs javascript" data-trim data-line-numbers>
+						age = int(input("Enter Age"))
+						if age < 10 :
+							print("You are below 10 years")
+						elif age < 20:
+							print("You are below 20 years")
+						else :
+							print("You are above 20 years")
+					</code></pre>
+
+					<h5>NESTED Condition</h5>
+					<pre data-id="code-animation"><code class="hljs javascript" data-trim data-line-numbers>
+						age = int(input("Enter Age"))
+						if age < 10 :
+							print("You are below 10 years")
+						else :
+							if age < 20:
+								print("You are below 20 years")
+							else :
+								print("You are above 20 years")
+					</code></pre>
+				</section>
+			</section>
+
+
+			
+
+
+			<section>
+				<section>
+					<h2>Iteration (Loop)</h2>
+					Iteration is the construct used to repeat sections of code. It's commonly called looping.
+				</section>
+				<section>
+					<img height="350" data-src="./images/loop.png" alt="Loop"><br>
+					Code in English (psudo-code)					
+					<pre data-id="code-animation"><code class="hljs python" data-trim data-line-numbers>						
+						loop i equals 1 to 10
+							output i
+						end loop
+					</code></pre>
+				</section>
+				<section>
+					<h3>Definite loops</h3>
+					Definite iteration uses the FOR loop.<br><br>
+					<ul>
+						<li>This uses a variable to act as a counter for the loop.</li>
+						<li>The program will assign this variable a starting value.</li>
+						<li>Automatically increment the variable by one every time the code repeats.</li>
+						<li>When this counter equals the final value, the loop stops.</li>
+					</ul>
+				</section>
+				<section>
+					<pre data-id="code-animation"><code class="hljs javascript" data-trim data-line-numbers>
+						for i in range(1, 10):
+							print(i)
+
+						# 1 2 3 4 5 6 7 8 9
+					</code></pre><br>
+					<pre data-id="code-animation"><code class="hljs javascript" data-trim data-line-numbers>
+						for i in range(10):
+							print(i)
+
+						# 0 1 2 3 4 5 6 7 8 9
+					</code></pre>
+					<pre data-id="code-animation"><code class="hljs javascript" data-trim data-line-numbers>
+						for i in range(1, 11, 2):
+							print(i)
+
+						# 1 3 5 7 9
+					</code></pre>
+				</section>
+				<section>
+					<h3>Indefinite loops</h3>
+					Indefinite iteration checks a condition each time around the loop to decide whether to repeat the loop again or continue.<br><br>
+					<ul>
+						<li>WHILE loop</li>
+					</ul>
+				</section>
+				<section>
+					While Loop
+					<pre data-id="code-animation"><code class="hljs javascript" data-trim data-line-numbers>
+						total = 0
+						while total < 20:
+							num = int(input("enter number"))
+							total = total + num
+						print ("done!")
+					</code></pre>
+				</section>
+				<section>
+					Nested selection and iteration
+					<pre data-id="code-animation"><code class="hljs javascript" data-trim data-line-numbers>
+						for a in range(1, 5):
+							print("a = " + str(a))
+								for b in range(1, 3):
+									print(str(a) + " X " + str(b) + " = " + str(a * b))
+
+						a = 1
+						1 X 1 = 1
+						1 X 2 = 2
+						a = 2
+						2 X 1 = 2
+						2 X 2 = 4
+						a = 3
+						3 X 1 = 3
+						3 X 2 = 6
+						a = 4
+						4 X 1 = 4
+						4 X 2 = 8
+					</code></pre>
+					<pre data-id="code-animation"><code class="hljs javascript" data-trim data-line-numbers>
+						# Even numbers upto 20
+						for i in range(1, 21):
+							if i % 2 == 0 :
+								print(i)
+						# 2 4 6 8 10 12 14 16 18 20
+					</code></pre>
+				</section>
+				<section>
+					<h3>Control Statement</h3>
+					<ul>
+						<li><b>break statement</b> : Terminates the loop statement and transfers execution to the statement immediately following the loop.</li>
+						<li><b>continue statement</b> : Causes the loop to skip the remainder of it's body and immediately resets it's condition prior to reiterating.</li>
+						<li><b>pass statement</b> : The pass statement in Python is used when a statement is required syntactically but you do not want any command or code to execute.</li>
+					</ul>
+				</section>
+				<section>
+					<h3>break statement</h3>
+					Terminates the loop statement and transfers execution to the statement immediately following the loop.
+					<pre data-id="code-animation"><code class="hljs javascript" data-trim data-line-numbers>
+						for letter in 'Python': # First Example
+							if letter == 'h':
+								break
+								print 'Current Letter :', letter
+
+						var = 10 # Second Example
+						while var > 0:
+							print('Current variable value :', var)
+							var = var -1
+							if var == 5:
+								break
+					</code></pre>
+				</section>
+				<section>
+					<h3>continue statement</h3>
+					It returns the control to the beginning of the loop. The continue statement rejects all the remaining statements in the current iteration of the loop and moves the control back to the top of the loop.
+					<pre data-id="code-animation"><code class="hljs javascript" data-trim data-line-numbers>
+						for letter in 'Python': # First Example
+						if letter == 'h':
+							continue
+							print('Current Letter :', letter)
+						
+						
+						var = 10 # Second Example
+						while var > 0:
+							var = var -1
+							if var == 5:
+								continue
+								print('Current variable value :', var)
+					</code></pre>
+				</section>
+				<section>
+					<h3>pass statement</h3>
+					It is used when a statement is required syntactically but you do not want any command or code to execute. The pass statement is a null operation; nothing happens when it executes. 
+					<pre data-id="code-animation"><code class="hljs javascript" data-trim data-line-numbers>
+						for letter in 'Python':
+							if letter == 'h':
+								pass
+							print 'This is pass block'
+							print 'Current Letter :', letter
+					
+						Current Letter : P
+						Current Letter : y
+						Current Letter : t
+						This is pass block
+						Current Letter : h
+						Current Letter : o
+						Current Letter : n
+					</code></pre>
+				</section>
+			</section>
+
+
+
+			<section>
+				<section><h2>List</h2></section>
+				<section>
+					Variable is used to store a single item of data. List allows to store multiple items of data.
+					<br>
+					It contains items separated by commas, enclosed in square brackets ([]).
+					<br><br>					
+					<pre data-id="code-animation"><code class="hljs python" data-trim data-line-numbers>						
+						arr = ["Apple", "Orange", "Banana", "Pears", "Grapes"]
+						for i in range(0, 4):
+							print(arr[i])
+					</code></pre>
+					<br>
+					<pre data-id="code-animation"><code class="hljs python" data-trim data-line-numbers>						
+						scores = [5,7,0,10,8,3,7,3]
+						total = 0
+						for x in range(8):
+							total = total + scores[x]
+						print(total)
+					</code></pre>
+				</section>
+				<section>
+					The values stored in a list can be accessed using the slice operator ([ ] and [:]) with indexes starting at 0.<br><br>
+					<pre data-id="code-animation"><code class="hljs python" data-trim data-line-numbers>						
+						list1 = ['abc',123,2.2,'def',2]
+						print(list1)  # ['abc', 123, 2.2, 'def', 2]
+						print(list1[0])  # abc
+						print(list1[1:3])
+						print(list1[3:])
+						print(list1[:3])
+						list2 = ['a','b']
+						print(list1 + list2)
+						list1[1] = 456
+						print(list1)
+						del list1[1]
+						print(list1)
+					</code></pre>
+				</section>
+				<section>
+					<pre data-id="code-animation"><code class="hljs python" data-trim data-line-numbers>						
+						list1 = ['abc',123,2.2,'def',2]
+						print(len(list1))
+						print(['hi']*4)
+						print('def' in list1)
+						for i in list1: print(i) - List Comprehesion
+
+
+						list1 = ['abc',123,2.2,'def',2]
+						list2 = [1,2,3]
+						# print(cmp(list1,list2))
+						print(len(list1))
+						print(max(list2))
+
+
+						l1 = ['abc',123,2.2,'def',2]
+						l1.append(2)
+						print(l1)
+						print(l1.count(2))
+						print(l1.index(2))
+						l1.insert(2,10)
+						print(l1)
+						l1.remove(10)
+						print(l1)
+						l1.reverse()
+						print(l1)
+						l2 = [2,3,1,2,3]
+						l2.sort()
+						print(l2)
+						l2.sort(reverse=True)
+						print(l2)
+						# ['abc', 123, 2.2, 'def', 2, 2] 2 4 ['abc', 123, 10, 2.2, 'def', 2, 2] 
+						['abc', 123, 2.2, 'def', 2, 2] [2, 2, 'def', 2.2, 123, 'abc'] [1, 2, 2, 3, 3] [3, 3, 2, 2, 1]
+
+
+						l1=['a','b','c']
+						# str = ''.join("z." + str(s) + "," for s in l1).strip(',')
+						str = ''.join(s+',' for s in l1)
+						print(str)
+						# a,b,c,
+
+
+						l1=['a','b','c']
+						l2=['1','2','3']
+						l3=[]
+						for i in range(len(l1)):
+							a=l1[i]
+							l3.append([l1[i]+','+l2[i]])
+						print(l3)
+						# [['a,1'], ['b,2'], ['c,3']]
+
+
+						l1=[['aaa'], ['bbb'],['ccc', 'ddd']]
+						for i in l1:
+							for j in i:
+								if j.find('ccc') != -1:
+									print('present')
+						# present
+					</code></pre>
+				</section>
+				<section>
+					<h3>List Functions</h3>
+					<pre data-id="code-animation"><code class="hljs python" data-trim>						
+						cmp(list1, list2)
+						len(list)
+						max(list)
+						min(list)
+						list(seq)
+						list.append(obj)
+						list.count(obj)
+						list.extend(seq)
+						list.index(obj)
+						list.insert(index, obj)
+						list.pop(obj=list[-1])
+						list.remove(obj)
+						list.reverse()
+						list.sort([func])
+					</code></pre>
+				</section>
+			</section>
+
+
+
+			<section>
+				<section><h2>Dictionary</h2></section>
+				<section>
+					Python's dictionaries are kind of hash table type. They consist of key-value pairs. 
+					<br>
+					A dictionary key can be almost any Python type, but are usually numbers or strings. Values, on the other hand, can be any arbitrary Python object.
+					
+					<pre data-id="code-animation"><code class="hljs python" data-trim>
+						dict = {'age': '20', 'name': 'abc'}
+					</code></pre>
+				</section>
+				<section>
+					<pre data-id="code-animation"><code class="hljs python" data-trim>
+						dict={}
+						dict['name']='abc'
+						dict['age']='20'
+						print(dict)
+						# {'age': '20', 'name': 'abc'}
+
+						dict = {'name':'abc','age':30,'dept':'it'}
+						print(dict)
+						print(dict['name'])
+						print(dict.keys())
+						print(dict.values())
+						# {'age': 30, 'name': 'abc', 'dept': 'it'} 
+						# abc 
+						# dict_keys(['age', 'name', 'dept']) 
+						# dict_values([30, 'abc', 'it'])
+
+						dict = {'name':'abc','age':30,'dept':'it'}
+						dict['age']=40
+						print(dict)
+						dict['add']='address1'
+						print(dict)
+						del dict['add']
+						print(dict)
+						dict.clear()
+						del dict
+						print(dict)
+						#{'age': 40, 'name': 'abc', 'dept': 'it'} 
+						#{'age': 40, 'add': 'address1', 'name': 'abc', 'dept': 'it'} 
+						#{'age': 40, 'name': 'abc', 'dept': 'it'} 
+						#{}
+
+						d = {'name':'abc','age':30,'dept':'it'}
+						print(len(d))
+						print(d)
+						print(str(d))
+						print(type(d))
+						print(dict.items())
+						print(dict.keys())
+						print(dict.values())
+						d2 = {'name':'def','age':20}
+						d.update(d2)
+						print(d)
+						#3 
+						#{'age': 30, 'name': 'abc', 'dept': 'it'} 
+						#{'age': 30, 'name': 'abc', 'dept': 'it'} 
+						#dict_items([('age', 30), ('name', 'abc'), ('dept', 'it')]) 
+						#dict_keys(['age', 'name', 'dept']) 
+						#dict_values([30, 'abc', 'it']) 
+						#{'age': 20, 'name': 'def', 'dept': 'it'}
+					</code></pre>
+				</section>
+				<section>
+					<pre data-id="code-animation"><code class="hljs python" data-trim>
+						dict1 = {
+							"market":
+							{
+								"name":"market1",
+								"dimension1":
+								{
+									"table":"product",
+									"fields":"product_id,product_code,product_desc",
+									"keys":
+									[
+										{"pk":"product_id","sk":"product_id,product_code,product_desc","order":0},
+										{"pk":"product_level1_id","sk":"product_level1_id","order":1},
+										{"pk":"product_level2_id","sk":"product_level2_id","order":2},
+										{"pk":"product_level3_id","sk":"product_level3_id","order":3}
+									]
+								},
+								"dimension2":
+								{
+									"table":"store",
+									"fields":"store_id"
+								}
+							}
+						}
+						# print(dict1)
+						print(dict1.keys())
+						# print(dict1.values())
+						print(dict1.items())
+
+
+						for key1, value1 in dict1.items():
+							if dict1[key1]['name'].lower() == 'market1':
+								# dimension1
+								for dict2 in dict1[key1]['dimension1']['keys']: #list
+									for key2, value2 in dict2.items():
+										if key2 == 'sk':
+											if 'product_desc' in value2.split(','):
+												l_pk = dict2['pk']
+												l_sk = dict2['sk']
+												l_order = dict2['order']
+												l_table = dict1[key1]['dimension1']['table']
+												l_subject = 'dimension1'
+												print([l_subject, l_table, l_pk, l_sk, l_order])
+
+						# ['dimension1', 'product', 'product_id', 'product_id, product_code, product_desc', 0]
+					</code></pre>
+				</section>
+				<section>
+					<h3>Dictionary Functions</h3><br>
+					<pre data-id="code-animation"><code class="hljs python" data-trim>
+						dict.clear()
+						dict.copy()
+						dict.fromkeys()
+						dict.get(key, default=None)
+						dict.has_key(key)
+						dict.items()
+						dict.keys()
+						dict.setdefault(key, default=None)
+						dict.update(dict2)
+						dict.values()
+					</code></pre>					
+				</section>
+			</section>
+
+
+
+			<section>
+				<section>
+					<h2>Functions</h2>
+				</section>
+				<section>
+					When programs grow in size, they can become hard to manage. Ideally, larger programs should be broken down into functions.
+					<br>
+					<img height="250" data-src="./images/subroutines.png" alt="Loop">
+					<br>
+					When a function is called, control passes from the main program to the function. Once the function has completed, control is passed back to the main program.
+				</section>
+				<section>
+					<h3>Defining function</h3>
+					A function is a section of code that is defined outside the main body. It can be called as many times as required.
+					<br>
+					<pre data-id="code-animation"><code class="hljs python" data-trim>
+						# function to produce a printed times table
+						def TimesTable():
+							for i in range(1, 11):
+								print(str(i) + " X 5 = " + str(i * 5))
+
+						# Calling
+						TimesTable()
+
+						# Output
+						1 X 5 = 5
+						2 X 5 = 10
+						3 X 5 = 15
+						4 X 5 = 20
+						5 X 5 = 25
+						6 X 5 = 30
+						7 X 5 = 35
+						8 X 5 = 40
+						9 X 5 = 45
+						10 X 5 = 50
+					</code></pre>
+				</section>
+				<section>
+					<h3>Passing parameters</h3>
+					In the last example, the brackets were empty but they can be used to pass parameters into the function.
+					<br><br>
+					We can rewrite the previous function with parameters to control which times table to produce.
+					<pre data-id="code-animation"><code class="hljs python" data-trim>
+						def TimesTable(tt):
+							for i in range(1, 11):
+								print(str(i) + " X " + str(tt) + " = " + str(i * tt))
+
+						TimesTable(8)
+
+						1 X 8 = 8
+						2 X 8 = 16
+						3 X 8 = 24
+						4 X 8 = 32
+						5 X 8 = 40
+					</code></pre>
+				</section>
+				<section>
+					<h3>Return Values</h3>
+					A function can return value back to the main program when it returns control. This value can then be used in the main program.
+					<br><br>
+					<pre data-id="code-animation"><code class="hljs python" data-trim>
+						def circle_area(radius):
+							PI = 3.14159
+							area = PI * radius**2
+							return area
+
+						area = circle_area(5)
+						print(area)
+					</code></pre>
+				</section>
+				<section>
+					<h3>Local variables</h3>
+					Variables which only exist within the function and cannot be accessed by the main program are called local variables.
+					<br><br>
+					<h4>In the circle_area() function, the values area and pi are both used within the function definition. These variables have local scope.</h4>
+					<pre data-id="code-animation"><code class="hljs python" data-trim>
+						def circle_area(radius):
+							PI = 3.14159
+							area = PI * (radius**2)
+							return area
+
+						print(circle_area(10))
+						print(area)
+					</code></pre>
+				</section>
+				<section>
+					<h3>Global variable</h3>
+					A variable declared outside any function is often global by default, but it can usually be declared explicitly with a keyword such as 'global'.
+					<br><br>
+					<h4>It can be accessed, changed or updated by any part of the code. 
+					<br>
+					On the other hand, a 'local' variable can only be accessed by the function in which it declared. This means that the same variable name can be used in different function and modules without any issues.</h4>
+				</section>
+				<section>
+					<h3>Advantages of the structured approach</h3>
+					Splitting programs down into multiple functions rather than one large program is known as modularised or structured programming.
+					<br><br>
+					Advantages of structured approach:
+					<ul>
+						<li>It reduces the overall size of the program.</li>
+						<li>It makes the code much easier to maintain.</li>
+						<li>It reduces development and testing.</li>
+						<li>It allows reuse of code between programs</li>
+					</ul>
+				</section>
+			</section>
+
+
+			<section>
+				<section><h2>Robust Secure</h2></section>
+				<section>
+					<ul>
+						<li>A robust program will anticipate unusual user behaviour and still function correctly.</li>
+						<li>A secure program is one that only allows authorised users to access it.</li>
+					</ul>
+					<br><br>
+					Robust and secure programs can be written using the following techniques:
+					<br>
+					<ul>
+						<li>Data validation</li>
+						<li>Authentication</li>
+						<li>Testing</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Data validation</h2>
+					This is used to ensure that users have entered data in the correct form, for instance:<br><br>
+					<ul>
+						<li>of the correct type</li>
+						<li>within a sensible range</li>
+						<li>of the correct length</li>
+						<li>not empty</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Authentication</h2>
+					This is used to ensure that only authorised users access a system by establishing a user’s identity. This can be one in a number of ways:<br>
+					<ul>
+						<li>using usernames and passwords</li>
+						<li>through possession of an electronic key, device or account</li>
+						<li>using biometrics</li>
+						<li>Two-factor authentication is where two of the above are checked simultaneously.</li>
+					</ul>					
+				</section>
+				<section>
+					<h2>Testing</h2>
+					<ul>
+						<li>The purpose of testing is to ensure that the program functions as expected and meets all requirements.</li>
+						<li>Testing should not simply aim to prove that the program works, but also try to break it. Only by knowing that it cannot easily be broken can we be satisfied that it works.</li>
+					</ul>
+				</section>				
+				<section>
+					<h2>Test data</h2>
+					<h4>Test data should be chosen so that the system as a whole can be tested destructively, checking for errors wherever they may occur. Test data should be chosen to include as many of the following as possible:
+					<ul>
+						<li>Normal test data is data of the correct type that would typically be expected from a user who is correctly using the system. This should be accepted by the program without causing errors.</li>
+						<li>Boundary test data is test data that is of the correct type but is on the very edge of being valid. Boundary test data should be accepted by the program without causing errors.</li>
+						<li>Erroneous test data is test data that is outside the expected values or of the incorrect type, and should be rejected by the system.</li></h4>
+					</ul>					
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## Test Plan
+
+						A test plan lists all of the tests that will be carried out, the expected result and the actual result in each case.
+
+						|Test data|Type of test data|Reason|Expected result|Actual result|
+						|-|-|-|-|-|
+						||Normal||||
+						||Boundary||||
+						||Erroneous||||
+					</script>
+				</section>
+				<section>
+					<b>A syntax error</b> is one that breaks the grammatical rules of the programming language. Examples include misspelling a keyword, missing a bracket or using a keyword in the wrong way.
+					<br>
+					Syntax errors will stop the program from running.
+					<br><br>
+					<b>A logic error</b> is one that causes the program to produce an unexpected or incorrect output but will not stop the program from running.
+				</section>
+			</section>
+
+
+			
+
+
+			<section>
+				<h2>Thank You</h2>
+			</section>
+
+			
+        </div>
+
+    </div>
+
+    <script src="../../presentation/dist/reveal.js"></script>
+	<script src="../../presentation/plugin/zoom/zoom.js"></script>
+	<script src="../../presentation/plugin/notes/notes.js"></script>
+	<script src="../../presentation/plugin/search/search.js"></script>
+	<script src="../../presentation/plugin/markdown/markdown.js"></script>
+	<script src="../../presentation/plugin/highlight/highlight.js"></script>
+	<script>
+
+		// Also available as an ES module, see:
+		// https://revealjs.com/initialization/
+		Reveal.initialize({
+			controls: true,
+			progress: true,
+			center: true,
+			hash: true,
+			slideNumber: true,
+
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
+		});
+
+	</script>
+
+</body>
+
+</html>
