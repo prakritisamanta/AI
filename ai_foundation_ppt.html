@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF.js Canvas Renderer</title>
+    <!-- Load Tailwind CSS for modern, responsive styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for centering and handling the canvas */
+        body {
+            /* Use Inter font */
+            font-family: 'Inter', sans-serif; 
+        }
+        .viewer-container {
+            /* Responsive maximum width */
+            max-width: 1200px;
+            width: 95%; 
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            border-radius: 16px;
+            overflow: hidden;
+        }
+        canvas {
+            display: block;
+            width: 100%;
+            height: auto;
+            background-color: #fff;
+        }
+        /* Custom styles for the interactive buttons */
+        .control-button {
+            transition: all 0.2s;
+        }
+        .control-button:hover:not(:disabled) {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(99, 102, 241, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 min-h-screen flex flex-col items-center justify-center p-4">
+
+    <div class="viewer-container bg-white p-6 md:p-8">
+                
+        <!-- Loading Indicator -->
+        <div id="loadingMessage" class="text-center text-lg text-indigo-500 mb-4 font-medium p-2 border border-dashed border-indigo-300 rounded-lg">
+            Awaiting document load...
+        </div>
+
+        <!-- Canvas where PDF page is rendered -->
+        <div class="shadow-xl rounded-lg overflow-hidden border border-gray-200">
+            <canvas id="pdfCanvas"></canvas>
+        </div>
+
+        <!-- Control Bar -->
+        <div id="controls" class="flex flex-col sm:flex-row justify-between items-center mt-6 p-4 bg-indigo-50 rounded-xl">
+            
+            <!-- Previous Button -->
+            <button id="prevBtn" 
+                    class="control-button bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-6 rounded-full shadow-lg text-sm mb-3 sm:mb-0 w-full sm:w-auto" 
+                    disabled>
+                <span class="inline-block transform rotate-180">&#10148;</span> Previous Page
+            </button>
+            
+            <!-- Page Info -->
+            <span id="pageInfo" class="text-xl font-bold text-indigo-800 tracking-wide">Page 0 of 0</span>
+            
+            <!-- Next Button -->
+            <button id="nextBtn" 
+                    class="control-button bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-6 rounded-full shadow-lg text-sm w-full sm:w-auto" 
+                    disabled>
+                Next Page <span class="inline-block">&#10148;</span>
+            </button>
+        </div>
+    </div>
+
+    <script type="module">
+        // ---------------------------------------------------------------------
+        // PDF.js Configuration and Initialization
+        // ---------------------------------------------------------------------
+
+        // Publicly accessible sample PDF for demonstration purposes.
+        // NOTE: Updated to use a stable mozilla.github.io link instead of a raw
+        // GitHub link with an unstable commit hash, which caused the "Missing PDF" error.
+        //const PDF_URL = 'https://mozilla.github.io/pdf.js/web/compressed.tracemonkey-pldi-09.pdf';
+        const PDF_URL = 'https://raw.githubusercontent.com/prakritisamanta/AI/main/assets/AI_Foundations2.pdf';
+
+        
+        // Define CDN path for the PDF.js worker script
+        const PDFJS_WORKER_CDN = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf.worker.min.mjs';
+
+        let pdfDoc = null; // Holds the PDF document object
+        let pageNum = 1;   // Current page number, initialized to 1
+        let pageRendering = false;
+        let pageNumPending = null; // Used to queue a page render if one is in progress
+
+        // Statically import the necessary functions from the PDF.js Core CDN module.
+        import { getDocument, GlobalWorkerOptions } from 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf.min.mjs';
+
+        // Set up the worker source (MANDATORY for PDF.js operations)
+        GlobalWorkerOptions.workerSrc = PDFJS_WORKER_CDN;
+
+        // Get DOM elements
+        const canvas = document.getElementById('pdfCanvas');
+        const ctx = canvas.getContext('2d');
+        const pageInfo = document.getElementById('pageInfo');
+        const loadingMessage = document.getElementById('loadingMessage');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const container = document.querySelector('.viewer-container');
+
+
+        // ---------------------------------------------------------------------
+        // Rendering Functions
+        // ---------------------------------------------------------------------
+
+        /**
+         * Get page info from document, resize canvas, and render the page.
+         * @param {number} num The page number to render.
+         */
+        function renderPage(num) {
+            pageRendering = true;
+            loadingMessage.textContent = `Rendering page ${num}...`;
+
+            // Disable controls during render
+            prevBtn.disabled = true;
+            nextBtn.disabled = true;
+
+            // Fetch the specific page
+            pdfDoc.getPage(num).then(page => {
+                
+                // Calculate scale to fit the page to the width of the container
+                const viewport1x = page.getViewport({ scale: 1 });
+                const scale = container.clientWidth / viewport1x.width;
+                const viewport = page.getViewport({ scale: scale });
+
+                // Set canvas size to match viewport dimensions
+                canvas.height = viewport.height;
+                canvas.width = viewport.width;
+
+                // Render context configuration
+                const renderContext = {
+                    canvasContext: ctx,
+                    viewport: viewport
+                };
+
+                const renderTask = page.render(renderContext);
+
+                // Wait for rendering to finish
+                renderTask.promise.then(() => {
+                    pageRendering = false;
+                    loadingMessage.textContent = 'Ready.';
+                    
+                    if (pageNumPending !== null) {
+                        // If a new page was requested during rendering, process it now
+                        renderPage(pageNumPending);
+                        pageNumPending = null;
+                    }
+                    updatePageInfo();
+                }).catch(error => {
+                    console.error("Error during PDF page rendering:", error);
+                    loadingMessage.textContent = 'Error: Could not render page.';
+                    updatePageInfo(); // Re-enable controls if possible
+                });
+            }).catch(error => {
+                console.error("Error getting page:", error);
+                loadingMessage.textContent = 'Error: Could not fetch page data.';
+                updatePageInfo();
+            });
+        }
+
+        /**
+         * Queues a page render if one is currently in progress.
+         */
+        function queueRenderPage(num) {
+            if (pageRendering) {
+                pageNumPending = num;
+            } else {
+                renderPage(num);
+            }
+        }
+
+        /**
+         * Updates the page number display and controls state (enable/disable buttons).
+         */
+        function updatePageInfo() {
+            if (!pdfDoc) return;
+            
+            pageInfo.textContent = `Page ${pageNum} of ${pdfDoc.numPages}`;
+            
+            // Enable/disable buttons based on current page number
+            prevBtn.disabled = pageNum <= 1 || pageRendering;
+            nextBtn.disabled = pageNum >= pdfDoc.numPages || pageRendering;
+        }
+
+        // ---------------------------------------------------------------------
+        // Event Handlers
+        // ---------------------------------------------------------------------
+
+        function onPrevPage() {
+            if (pageNum <= 1) return;
+            pageNum--;
+            queueRenderPage(pageNum);
+        }
+
+        function onNextPage() {
+            if (pageNum >= pdfDoc.numPages) return;
+            pageNum++;
+            queueRenderPage(pageNum);
+        }
+
+        // Add event listeners to buttons
+        prevBtn.addEventListener('click', onPrevPage);
+        nextBtn.addEventListener('click', onNextPage);
+        
+        // Handle resizing to keep the PDF scaled correctly
+        window.addEventListener('resize', () => {
+            // Only re-render if the document is loaded
+            if (pdfDoc) {
+                // Throttle this or queue it to prevent performance issues
+                queueRenderPage(pageNum);
+            }
+        });
+
+        // ---------------------------------------------------------------------
+        // Document Loading
+        // ---------------------------------------------------------------------
+        
+        /**
+         * Initializes the PDF document loading.
+         */
+        function loadDocument() {
+            loadingMessage.textContent = 'Starting PDF download...';
+            
+            // Asynchronous download of PDF via a Promise
+            const loadingTask = getDocument({
+                url: PDF_URL, 
+                // CMap configuration is necessary for proper text rendering in many PDFs
+                cMapUrl: 'https://cdn.jsdelivr.net/npm/pdfjs-dist@4.4.168/cmaps/', 
+                cMapPacked: true
+            });
+            
+            loadingTask.promise.then(pdf => {
+                pdfDoc = pdf;
+                loadingMessage.textContent = `Document loaded successfully (${pdfDoc.numPages} pages).`;
+                
+                // Initial render of the first page
+                renderPage(pageNum);
+            }).catch(error => {
+                // Display error message if the PDF fails to load
+                console.error("Error loading PDF document:", error);
+                // The check for the "Missing PDF" error should now be resolved with the new URL.
+                loadingMessage.textContent = `FATAL ERROR: Could not load PDF document. Check console for network details.`;
+                
+                // Ensure controls are disabled on failure
+                updatePageInfo();
+            });
+        }
+
+        // Start loading the document when the script executes
+        loadDocument();
+
+    </script>
+</body>
+</html>
